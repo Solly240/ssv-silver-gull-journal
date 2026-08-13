@@ -946,11 +946,414 @@
     "The Iron Directorate and Sovereign Horizon — the galaxy's other two superpowers, both currently Neutral / no contact."
   ],
   "map": {
-    "galaxies": [
-      {
-        "id": "expanse",
+    "start": "erevos",
+    "nodes": {
+      "erevos": {
+        "name": "The Erevos Reach",
+        "kind": "galaxy",
+        "image": "assets/current-galaxy-current.png",
+        "imageNamed": "assets/current-galaxy-named.png",
+        "locations": [
+          {
+            "id": "the-shattered-expanse",
+            "name": "The Shattered Expanse",
+            "x": 0.2246,
+            "y": 0.752,
+            "hasData": true,
+            "child": "expanse",
+            "info": "The crew's known region — the lawless frontier sector where the rift stranded the Silver Gull. Click again to open the sector chart."
+          },
+          {
+            "id": "godsreach",
+            "name": "Godsreach",
+            "x": 0.4785,
+            "y": 0.4443,
+            "hasData": false
+          },
+          {
+            "id": "the-iron-throne-cluster",
+            "name": "The Iron Throne Cluster",
+            "x": 0.5208,
+            "y": 0.473,
+            "hasData": false
+          },
+          {
+            "id": "ferrun-deep",
+            "name": "Ferrun Deep",
+            "x": 0.3781,
+            "y": 0.5919,
+            "hasData": false
+          },
+          {
+            "id": "the-compliance-march",
+            "name": "The Compliance March",
+            "x": 0.4346,
+            "y": 0.397,
+            "hasData": false
+          },
+          {
+            "id": "adamant-reach",
+            "name": "Adamant Reach",
+            "x": 0.5239,
+            "y": 0.5349,
+            "hasData": false
+          },
+          {
+            "id": "the-gilded-veil",
+            "name": "The Gilded Veil",
+            "x": 0.3714,
+            "y": 0.5493,
+            "hasData": false
+          },
+          {
+            "id": "halo-of-saints",
+            "name": "Halo of Saints",
+            "x": 0.4712,
+            "y": 0.3975,
+            "hasData": false
+          },
+          {
+            "id": "the-threshold-choir",
+            "name": "The Threshold Choir",
+            "x": 0.5011,
+            "y": 0.5983,
+            "hasData": false
+          },
+          {
+            "id": "reliquary-drift",
+            "name": "Reliquary Drift",
+            "x": 0.344,
+            "y": 0.4896,
+            "hasData": false
+          },
+          {
+            "id": "the-crater-sea",
+            "name": "The Crater Sea",
+            "x": 0.5373,
+            "y": 0.3757,
+            "hasData": false
+          },
+          {
+            "id": "vesper-nebula",
+            "name": "Vesper Nebula",
+            "x": 0.4258,
+            "y": 0.6168,
+            "hasData": false
+          },
+          {
+            "id": "the-sovereign-sprawl",
+            "name": "The Sovereign Sprawl",
+            "x": 0.3805,
+            "y": 0.4406,
+            "hasData": false
+          },
+          {
+            "id": "free-marches",
+            "name": "Free Marches",
+            "x": 0.5465,
+            "y": 0.42,
+            "hasData": false
+          },
+          {
+            "id": "smuggler-s-gyre",
+            "name": "Smuggler's Gyre",
+            "x": 0.3649,
+            "y": 0.6429,
+            "hasData": false
+          },
+          {
+            "id": "the-black-verge",
+            "name": "The Black Verge",
+            "x": 0.4047,
+            "y": 0.3742,
+            "hasData": false
+          },
+          {
+            "id": "corsair-belt",
+            "name": "Corsair Belt",
+            "x": 0.5755,
+            "y": 0.4834,
+            "hasData": false
+          },
+          {
+            "id": "the-ashen-rift",
+            "name": "The Ashen Rift",
+            "x": 0.3317,
+            "y": 0.5706,
+            "hasData": false
+          },
+          {
+            "id": "pyre-nebula",
+            "name": "Pyre Nebula",
+            "x": 0.4849,
+            "y": 0.3515,
+            "hasData": false
+          },
+          {
+            "id": "cinderfall-deep",
+            "name": "Cinderfall Deep",
+            "x": 0.5717,
+            "y": 0.5562,
+            "hasData": false
+          },
+          {
+            "id": "the-weeping-span",
+            "name": "The Weeping Span",
+            "x": 0.2999,
+            "y": 0.5198,
+            "hasData": false
+          },
+          {
+            "id": "umbral-hollows",
+            "name": "Umbral Hollows",
+            "x": 0.5485,
+            "y": 0.3242,
+            "hasData": false
+          },
+          {
+            "id": "warden-s-span",
+            "name": "Warden's Span",
+            "x": 0.4835,
+            "y": 0.6276,
+            "hasData": false
+          },
+          {
+            "id": "the-silent-reach",
+            "name": "The Silent Reach",
+            "x": 0.3571,
+            "y": 0.4146,
+            "hasData": false
+          },
+          {
+            "id": "dead-star-chain",
+            "name": "Dead Star Chain",
+            "x": 0.5862,
+            "y": 0.3981,
+            "hasData": false
+          },
+          {
+            "id": "the-cold-lattice",
+            "name": "The Cold Lattice",
+            "x": 0.4176,
+            "y": 0.6849,
+            "hasData": false
+          },
+          {
+            "id": "hollow-marches",
+            "name": "Hollow Marches",
+            "x": 0.3981,
+            "y": 0.3336,
+            "hasData": false
+          },
+          {
+            "id": "the-verdant-chain",
+            "name": "The Verdant Chain",
+            "x": 0.6196,
+            "y": 0.4508,
+            "hasData": false
+          },
+          {
+            "id": "greenwake-nebula",
+            "name": "Greenwake Nebula",
+            "x": 0.3613,
+            "y": 0.6619,
+            "hasData": false
+          },
+          {
+            "id": "the-kelp-sea",
+            "name": "The Kelp Sea",
+            "x": 0.5027,
+            "y": 0.3053,
+            "hasData": false
+          },
+          {
+            "id": "amber-drift",
+            "name": "Amber Drift",
+            "x": 0.594,
+            "y": 0.5842,
+            "hasData": false
+          },
+          {
+            "id": "the-sundering",
+            "name": "The Sundering",
+            "x": 0.2756,
+            "y": 0.6178,
+            "hasData": false
+          },
+          {
+            "id": "riftmouth",
+            "name": "Riftmouth",
+            "x": 0.5807,
+            "y": 0.2846,
+            "hasData": false
+          },
+          {
+            "id": "the-maw",
+            "name": "The Maw",
+            "x": 0.5199,
+            "y": 0.6464,
+            "hasData": false
+          },
+          {
+            "id": "chrysalis-nebula",
+            "name": "Chrysalis Nebula",
+            "x": 0.2839,
+            "y": 0.5321,
+            "hasData": false
+          },
+          {
+            "id": "the-glass-waste",
+            "name": "The Glass Waste",
+            "x": 0.6267,
+            "y": 0.3804,
+            "hasData": false
+          },
+          {
+            "id": "saint-vael-s-crossing",
+            "name": "Saint Vael's Crossing",
+            "x": 0.3981,
+            "y": 0.7315,
+            "hasData": false
+          },
+          {
+            "id": "the-long-dark",
+            "name": "The Long Dark",
+            "x": 0.3088,
+            "y": 0.3938,
+            "hasData": false
+          },
+          {
+            "id": "ossuary-fields",
+            "name": "Ossuary Fields",
+            "x": 0.6569,
+            "y": 0.454,
+            "hasData": false
+          },
+          {
+            "id": "the-rust-belt",
+            "name": "The Rust Belt",
+            "x": 0.3294,
+            "y": 0.7019,
+            "hasData": false
+          },
+          {
+            "id": "emberline",
+            "name": "Emberline",
+            "x": 0.3847,
+            "y": 0.3271,
+            "hasData": false
+          },
+          {
+            "id": "the-molten-chain",
+            "name": "The Molten Chain",
+            "x": 0.6471,
+            "y": 0.5618,
+            "hasData": false
+          },
+          {
+            "id": "vlow-nebula",
+            "name": "Vlow Nebula",
+            "x": 0.2345,
+            "y": 0.6339,
+            "hasData": false
+          },
+          {
+            "id": "the-pale-reach",
+            "name": "The Pale Reach",
+            "x": 0.5103,
+            "y": 0.237,
+            "hasData": false
+          },
+          {
+            "id": "coldharbor-verge",
+            "name": "Coldharbor Verge",
+            "x": 0.523,
+            "y": 0.6894,
+            "hasData": false
+          },
+          {
+            "id": "the-choirless-deep",
+            "name": "The Choirless Deep",
+            "x": 0.2462,
+            "y": 0.5296,
+            "hasData": false
+          },
+          {
+            "id": "nyx-rift",
+            "name": "Nyx Rift",
+            "x": 0.5831,
+            "y": 0.2647,
+            "hasData": false
+          },
+          {
+            "id": "the-thousand-wrecks",
+            "name": "The Thousand Wrecks",
+            "x": 0.4279,
+            "y": 0.7696,
+            "hasData": false
+          },
+          {
+            "id": "beacon-s-end",
+            "name": "Beacon's End",
+            "x": 0.2892,
+            "y": 0.3621,
+            "hasData": false
+          },
+          {
+            "id": "the-drowned-span",
+            "name": "The Drowned Span",
+            "x": 0.6829,
+            "y": 0.3325,
+            "hasData": false
+          },
+          {
+            "id": "halcyon-drift",
+            "name": "Halcyon Drift",
+            "x": 0.2947,
+            "y": 0.7397,
+            "hasData": false
+          },
+          {
+            "id": "the-vantage-chain",
+            "name": "The Vantage Chain",
+            "x": 0.381,
+            "y": 0.2843,
+            "hasData": false
+          },
+          {
+            "id": "marrow-waste",
+            "name": "Marrow Waste",
+            "x": 0.7182,
+            "y": 0.4295,
+            "hasData": false
+          },
+          {
+            "id": "the-gallows-belt",
+            "name": "The Gallows Belt",
+            "x": 0.2098,
+            "y": 0.6989,
+            "hasData": false
+          },
+          {
+            "id": "anvil-cluster",
+            "name": "Anvil Cluster",
+            "x": 0.4783,
+            "y": 0.2004,
+            "hasData": false
+          },
+          {
+            "id": "wraithlight-nebula",
+            "name": "Wraithlight Nebula",
+            "x": 0.6317,
+            "y": 0.6121,
+            "hasData": false
+          }
+        ]
+      },
+      "expanse": {
         "name": "The Shattered Expanse",
-        "available": true,
+        "kind": "sector",
+        "parent": "erevos",
         "image": "assets/shattered-expanse-sector-chart.png",
         "locations": [
           {
@@ -1390,15 +1793,7 @@
           }
         ]
       }
-    ]
+    }
   },
-  "playerMap": {
-    "JimFtN4dTfDCyslS": "astra",
-    "GJNbJjJl6BehTpfI": "baldy",
-    "L2myrPrfK9pVFw0M": "glimm",
-    "rnDzGHLG2fHsWfPB": "gerth",
-    "H7gAAER6VkPzFBdq": "gobby",
-    "IlqUeqhRmBQHJ0KW": "kael",
-    "HmIuAcON0AbyOcVT": "ronon"
-  }
+  "playerMap": {}
 }

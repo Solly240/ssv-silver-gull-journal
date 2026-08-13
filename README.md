@@ -12,7 +12,7 @@ tab alone.
 | **Quests** | Quest board. The list shows only each quest's **next task**; click a quest for the full **Description + Quest Log & Checklist** (each objective expands its own detail). **Rebuild Turrets** is a collapsible parent with the 4 material bars (fed live from the ship inventory) + 6 turret objectives. Completed quests (Ferrocrystal, Charge ASTRA, Get More Fuel) open full briefings. **Find Captain Talvos** and **Get Home** start with no objectives. |
 | **Lore** | 16-section lore compendium with a section rail. |
 | **Timeline** | 29 dated entries in chronological order (Standard Year 6874), each tagged with the session the party learned it. |
-| **Map** | The Shattered Expanse **sector chart** with clickable hotspots. Zoom out with **◀ Galaxy view**. Locations with no data show a red **"ASTRA currently has no image or data for this location."** |
+| **Map** | Opens to the **galaxy chart** ("The Erevos Reach"). All 56 region dots are clickable: **The Shattered Expanse** drills into the sector chart; every other region pops **"ASTRA has no info on this region yet."** Sector locations show their info, with **◀ Back** / breadcrumb to zoom out. Swap the galaxy image to the all-named version later via `map.nodes.erevos.image` in `content.json`. |
 | **My Journal** | Each player's **hidden** dossier (secrets, goals, abilities, loose threads) — rendered per-user — plus a writable scratchpad. |
 | **Party Journal** | Shared mission log (S1–S4), open leads, and a who's-who of the crew. |
 

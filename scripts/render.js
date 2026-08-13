@@ -342,51 +342,55 @@
   /* ================================================================== */
   /*  4. MAP                                                             */
   /* ================================================================== */
-  S._mapGalaxy = null;    // galaxy id when zoomed in
-  S._mapSel = null;       // selected location id
+  // Map is a tree of nodes: map.start + map.nodes{ id: {name, image, kind, locations:[{id,name,x,y,hasData,info?,child?}]} }.
+  // A location with a `child` node id drills into that sub-map; otherwise it shows info, or a red
+  // "no info yet" popup when hasData is false.
+  S._mapPath = null;      // array of node ids (breadcrumb)
+  S._mapSel = null;       // selected location id (info / red popup)
   S.renderMap = function (ctx, body) {
     const el = root(body, "map");
-    const gals = (ctx.data.map && ctx.data.map.galaxies) || [];
-    const gal = S._mapGalaxy ? gals.find((g) => g.id === S._mapGalaxy) : null;
+    const M = (ctx.data && ctx.data.map) || {};
+    const nodes = M.nodes || {};
+    const startId = M.start || Object.keys(nodes)[0];
+    if (!startId || !nodes[startId]) { el.innerHTML = `<h1 class="ssvj-title">Star Map</h1><p class="muted">No map loaded.</p>`; return; }
+    if (!S._mapPath || !S._mapPath.length || !nodes[S._mapPath[S._mapPath.length - 1]]) S._mapPath = [startId];
 
-    if (!gal) {
-      el.innerHTML = `
-        <h1 class="ssvj-title">Star Map</h1>
-        <p class="ssvj-sub">ASTRA's cartography. Pick a region to zoom in.</p>
-        <div class="galgrid">
-          ${gals.map((g) => `<button class="galbtn ${g.available ? "" : "soon"}" ${g.available ? `data-gal="${g.id}"` : "disabled"}>
-            <div class="gn">${esc(g.name)}</div><div class="gs">${g.available ? "Charted — click to open" : "No chart yet"}</div></button>`).join("")}
-          <button class="galbtn soon" disabled><div class="gn">The Luminara Galaxy (home)</div><div class="gs">No chart yet — a road home is the goal</div></button>
-          <button class="galbtn soon" disabled><div class="gn">Uncharted</div><div class="gs">ASTRA has no data yet</div></button>
-        </div>`;
-      el.querySelectorAll("[data-gal]").forEach((b) => b.onclick = () => { S._mapGalaxy = b.dataset.gal; S._mapSel = null; S.renderMap(ctx, body); });
-      return;
-    }
+    const node = nodes[S._mapPath[S._mapPath.length - 1]];
+    const locs = node.locations || [];
+    const loc = S._mapSel ? locs.find((l) => l.id === S._mapSel) : null;
 
-    const loc = S._mapSel ? gal.locations.find((l) => l.id === S._mapSel) : null;
+    const crumbs = S._mapPath.map((id, i) => `<a data-jump="${i}">${esc(nodes[id].name)}</a>`).join(' <span>&rsaquo;</span> ');
+    const back = S._mapPath.length > 1 ? `<a data-back>&#9664; Back</a> &nbsp; ` : "";
+
     let detail = "";
     if (loc) {
       detail = loc.hasData
-        ? `<div class="detail"><div style="display:flex;justify-content:space-between;gap:10px;align-items:center;"><b style="color:var(--teal);font-size:15px;">${esc(loc.name)}</b><a class="link" data-close>close ✕</a></div><p style="color:#c6d6ec;margin-top:6px;font-size:13.5px;">${esc(loc.info)}</p></div>`
-        : `<div class="detail red"><div style="display:flex;justify-content:space-between;gap:10px;align-items:center;"><b style="color:var(--red);font-size:15px;">${esc(loc.name)}</b><a class="link" data-close>close ✕</a></div><p class="noinfo" style="margin-top:6px;">⚠ ASTRA currently has no image or data for this location.</p></div>`;
+        ? `<div class="detail"><div style="display:flex;justify-content:space-between;gap:10px;align-items:center;"><b style="color:var(--teal);font-size:15px;">${esc(loc.name)}</b><a class="link" data-close>close ✕</a></div><p style="color:#c6d6ec;margin-top:6px;font-size:13.5px;">${esc(loc.info || "")}</p></div>`
+        : `<div class="detail red"><div style="display:flex;justify-content:space-between;gap:10px;align-items:center;"><b style="color:var(--red);font-size:15px;">${esc(loc.name)}</b><a class="link" data-close>close ✕</a></div><p class="noinfo" style="margin-top:6px;">⚠ ASTRA has no info on this region yet.</p></div>`;
     }
 
     el.innerHTML = `
       <h1 class="ssvj-title">Star Map</h1>
-      <div class="crumbs"><a data-up>◀ Galaxy view</a> <span>›</span> ${esc(gal.name)}</div>
+      <div class="crumbs">${back}${crumbs}</div>
       <div class="mapstage">
-        <img src="${ctx.assetUrl(gal.image)}" alt="${esc(gal.name)}"/>
-        ${gal.locations.map((l) => `<button class="hot ${l.hasData ? "" : "nodata"} ${loc && loc.id === l.id ? "sel" : ""}" data-loc="${l.id}" title="${esc(l.name)}" style="left:${(l.x * 100).toFixed(2)}%;top:${(l.y * 100).toFixed(2)}%;"></button>`).join("")}
+        <img src="${ctx.assetUrl(node.image)}" alt="${esc(node.name)}"/>
+        ${locs.map((l) => { const drill = l.child && nodes[l.child]; const nd = (l.hasData || drill) ? "" : "nodata"; return `<button class="hot ${nd} ${loc && loc.id === l.id ? "sel" : ""}" data-loc="${l.id}" title="${esc(l.name)}" style="left:${(l.x * 100).toFixed(2)}%;top:${(l.y * 100).toFixed(2)}%;"></button>`; }).join("")}
       </div>
       <div class="legend">
-        <span><b style="background:#3fe0c8"></b>Has data — click a marker</span>
-        <span><b style="background:#ff5470"></b>No data yet</span>
-        <span class="muted">One galaxy charted for now; more to come.</span>
+        <span><b style="background:#3fe0c8"></b>Charted — click a marker</span>
+        <span><b style="background:#ff5470"></b>No info yet</span>
+        <span class="muted">${node.kind === "galaxy" ? "Click The Shattered Expanse to zoom into its sector chart." : ""}</span>
       </div>
       ${detail}`;
 
-    el.querySelector("[data-up]").onclick = () => { S._mapGalaxy = null; S._mapSel = null; S.renderMap(ctx, body); };
-    el.querySelectorAll("[data-loc]").forEach((h) => h.onclick = () => { S._mapSel = h.dataset.loc; S.renderMap(ctx, body); });
+    el.querySelectorAll("[data-loc]").forEach((h) => h.onclick = () => {
+      const l = locs.find((x) => x.id === h.dataset.loc);
+      if (l && l.child && nodes[l.child]) { S._mapPath = S._mapPath.concat(l.child); S._mapSel = null; }
+      else { S._mapSel = h.dataset.loc; }
+      S.renderMap(ctx, body);
+    });
+    el.querySelectorAll("[data-jump]").forEach((a) => a.onclick = () => { S._mapPath = S._mapPath.slice(0, Number(a.dataset.jump) + 1); S._mapSel = null; S.renderMap(ctx, body); });
+    const b = el.querySelector("[data-back]"); if (b) b.onclick = () => { S._mapPath = S._mapPath.slice(0, -1); S._mapSel = null; S.renderMap(ctx, body); };
     const c = el.querySelector("[data-close]"); if (c) c.onclick = () => { S._mapSel = null; S.renderMap(ctx, body); };
   };
 

@@ -31,7 +31,7 @@ let pushTimer = null;
 /* -------------------------------------------------------------------------- */
 /*  content load / cache                                                      */
 /* -------------------------------------------------------------------------- */
-function assetUrl(p) { return `modules/${MODULE_ID}/${p}`; }
+function assetUrl(p) { return p && /^https?:/i.test(p) ? p : `modules/${MODULE_ID}/${p}`; }
 const b64 = (str) => btoa(unescape(encodeURIComponent(str)));
 
 async function loadBundled() {
