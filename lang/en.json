@@ -1,0 +1,5 @@
+{
+  "SSVJOURNAL.settings.mappingName": "Player → Character mapping",
+  "SSVJOURNAL.settings.mappingHint": "Assign which Foundry user plays which crew member, so each player's hidden 'My Journal' dossier is shown only to them.",
+  "SSVJOURNAL.keybind.open": "Open the Ship's Journal"
+}

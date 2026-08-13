@@ -1,0 +1,22 @@
+{
+  "id": "ssv-silver-gull-journal",
+  "title": "SSV Silver Gull — Ship's Journal",
+  "description": "Fills out the SSV Silver Gull campaign's Simple Quest journal: a custom Quest Board with ship-inventory progress bars, a Lore compendium, an in-fiction Timeline, a zoomable galaxy Map, per-player hidden My Journal dossiers, and a shared Party Journal. Companion to the Politics & Standing module; leaves the Politics tab untouched.",
+  "version": "1.0.0",
+  "authors": [
+    { "name": "SSV Silver Gull GM" }
+  ],
+  "compatibility": {
+    "minimum": "12",
+    "verified": "14"
+  },
+  "esmodules": [
+    "scripts/journal.js"
+  ],
+  "languages": [
+    { "lang": "en", "name": "English", "path": "lang/en.json" }
+  ],
+  "url": "https://github.com/Solly240/ssv-silver-gull-journal",
+  "manifest": "https://github.com/Solly240/ssv-silver-gull-journal/releases/latest/download/module.json",
+  "download": "https://github.com/Solly240/ssv-silver-gull-journal/releases/latest/download/module.zip"
+}
