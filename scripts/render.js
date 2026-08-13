@@ -157,6 +157,28 @@
     .ssvj .banner{border:1px solid var(--border);border-radius:8px;background:var(--panel2);padding:9px 12px;margin-bottom:12px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
     .ssvj .backbtn{display:inline-flex;align-items:center;gap:6px;color:var(--teal);cursor:pointer;font-size:13px;margin-bottom:10px;}
     .ssvj .backbtn:hover{text-decoration:underline;}
+    .ssvj .inv-edit{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:11px;padding:8px 11px;border:1px solid var(--border);border-radius:8px;background:var(--panel2);}
+    .ssvj .inv-item{font-size:12px;color:var(--teal2);display:inline-flex;gap:5px;align-items:center;}
+    .ssvj .inv-item b{color:var(--ink);min-width:14px;text-align:center;font-variant-numeric:tabular-nums;}
+    .ssvj .turret-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:10px;}
+    .ssvj .turret-card{border:1px solid var(--border);border-radius:9px;background:var(--panel2);padding:10px 12px;}
+    .ssvj .turret-card.built{opacity:.7;border-color:rgba(87,211,140,.4);}
+    .ssvj .turret-head{display:flex;gap:11px;align-items:flex-start;}
+    .ssvj .turret-img{width:62px;height:66px;object-fit:contain;flex:none;border-radius:6px;background:#0a1120;border:1px solid var(--line);}
+    .ssvj .turret-bars{margin-top:9px;}
+    .ssvj .recap{font-size:13.5px;color:#c6d6ec;line-height:1.55;}
+    .ssvj .recap h3{color:var(--teal);font-size:14px;margin:14px 0 5px;text-transform:uppercase;letter-spacing:.4px;}
+    .ssvj .recap p{margin:7px 0;}
+    .ssvj .recap ul{margin:6px 0 6px 2px;padding-left:18px;}
+    .ssvj .recap li{margin:4px 0;}
+    .ssvj .recap b{color:var(--teal2);}
+    .ssvj .recap table.rtab{border-collapse:collapse;margin:8px 0;font-size:12.5px;width:100%;}
+    .ssvj .recap table.rtab th,.ssvj .recap table.rtab td{border:1px solid var(--line);padding:4px 8px;text-align:left;}
+    .ssvj .recap table.rtab th{color:var(--gold);background:var(--panel2);}
+    .ssvj .sess{cursor:pointer;border:1px solid transparent;border-radius:8px;padding:8px 10px;margin-top:8px;transition:background .12s;}
+    .ssvj .sess:hover{background:rgba(63,224,200,.06);border-color:var(--border);}
+    .ssvj .sess .st{font-weight:700;color:var(--teal2);font-size:14px;display:flex;justify-content:space-between;gap:8px;align-items:center;}
+    .ssvj .sess .st .go{color:var(--teal);font-size:12px;}
     `;
     document.head.appendChild(st);
   };
@@ -224,33 +246,34 @@
     const aq = el.querySelector("[data-addquest]"); if (aq) aq.onclick = async () => { const t = await ctx.promptText?.("New quest name", ""); if (t) ctx.addQuest?.(t); };
   };
 
+  // Each turret is its own task with its OWN material progress bars (fed from the shared inventory).
   function turretGroup(ctx, q) {
     const data = ctx.data;
-    const bars = (data.materials || []).map((m) => {
-      const have = Number(data.inventory[m.id] || 0), req = m.req;
-      return `<div class="bar-row">
-        <div class="bar-top"><span class="lbl">${esc(m.name)}</span><span class="num">${have} / ${req}</span></div>
-        <div class="bar"><i class="${barClass(have, req)}" style="width:${pctv(have, req)}%"></i></div>
-        ${ctx.isGM ? `<div class="gm-row"><span class="gm-tag">GM</span>
-          <button class="step" data-inv="${m.id}" data-d="-1">−</button>
-          <button class="step" data-inv="${m.id}" data-d="1">+</button>
-          <button class="step" data-setinv="${m.id}">set…</button></div>` : ""}
-      </div>`;
-    }).join("");
-    const turrets = q.objectives.map((o, i) => {
+    const gmInv = ctx.isGM ? `<div class="inv-edit"><span class="gm-tag">Ship inventory (GM)</span>` +
+      (data.materials || []).map((m) => `<span class="inv-item">${esc(matShort(data, m.id))}
+        <button class="step" data-inv="${m.id}" data-d="-1">−</button><b data-invval="${m.id}">${Number(data.inventory[m.id] || 0)}</b>
+        <button class="step" data-inv="${m.id}" data-d="1">+</button></span>`).join("") + `</div>` : "";
+    const cards = q.objectives.map((o) => {
       const t = (data.turrets || []).find((x) => x.id === o.turret);
-      const built = t && t.built;
-      const ready = t && turretReady(data, t);
-      const costTxt = t ? Object.entries(t.cost).map(([k, v]) => `${v}× ${matShort(data, k)}`).join(", ") : "";
+      if (!t) return "";
+      const built = t.built, ready = turretReady(data, t);
+      const bars = Object.entries(t.cost).map(([k, v]) => {
+        const have = Number(data.inventory[k] || 0);
+        return `<div class="bar-row"><div class="bar-top"><span class="lbl">${esc(matName(data, k))}</span><span class="num">${Math.min(have, v)} / ${v}</span></div>
+          <div class="bar"><i class="${barClass(have, v)}" style="width:${pctv(have, v)}%"></i></div></div>`;
+      }).join("");
       const state = built ? `<span class="t-built">✔ built</span>` : (ready ? `<span class="t-ready">ready to build</span>` : `<span class="t-wait">needs materials</span>`);
-      return `<div class="obj ${built ? "done" : ""}">
-        <span class="box" ${ctx.isGM ? `data-turret="${t ? t.id : ""}"` : ""}>${built ? "✔" : ""}</span>
-        <div style="flex:1;"><div class="otitle">${esc(o.title)} <span class="cost">— ${esc(costTxt)}</span></div>
-          <div class="odetail">${esc(o.detail || "")}</div></div>
-        <div style="flex:none;">${state}</div>
+      return `<div class="turret-card ${built ? "built" : ""}">
+        <div class="turret-head">
+          ${t.img ? `<img class="turret-img" src="${ctx.assetUrl(t.img)}" alt=""/>` : ""}
+          <div style="flex:1;min-width:0;"><div class="otitle">${esc(t.name)}</div><div class="odetail">${esc(o.detail || t.role || "")}</div>
+            <div style="margin-top:4px;">${state}</div></div>
+          ${ctx.isGM ? `<button class="btn mini" data-turret="${t.id}">${built ? "unbuild" : "mark built"}</button>` : ""}
+        </div>
+        ${built ? "" : `<div class="turret-bars">${bars}</div>`}
       </div>`;
     }).join("");
-    return `<div style="margin-top:8px;">${bars}<div style="margin-top:6px;">${turrets}</div></div>`;
+    return `<div style="margin-top:8px;">${gmInv}<div class="turret-grid">${cards}</div></div>`;
   }
   function wireTurretGroup(ctx, el, body) {
     el.querySelectorAll("[data-inv]").forEach((b) => b.onclick = (e) => { e.stopPropagation(); ctx.adjustInv(b.dataset.inv, Number(b.dataset.d)); });
@@ -457,24 +480,38 @@
   /* ================================================================== */
   /*  6. PARTY JOURNAL                                                   */
   /* ================================================================== */
+  S._sessionOpen = null;   // session index when viewing a full recap
   S.renderParty = function (ctx, body) {
     const el = root(body, "party");
     const data = ctx.data;
     const sessions = data.partyLog || [];
+
+    if (S._sessionOpen != null && sessions[S._sessionOpen]) {
+      const s = sessions[S._sessionOpen];
+      const full = s.full || ("<ul>" + s.beats.map((b) => `<li>${esc(b)}</li>`).join("") + "</ul>");
+      el.innerHTML = `
+        <div class="backbtn" data-back>◀ Back to Party Journal</div>
+        <h1 class="ssvj-title" style="font-size:19px;">${esc(s.session)} — ${esc(s.title)}</h1>
+        <p class="ssvj-sub">${esc(s.date || "")} · the full account</p>
+        <div class="recap">${full}</div>`;
+      el.querySelector("[data-back]").onclick = () => { S._sessionOpen = null; S.renderParty(ctx, body); };
+      return;
+    }
+
     const notes = data.partyNotes || [];
     const who = data.whoswho || [];
     const leads = data.leads || [];
     el.innerHTML = `
       <h1 class="ssvj-title">Party Journal</h1>
-      <p class="ssvj-sub">The crew's shared record — everyone can read this.</p>
+      <p class="ssvj-sub">The crew's shared record — click a session for the full rundown.</p>
 
       <div class="ssvj-card">
         <div class="q-head" style="cursor:default;"><span class="q-ico">📓</span><span class="q-name">Mission log</span>
           ${ctx.isGM ? `<button class="btn mini" data-addnote>+ note</button>` : ""}</div>
-        ${sessions.map((s) => `<div style="margin-top:12px;">
-          <div style="font-weight:700;color:var(--teal2);font-size:14px;">${esc(s.session)} — ${esc(s.title)}</div>
+        ${sessions.map((s, i) => `<div class="sess" data-sess="${i}">
+          <div class="st"><span>${esc(s.session)} — ${esc(s.title)}</span><span class="go">full recap ▸</span></div>
           <div class="muted" style="margin:2px 0 6px;">${esc(s.date || "")}</div>
-          <ul class="doc" style="margin:0;">${s.beats.map((b) => `<li>${esc(b)}</li>`).join("")}</ul>
+          <ul class="doc" style="margin:0;">${s.beats.slice(0, 3).map((b) => `<li>${esc(b)}</li>`).join("")}${s.beats.length > 3 ? `<li class="muted">…click for the full account</li>` : ""}</ul>
         </div>`).join("")}
         ${notes.length ? `<div style="margin-top:12px;"><div style="font-weight:700;color:var(--gold);font-size:14px;">GM notes</div>
           <ul class="doc" style="margin:4px 0 0;">${notes.map((n) => `<li>${esc(n)}</li>`).join("")}</ul></div>` : ""}
@@ -490,6 +527,7 @@
         ${who.map((c) => `<div class="who" style="border-top-color:${c.color || "#3fe0c8"}">
           <div class="nm">${esc(c.name)}</div><div class="rl">${esc(c.role)}</div><p>${esc(c.text)}</p></div>`).join("")}
       </div>`;
+    el.querySelectorAll("[data-sess]").forEach((d) => d.onclick = () => { S._sessionOpen = Number(d.dataset.sess); S.renderParty(ctx, body); });
     if (ctx.isGM) { const b = el.querySelector("[data-addnote]"); if (b) b.onclick = async () => { const t = await ctx.promptText?.("Add a mission-log note", ""); if (t) ctx.addPartyNote(t); }; }
   };
 

@@ -42,7 +42,8 @@
         "polymer": 2,
         "ferrocrystal": 1
       },
-      "built": false
+      "built": false,
+      "img": "https://raw.githubusercontent.com/Solly240/ssv-silver-gull-journal/main/assets/turrets/flak.png"
     },
     {
       "id": "autocannon",
@@ -52,7 +53,8 @@
         "thermite": 3,
         "polymer": 2
       },
-      "built": false
+      "built": false,
+      "img": "https://raw.githubusercontent.com/Solly240/ssv-silver-gull-journal/main/assets/turrets/autocannon.png"
     },
     {
       "id": "plasma",
@@ -62,7 +64,8 @@
         "ferrocrystal": 2,
         "relays": 1
       },
-      "built": false
+      "built": false,
+      "img": "https://raw.githubusercontent.com/Solly240/ssv-silver-gull-journal/main/assets/turrets/plasma.png"
     },
     {
       "id": "cryo",
@@ -72,7 +75,8 @@
         "polymer": 2,
         "relays": 1
       },
-      "built": false
+      "built": false,
+      "img": "https://raw.githubusercontent.com/Solly240/ssv-silver-gull-journal/main/assets/turrets/cryo.png"
     },
     {
       "id": "ion",
@@ -82,7 +86,8 @@
         "relays": 3,
         "ferrocrystal": 1
       },
-      "built": false
+      "built": false,
+      "img": "https://raw.githubusercontent.com/Solly240/ssv-silver-gull-journal/main/assets/turrets/ion.png"
     },
     {
       "id": "gravity",
@@ -92,7 +97,8 @@
         "ferrocrystal": 3,
         "relays": 2
       },
-      "built": false
+      "built": false,
+      "img": "https://raw.githubusercontent.com/Solly240/ssv-silver-gull-journal/main/assets/turrets/gravity.png"
     }
   ],
   "quests": [
@@ -843,7 +849,8 @@
         "We crossed ~2 km 'to port' to a ferrocrystal mining camp guarded by goblins/hobgoblins and mined 100+ kg by hand.",
         "ASTRA charged 2% → 84% while Gobby printed 40% tequila, drank the whole goblin population under the table, and got crowned their 'king.'",
         "On the way out we soaked the hall in tequila and G.L.I.M.M.'s dropped torch set off a fireball. Five sober enemies confronted us; talk failed; G.L.I.M.M. was dropped and ASTRA knocked offline, but Ronon (nat-20 crit) scattered the rest. Leveled to 2."
-      ]
+      ],
+      "full": "<h3>Summary</h3><p>The session opens right after the crash. The rift has flung the crew out of the <b>Luminara Galaxy</b> onto a barren asteroid in the <b>\"Shattered Expanse.\"</b> The very first scene is meeting <b>Ronon Dex</b>, a barbarian/gunslinger stranded ~2 weeks after his own ship crashed nearby (his whole crew died). After character introductions and searching their own dead ship (finding rations and Gobby's ~12 bottles of spirits), the crew <b>recruit Ronon</b> with food rations — he knows the local space, they don't.</p><p>Following ASTRA's scan, they cross ~2 km \"to port\" to a <b>ceruleum-ferrocrystal mining camp</b> guarded by dim goblins and hobgoblins. They <b>mine 100+ kg</b> of ferrocrystal by hand (Baldy hauling the biggest chunks; G.L.I.M.M. even digests a small one and turns partly blue), find camp logs, and reach the <b>main power grid.</b> The party splits: <b>ASTRA plugs in to recharge</b> (2% → <b>84%</b>, past the 40% goal) while <b>Gobby prints 40% tequila</b> and gets the entire goblin population blackout drunk, usurping the throne as their \"king.\"</p><p>The session climaxes in fire and combat. On the way out they soak the hall in tequila and <b>G.L.I.M.M. drops a torch</b> — a fireball-scale explosion incinerates the drunk goblins. At the exit, <b>5 sober enemies (3 hobgoblins + 2 goblins)</b> confront them over the burning camp; deception and persuasion fail. In the fight, <b>G.L.I.M.M.</b> (Faerie Fire + dual sickles) and a <b>raging Ronon Dex</b> kill multiple foes, but at level 1 the party is fragile: <b>G.L.I.M.M. is dropped (\"dead\")</b> and <b>ASTRA's body is knocked offline</b> back into the ship matrix. The surviving hobgoblins flee at the sight of Ronon. The crew recover their downed member and the crystal and head back to the ship. <b>Level up to 2.</b></p><h3>Key beats</h3><ul><li>Crew crash-land in the Shattered Expanse after the rift.</li><li>Meet &amp; recruit <b>Ronon Dex</b> (stranded survivor, local guide) for food rations.</li><li>Search their own ship: rations + Gobby's spirits; little else.</li><li>Cross ~2 km to the mining camp; identify goblins/hobgoblins + the ferrocrystal vein.</li><li><b>Mine 100+ kg ferrocrystal</b>; find camp logs + the main power grid.</li><li>Split: <b>ASTRA charges to 84%</b>; <b>Gobby drinks the goblins under the table</b> and is crowned king.</li><li>Soak the hall in tequila; <b>G.L.I.M.M.'s torch → fireball</b> kills the drunk goblins.</li><li>Exit fight vs. 5 sober hobgoblins/goblins; deception/persuasion fail → combat.</li><li>G.L.I.M.M. downed; ASTRA's body knocked offline; survivors flee.</li><li>Recover downed member + crystal; head back. <b>Level 2.</b></li></ul><h3>Characters present</h3><p>All except <b>Gerthorlemue</b> (still in his pod; 0 mentions).</p><ul><li><b>ASTRA</b> — scanned for the camp, negotiated, plugged into the power grid (→84%); body knocked offline in the fight, reverting to the ship matrix. Deadpan dark comedy.</li><li><b>Ronon Dex</b> — recruited guide; carried the heavy crystal; <b>raged</b> and killed multiple hobgoblins (incl. a crit); made the survivors flee.</li><li><b>Gobby</b> — led with sharp sight; brewed the tequila; got the goblins drunk; crowned \"king.\"</li><li><b>G.L.I.M.M.</b> — shifted forms (blob/turtle/monkey), morphed sickle-arms, digested a crystal, made a detached \"clone,\" set off the explosion, cast Faerie Fire — then dropped (\"dead\").</li><li><b>Kael Voss</b> — cautious/moral voice; wanted a hobgoblin captive via persuasion; ex-Vanguard reveal.</li><li><b>Baldy (\"Big D\")</b> — the mining muscle (huge carry capacity); pulled the biggest crystals; mostly out of the final fight.</li></ul><h3>NPCs</h3><ul><li><b>Ronon Dex</b> — NPC stranger → recruited ally.</li><li><b>Goblins &amp; hobgoblins</b> (mining-camp guards) — dim, easily manipulated; initially passive, turned hostile after the camp burned. Drunk ones killed by the explosion; 5 sober ones fought and lost/fled.</li><li><b>The goblin \"king\"</b> — a hobgoblin in a cheap paper crown; deposed by Gobby.</li><li><b>Captain Talvos</b> — <b>not mentioned</b> this session.</li></ul><h3>Locations</h3><ul><li><b>The asteroid</b> — barren; both the crew's and Ronon's ships crashed here. (DM mused it was meant to be a <i>prison</i> but \"mildly forgot that bit.\")</li><li><b>The crew's crashed ship (Silver Gull)</b> — powered down; rations, wiring, spirits. Still dark at session end.</li><li><b>Ronon's crashed ship</b> — burned-out hull, nothing of value.</li><li><b>The mining encampment</b> (~2 km port) — abandoned/lightly-staffed ferrocrystal camp with a main hall/throne room, food-printer, company logs, and an accessible power grid. <b>Destroyed by fire.</b></li></ul><h3>Combat</h3><p>One real fight, at the camp exit: crew (Ronon, G.L.I.M.M., ASTRA's body) vs. 5 enemies (3 hobgoblins, 2 goblins), after failed deception + persuasion. G.L.I.M.M. cast <b>Faerie Fire</b> and killed several with sickles before being <b>dropped to 0</b>; <b>Ronon raged</b>, crit, and finished several; <b>ASTRA's body</b> was struck and dissipated offline. Crew win; survivors flee. Plus the <b>tequila+torch explosion</b> (~8d6 fireball) that wiped out the drunk goblins beforehand.</p><h3>Loot / resources</h3><ul><li><b>Ceruleum ferrocrystal</b> — ~100+ kg (objective complete + spares). Fuel/repair feedstock.</li><li><b>Gobby's spirits</b> — ~10–12 bottles, weaponized as tequila.</li><li><b>Camp logs</b> — intel on the previous mining company (little on the galaxy itself).</li><li><b>A broken alien console/scrap</b> — unreadable (foreign tech).</li><li><b>Ronon's kit</b> joins the party (2 daggers, leather armor, revolver + ~10 bullets, torch, etc.).</li><li>A drunk <b>hobgoblin captive</b> carried out; a joke lawnmower; the goblin throne (crumbled).</li></ul><h3>Objective status after S1</h3><ul><li>✅ Ferrocrystal retrieved. ✅ ASTRA charged (84%). ❌ Ship not yet re-powered. ❌ Talvos: no progress.</li></ul><h3>Threads left open</h3><ul><li>How to actually use the ferrocrystal to re-power/repair the ship.</li><li>Where they are; whether home is reachable.</li><li>ASTRA's downed body + G.L.I.M.M. \"dead\" — both need the ship restored / reviving.</li><li>Fleeing hobgoblins could return; a captive + burning camp left behind.</li><li>Ronon's unexplained grudge \"against the people of this galaxy.\"</li><li>The dropped \"prison\" premise.</li></ul><h3>Memorable moments</h3><ul><li>Gobby's identity crisis: <i>\"I am a turtle… but I am a man. What is a turtle?\"</i></li><li>G.L.I.M.M. claiming to be <i>\"older than anything and everything\"</i> — then admitting he's a lab <b>experiment.</b></li><li>Kael's intro: <i>\"I don't like bad guys. I'm totally normal.\"</i></li><li>Gobby crowned: <i>\"I am the king… the fun water bringer.\"</i></li><li>ASTRA, after draining the grid and torching the camp, gives the survivors <i>\"zero time,\"</i> framed as <i>\"lessening their suffering.\"</i></li><li>The signature set-piece: <b>flood the hall with tequila, then torch it on the way out.</b></li></ul>"
     },
     {
       "session": "Session 2",
@@ -854,7 +861,8 @@
         "Goblins had snuck aboard, kicking off a long, comedic room-by-room boarding fight.",
         "Standout kills: Gobby fist-killed the drunk hobgoblin he'd carried 2 km; G.L.I.M.M. decapitated several; Ronon's 'thumb-war' made a goblin kill itself; Kael self-healed while mobbed.",
         "Cleared and looted, we deployed ferrocrystal-eating repair drones, re-attached the front door, salvaged ship weapons, and leveled to 3."
-      ]
+      ],
+      "full": "<h3>Summary</h3><p>Session 2 opens with a long DM recap of Session 1, then picks up with the crew back aboard the still- dark, grounded Silver Gull, carrying ASTRA's downed body (and Baldy still carrying a drunk hobgoblin). They <b>plug ASTRA's body into a ship console</b> — which <b>powers the ship back up</b>, flickers the lights on, and <b>revives ASTRA.</b> She reports many systems still down (internal sensors, engines, most weaponry) and urges immediate repairs, starting with the missing front door.</p><p>Before repairs can begin, they discover <b>goblins and hobgoblins have snuck aboard</b>, hiding in the bedrooms and a lower engineering level. This kicks off the session's single, very long <b>boarding fight</b> — a chaotic, comedic room-by-room clear through corridors, cockpit, bedrooms, and a bathroom. Gobby fist-kills the drunk hobgoblin he carried 2 km; <b>G.L.I.M.M.</b> morphs a glaive/sickles and decapitates several goblins; a gunslinger lines two goblins up and kills both with one shot; <b>Ronon Dex</b> runs absurd \"thumb war\" gambits (one goblin literally kills itself). <b>Kael</b> is mobbed to low HP and self-heals with Channel Divinity.</p><p>After clearing all enemies (including a couple of tougher hobgoblins), the crew loot the bodies, <b>deploy ferrocrystal-eating repair drones</b>, <b>re-attach the front door</b>, and claim salvaged ship weapons. Everyone takes a long rest and <b>levels up to 3.</b> The ship is now actively self-repairing — the session ends on that beat.</p><h3>Key beats</h3><ul><li>Long DM recap of Session 1.</li><li>Crew return to the dark, grounded Gull with ASTRA's body.</li><li><b>ASTRA plugged into a console → ship powers on, lights up, ASTRA revives.</b></li><li>ASTRA lists systems still down (internal sensors, engines, most weaponry); urges repairs + the door.</li><li>Gobby fist-kills the carried drunk hobgoblin.</li><li>Discovery of goblin/hobgoblin <b>boarders</b>; initiative → long room-by-room fight.</li><li>Comedic kills: Ronon's thumb-war (a goblin kills itself), G.L.I.M.M.'s decapitations, a lined-up double-kill shot, Gobby drinking mid-fight.</li><li>All boarders killed; bodies looted.</li><li><b>Repair drones deployed</b> (consume ferrocrystal); <b>front door re-attached</b>; ship weapons salvaged.</li><li>Long rest; <b>level up to 3.</b> Ship self-repairing.</li></ul><h3>Characters present</h3><ul><li><b>ASTRA</b> — revived at the console; powered the ship on; acted as exposition/quest-giver; limited in combat; repeatedly nagged the crew to <b>repair the internal weapons system.</b></li><li><b>Ronon Dex</b> — feral comedy: repeated \"thumb war\"/axe-endurance gambits (a goblin killed itself); held the door for re-attachment (rolled terribly on Investigating it); showered aboard; grabbed a salvaged pistol + hunting rifle for future proficiency.</li><li><b>Gobby</b> — punched/killed the drunk hobgoblin; fought bare-handed while drinking beer from his shell. (Newer player being taught the rules.)</li><li><b>G.L.I.M.M.</b> — glaive then dual sickles; decapitated multiple goblins; big melee damage (a max-damage hit).</li><li><b>Baldy</b> — present but passive (relaxing in a chair); associated with gunplay + repairs.</li><li><b>Kael Voss</b> — cast <b>Bless</b>; used <b>Channel Divinity</b> to self-heal while mobbed at low HP.</li><li><b>Gerthorlemue</b> — not active; presumably still in the stasis pod.</li></ul><h3>NPCs</h3><ul><li><b>Boarding goblins &amp; hobgoblins</b> — hostile; snuck aboard, appearing from bedrooms + a lower level; includes a couple of tougher/\"fancy\" hobgoblins. No named boss this session. One goblin killed itself during Ronon's thumb-war.</li><li><b>The drunk hobgoblin</b> — carried from S1; killed early by Gobby.</li><li><b>Captain Talvos</b> — referenced only (\"alive, dead, or somewhere considerably stranger\"); still lost.</li><li><b>\"10 crew members aboard nobody has fully encountered\"</b> — mentioned in the recap; never developed.</li></ul><h3>Locations</h3><ul><li><b>SSV Silver Gull interior</b> — the session's main setting. Multi-level: cockpit, corridors, crew bedrooms, a bathroom, an engineering level with a ladder down, and a console/charging station. Initially dark; front door missing (from S1) then reattached. Also: a handprint scanner (Baldy's print recognized), a shower, weapon storage, and a teased <b>unactivated ship \"feature.\"</b></li><li><b>The asteroid / unknown system</b> — the Gull remains grounded near the rift.</li><li><i>(Referenced)</i> the destroyed mining camp, 2 km west.</li></ul><h3>Combat</h3><p>Single major encounter: <b>repelling the boarding party</b> — a long multi-turn, room-by-room fight (the bulk of the session). Numerous goblins + several hobgoblins (incl. two \"stronger\" ones), which kept appearing from bedrooms/the lower level. Kael was mobbed to low HP and self-healed; Ronon dropped to ~12 HP and used Second Wind. <b>No PC deaths; total party victory.</b> (0 XP auto-assigned — the table doesn't use XP.)</p><h3>Loot / resources</h3><ul><li><b>Ferrocrystal</b> — the S1 haul now feeds the <b>repair drones</b> (they \"eat\" it to repair the ship).</li><li><b>Goblin weapon loot</b> — ~2 longswords, ~7 short swords, ~7 short bows (Kael plans to study weapons on a rest).</li><li><b>Salvaged ship weapons</b> — pistols and \"hunting rifles\"/\"space guns\"; Ronon claims a pistol + rifle.</li><li><b>Progression</b> — all PCs to <b>level 3.</b></li></ul><h3>Objective status after S2</h3><ul><li>✅ Ferrocrystal (secured, now in use). ✅ ASTRA charge (used to re-power the ship). 🔄 Ship repairs <b>in progress</b> (door done; drones running; internal sensors/engines/weaponry still down). ❌ Talvos: no progress.</li></ul><h3>Threads left open</h3><ul><li>Talvos's fate; getting off the asteroid (engines still down).</li><li>The teased <b>unactivated ship \"feature.\"</b></li><li>The \"10 unencountered crew members.\"</li><li>Where the boarders came from (players suspected someone \"spawning\" them).</li><li>The unknown star system / the rift.</li></ul><h3>Memorable moments</h3><ul><li>DM recap: <i>\"The first thing that happened was Gobby ripped the front door off. That's one. These things happen.\"</i></li><li>ASTRA on the S1 explosion: she'd have given the goblins <i>\"a year on this rock anyway. Then she looked at the fire and revised that figure to zero.\"</i></li><li><b>Ronon's thumb-war:</b> a goblin cuts off its own thumb, then smashes its own finger with a hammer and dies — <i>\"I might not have done any damage… but I made him kill himself.\"</i> Later: <i>\"Why am I shooting them when I can just tell them to kill himself?\"</i></li><li>The lined-up double kill: <i>\"Bang! Straight through one goblin's head, and then the other.\"</i></li><li>Ronon's self-deprecation: <i>\"I couldn't kill a goblin to save my life… but I can have a shower.\"</i></li><li>Meta note: Ronon Dex is intentionally the <i>Stargate Atlantis</i> character — <i>\"Jason Momoa before he was Jason Momoa popular.\"</i></li></ul>"
     },
     {
       "session": "Session 3",
@@ -865,7 +873,8 @@
         "Gobby and Baldy stayed on the Gull; the rest looted 6 vacc-suit patches and an unknown sidearm, and found a green-glowing stasis pod with a figure inside.",
         "In the cargo hold we hit The Hollow, a sensor-invisible rift creature. Ronon recognized it; it shrugged off our attacks and drifted out through the aft wound (downing Kael, nat 1).",
         "ASTRA revived Kael, G.L.I.M.M. reformed from a puddle, and we recovered 2 hyperfold fuel cells. The pod stayed sealed."
-      ]
+      ],
+      "full": "<h3>Summary</h3><p>With the three-day repair skip behind them and the Silver Gull back under power (and airborne), ASTRA presented the crew with the <b>first real sensor scan</b> of the system. Three destinations sat within fuel range; the crew chose the closest contact: <b>\"Unidentified Vessel — Adrift,\"</b> a mid-size freighter, dark, no transponder, one faint life sign, drifting toward the edge of range. ASTRA read the partial hull markings and estimated the ship's name as <b>Sandra's Folly</b> — a hauler roughly 40% larger than the Silver Gull, its <b>entire aft section sheared clean off</b> as if something had cut through it without slowing.</p><p><b>Gobby and Baldy stayed behind</b> to watch the Silver Gull (Gobby was, as ever, extremely drunk). The rest docked at a blown-out starboard airlock and entered. Thin but breathable air; partial artificial gravity running off a dying emergency micro-cell. Fanning out (loudly), the crew found <b>6 vacc-suit hull patches</b> and an <b>unknown-make sidearm</b> (a worn, non-UGC compact pistol, loaded + one spare mag), and located the <b>Medical Bay</b> — where a single <b>stasis pod glowed faint green</b> in the dark, a figure inside, blood on the floor near the door.</p><p>Before anyone reached the pod, they found <b>The Hollow</b> in the cargo hold — a <b>rift creature</b>, invisible to every sensor, three metres tall when it chose a shape. <b>Ronon Dex recognised it instantly</b> — these are what dismantled his civilisation — and told them: <i>don't fire kinetic, don't melee, leave now.</i> They didn't. A brutal, one-sided fight followed; the Hollow was <b>immune to psychic</b>, <b>resistant to nonmagical piercing</b>, and deflected most kinetic attacks (force and slashing worked). It never died — on <b>Round 3 its \"departure condition\" was met</b> and it simply <b>drifted out through the aft shear wound into space</b>, dealing 7 damage to everyone in its path (Kael rolled a nat 1, took 14, and went down). The crew ended battered but alive; ASTRA revived Kael with Cure Wounds, Glimm reformed from a puddle, Ronon stood at 5 HP. Searching the hold afterward turned up <b>2 Hyperfold Fuel Cells</b> (jump-drive fuel — flagged important). The session ended with the pod survivor still sealed and much of Sandra's Folly unexplored.</p><h3>Key beats</h3><ul><li>Three-day repair skip; Silver Gull re-powered and airborne. ASTRA shares the <b>first system scan.</b></li><li>Crew pick the <b>adrift derelict</b> (≈ Sandra's Folly) over the two other leads.</li><li>Dock at a blown starboard airlock; Gobby + Baldy stay on the Gull.</li><li>Loot sweep: <b>6 vacc-suit patches</b>, <b>1 unknown sidearm</b> (Kael).</li><li>Find the <b>Medical Bay</b>: an occupied, green-glowing <b>stasis pod</b> (blood on the floor).</li><li>Discover <b>The Hollow</b> in the cargo hold; Ronon recognises it and warns them off.</li><li><b>Combat</b> — the Hollow deflects/absorbs most attacks; Glimm phases through it taking backlash, drops to 2 HP; Kael Hexes it (Int) and Shields Ronon.</li><li><b>Round 3:</b> the Hollow leaves through the aft shear wound; AoE on exit downs Kael (nat 1 → 14).</li><li>Post-combat: ASTRA <b>Cure Wounds</b> revives Kael; Glimm reforms; find <b>2 Hyperfold Fuel Cells.</b></li><li>Pod survivor left sealed; rest of the ship unexplored → carries into Session 4.</li></ul><h3>Characters present</h3><ul><li><b>ASTRA</b> — ran the scan; identified Sandra's Folly; in combat held a crewmate clear of the Hollow; post-fight <b>Cure Wounds (2nd)</b> on Kael.</li><li><b>Kael Voss</b> (\"evil mode\") — <b>Hex</b> (Int at disadvantage) + Eldritch Blast (missed); <b>Shield of Faith</b> on Ronon; downed by the Hollow's exit AoE (nat 1, 14 dmg), stabilised/revived.</li><li><b>G.L.I.M.M.</b> — dual sickle-arms + Action Surge (3 attacks); <b>phased through the Hollow twice</b> taking 18 + 5 backlash; ended at 2 HP and <b>collapsed into a puddle</b> (reformed after).</li><li><b>Ronon Dex</b> — opened with his pistol (missed); rage + damage resistance soaked a 32-damage hit down to 4; recognised the Hollow; ended at 5 HP.</li><li><b>Gobby</b> &amp; <b>Baldy</b> — stayed aboard the Silver Gull.</li><li><b>Gerthorlemue</b> — the <b>figure in the stasis pod</b> (unopened this session; woken in S4).</li></ul><h3>NPCs / creatures</h3><ul><li><b>The Hollow</b> — a <b>rift creature</b> aboard Sandra's Folly's cargo hold. Sensor-invisible, gravity-warping, immune to psychic, resistant to nonmagical physical, deflects kinetic fire. Did <b>not</b> die — it left when its interest expired. Full stat block &amp; lore → `../../bestiary/the-hollow.md`. Ronon: <i>it left because they weren't worth its time — that is not the same as being safe. It knows what they smell like now.</i></li><li><b>The stasis-pod survivor</b> = <b>Gerthorlemue</b> (revealed S4).</li><li><b>Captain Talvos</b> — no sign; still lost.</li></ul><h3>Locations</h3><ul><li><b>Sandra's Folly</b> — a mid-size hauling freighter (~40% larger than the Gull), dark, no transponder, <b>aft sheared clean off</b> by something precise and fast. Breathable thin air, failing micro-cell gravity, scorch/impact scoring. Explored: starboard airlocks, a storage room, crew quarters, the port-side medical bay, the cargo hold. <b>Much remains unexplored.</b></li><li><b>The system (per the nav scan):</b> the Gull's position ringed by the <b>Keth Minor Cluster</b>, the <b>Vorrn-7 System</b>, and a <b>[CORRUPTED] ring structure</b> (see below), plus rift-radiation blackout zones and an asteroid field.</li></ul><h3>Loot / resources (confirmed this session)</h3><ul><li><b>6× Vacc-suit hull patches</b> (breach repair for either ship).</li><li><b>1× Unknown-make sidearm</b> — compact non-UGC pistol, worn grip, loaded + 1 spare mag (Kael).</li><li><b>2× Hyperfold Fuel Cells</b> — Silver Gull jump-drive fuel (a <b>3rd</b> is found in S4). Flagged as important to track. See `../inventory.md`.</li></ul><h3>HP going into Session 4</h3><p>Kael — down/stabilised/revived, low • Glimm — 2 HP, reformed from puddle • Ronon — 5 HP, still raging.</p><h3>Threads left open</h3><ul><li>The <b>stasis-pod survivor</b> (→ opened in S4 = Gerthorlemue).</li><li>The rest of <b>Sandra's Folly</b> (unsearched rooms, more loot).</li><li>The <b>[CORRUPTED] ring structure</b> — described here as <i>the corrupted ship visible in the rift, its writing in an <b>ancient language possibly older than ASTRA herself.</b></i> See `../../lore/ancients-and-tech.md`.</li><li>The two other scanned leads: <b>Keth Minor Cluster</b> and <b>Vorrn-7 System.</b></li><li>The Hollow is still out there — and now \"knows what they smell like.\"</li></ul><h3>Memorable</h3><ul><li>ASTRA's dry sensor-etiquette note that making that much noise aboard an unknown derelict was <i>probably not ideal.</i></li><li>Ronon's warning and, after: <i>these are the creatures that wiped out my entire civilisation — a small one.</i></li><li>Glimm going <b>straight through</b> the Hollow and coming out \"with holes in his goo.\"</li></ul>"
     },
     {
       "session": "Session 4",
@@ -876,7 +885,8 @@
         "We stripped the rest of Sandra's Folly (a 3rd hyperfold cell, 2 cutlasses, 3 frag grenades), Ronon briefed the three factions, and we set course for Vorrn-7.",
         "En route an Apostles of the Threshold vessel ambushed us — our first ship-to-ship battle. We crippled its engines, rammed it, and fired Ronon through a breach to board.",
         "The captain hit self-destruct (three blue hull modules). We killed 2 of 3 (Baldy's shot through our own windscreen; Gobby's flak turret) but Gerthorlemue's ancient gun misfired. The Apostles reflected the blast; G.L.I.M.M. took 27 (28 = death), survived, and ASTRA finally cast Cure Wounds. We're now on the Apostles' bad side."
-      ]
+      ],
+      "full": "<h3>Summary</h3><p>Session 4 opened with the crew <b>cracking the stasis pod</b> in Sandra's Folly's medical bay — revealing <b>Gerthorlemue</b>, a 4,000-year-old High Elf entertainer/wizard from Blackshire, Earth, stranded in emergency stasis since a cactus-related stage mishap. He took the situation (missing ship aft, rift creature, and the news that the UGC doesn't exist in this galaxy) reasonably well, and <b>joined the crew.</b> He mentioned that something <b>vast inside the rift had noticed him</b> during transit and left a mark on his forehead — the DM's (classified) <b>\"Magician's Eye.\"</b></p><p>The crew stripped Sandra's Folly (final haul incl. a <b>3rd Hyperfold Fuel Cell</b>, 2 boarding cutlasses, 3 frag grenades, and more), returned to the Silver Gull with fuel to spare, and set course for <b>Vorrn-7</b> — a gas giant with a faint life reading on a moon and a signal ASTRA couldn't identify. En route they were ambushed by an <b>Apostles of the Threshold</b> vessel, triggering the <b>Silver Gull's first ship-to-ship combat.</b> The crew manned stations and, over several rounds, crippled the Apostle ship's engines (Ronon's Heavy Autocannon dealing a near-crit 50), swung to its unshielded rear, and — realising the small ship could be captured intact — <b>rammed it and fired Ronon through a breach</b> (packed with six of Gobby's bottles and a breach mine) into the enemy.</p><p>Inside, Ronon shoved a gunner into space (nat 20 athletics) and battered the captain; Kael's intimidation flopped (nat 1) but he chopped the captain to 3 HP. The captain — serene, out of weapons — screamed <i>\"All hail the gods and the craters!\"</i> and hit <b>self-destruct:</b> a 12-second / two-round countdown. The twist: Apostle self-destructs are <b>three physical blue modules</b> on the hull, unstoppable by any terminal — destroy all three or the ship blows. In a frantic two rounds the crew got <b>two</b> modules (including <b>Baldy's legendary shot through the Silver Gull's own windscreen</b>, a total of 22), but <b>Gerthorlemue's 4,000-year-old gun misfired one short</b> and the <b>third module survived.</b> The Apostles <b>overcharged their shields backward to reflect the blast</b> straight at the Silver Gull. The ship (150 HP, shields up) took half — but <b>Glimm, still floating in open space, took 27; instant death was 28.</b> He made his death save (clean die), and <b>ASTRA — who'd forgotten all session she was a healer — finally cast Cure Wounds</b> and brought him back. Everyone survived; the Apostle ship was gone; the crew are now firmly on the Apostles' bad side.</p><h3>Key beats</h3><ul><li><b>Crack the stasis pod → Gerthorlemue</b> revealed and recruited; he mentions the rift-mark (\"Magician's Eye\", DM-classified).</li><li>Final loot sweep of Sandra's Folly; return to the Gull with ample fuel (<b>3 hyperfold cells</b>).</li><li>Ronon briefs the galaxy's <b>three factions</b> (Iron Directorate, Apostles, Sovereign Horizon) and confirms rift creatures killed his people — and <b>one faction worships them.</b></li><li>Set course for <b>Vorrn-7.</b></li><li><b>Ship combat vs. an Apostles vessel</b> (perception 16 to ID it). Crew take stations.</li><li>R1: Kael <b>Aggressive Positioning</b>; Ronon's Heavy Autocannon lands a <b>near-crit 50</b>; enemy engines crippled/locked.</li><li>R2: swing to the unshielded rear; Kael grants Ronon a 2nd action → two autocannon hits; Glimm heals ship HP each round.</li><li>R3: realise the ship is tiny and capturable → <b>ram + fire Ronon through a breach</b> to board.</li><li>Boarding: Ronon shoves a gunner into space (nat 20); Glimm blinds another with a plasmoid blob; Kael chops the captain to 3 HP (intimidation nat 1).</li><li>Captain triggers <b>self-destruct</b> (3 physical blue modules, terminal-proof).</li><li>Crew destroy <b>2 of 3</b> modules (Baldy's through-the-windscreen 22; Gobby's flak turret 21); <b>Gerthorlemue's ancient gun misfires one short (16 vs DC 17).</b></li><li>Ship detonates; Apostles <b>reflect the blast</b> off overcharged rear shields back at the Gull.</li><li>Gull (150 HP) takes half; <b>Glimm in open space takes 27 (28 = instant death)</b>, makes his death save; <b>ASTRA remembers Cure Wounds</b> and revives him.</li><li>All survive. No loot (ship destroyed). Crew now in <b>bad standing with the Apostles.</b></li></ul><h3>Characters present (with confirmed player↔character mapping)</h3><p>Ship-combat stations for the Apostle fight:</p><table class=\"rtab\"><thead><tr><th>Station</th><th>Player</th><th>Character</th></tr></thead><tbody><tr><td>Pilot</td><td>Justin</td><td><i>(unconfirmed — see roster note)</i></td></tr><tr><td>Captain</td><td>—</td><td><b>Kael Voss</b></td></tr><tr><td>Port Gunner</td><td>Derek</td><td><b>Ronon Dex</b></td></tr><tr><td>Starboard Gunner</td><td>Zion</td><td><b>Baldy</b></td></tr><tr><td>Engineer</td><td>Zach</td><td><b>G.L.I.M.M.</b></td></tr><tr><td>Science Officer</td><td>Jayden</td><td><i>(unconfirmed)</i></td></tr><tr><td>Shields</td><td>Steven</td><td><b>Gobby</b></td></tr></tbody></table><p>Plus <b>ASTRA</b> (Isaac) on the bridge, and <b>Gerthorlemue</b> newly aboard (manned a gun station for the final module shot). <i>(This table is the source of the confirmed mapping — see `../../characters/README.md`.)</i></p><p>Highlights: <b>Ronon</b> — autocannon near-crit 50, boarding leap, gunner-into-space nat 20, self-heal via Warrior of the Gods. <b>Baldy</b> — the impossible captain-swap pistol shot through the Gull's own viewport (22). <b>Gobby</b> — cold-shot the enemy engines; flak-turret module kill (21). <b>Kael</b> — positioning calls; chopped the captain to 3. <b>G.L.I.M.M.</b> — engineer power-reroutes + ship heals; blinded a gunner; nearly died in the blast. <b>ASTRA</b> — Bless on the shooters, then the clutch Cure Wounds. <b>Gerthorlemue</b> — first outing; his ancient gun misfired at the worst moment.</p><h3>NPCs</h3><ul><li><b>The Apostle captain</b> — fanatical, unafraid (\"<i>I am going to die with you… The craters will save me</i>\"); 58 HP; triggered the self-destruct. <b>NOT</b> Captain Talvos.</li><li><b>Apostle crew</b> — a gunner shoved into space; another blinded. All lost with the ship.</li><li><b>Captain Talvos</b> — still missing; no appearance.</li></ul><h3>Locations</h3><ul><li><b>Sandra's Folly</b> (medical bay + rest of ship) — finally stripped; Gerthorlemue recovered.</li><li><b>En route to Vorrn-7</b> — open space; site of the ship battle.</li><li><b>The Apostle vessel</b> — a deceptively tiny ship (barely more than a cockpit); boarded, then self-destructed.</li></ul><h3>Loot / resources</h3><ul><li><b>From Sandra's Folly (final):</b> <b>3× Hyperfold Fuel Cells</b> (confirmed total, locked storage near the engine room), <b>2× Boarding Cutlasses</b>, <b>3× Fragmentation Grenades</b>, <b>6× vacc-suit patches</b>, emergency rations + medical supplies, plus the earlier unknown sidearm. Fuel is now ample — the map's old max-travel-radius can be ignored.</li><li><b>From the Apostle ship:</b> nothing (it destroyed itself).</li><li>See the running tracker → `../inventory.md`.</li></ul><h3>Ship &amp; standing status</h3><ul><li><b>Silver Gull:</b> 150 HP; took <b>27</b> blast damage (half, shields up) — healthy overall. <b>Front windscreen now has a bullet hole</b> (Baldy's shot).</li><li><b>Factions:</b> now in <b>bad standing with the Apostles of the Threshold.</b> See `../../lore/factions.md`.</li></ul><h3>Threads left open</h3><ul><li>What the <b>Magician's Eye</b> actually is/does (DM-classified).</li><li><b>Vorrn-7</b> — the gas-giant moon signal they're still headed for.</li><li><b>Captain Talvos</b> — still out there.</li><li>Standing with all three factions — off to a rough start with the Apostles; the Hollow still at large.</li></ul><h3>Lessons the crew wrote down</h3><ul><li><b>\"Next time — shoot the blue things first.\"</b> Apostle ships have a <b>three-point self-destruct</b> that no terminal can stop once triggered; the blue hull markers are the targets.</li><li>Apostle shields can be <b>directionally overcharged to weaponise their own explosion.</b></li><li>The DM's reminder: <b>death is permanent.</b> Glimm survived by a single point.</li></ul>"
     }
   ],
   "whoswho": [
@@ -1359,24 +1369,24 @@
           {
             "id": "the-coil",
             "name": "The Coil (jump gate)",
-            "x": 0.607,
-            "y": 0.2,
+            "x": 0.6172,
+            "y": 0.2002,
             "hasData": true,
             "info": "The living Ancient hyper-gate at the heart of the Expanse — a weathered alien ring, still fully functional after untold ages. Ships travel sector-to-sector through it; nobody built it, nobody can shut it off. A possible road home."
           },
           {
             "id": "halberds-rest",
             "name": "Halberd's Rest",
-            "x": 0.526,
-            "y": 0.279,
+            "x": 0.5247,
+            "y": 0.2803,
             "hasData": true,
             "info": "The sector's great neutral-ground free port, built inside the gutted hull of a derelict Directorate dreadnought near The Coil. Every faction, pirate crew and trader passes through; weapons are peace-bonded at the door. The closest thing the Expanse has to a capital."
           },
           {
             "id": "sundowner",
             "name": "Sundowner",
-            "x": 0.483,
-            "y": 0.285,
+            "x": 0.4831,
+            "y": 0.2852,
             "hasData": true,
             "info": "A rogue, star-less planet turned into one endless casino-city, lit against the dark. Debts, information and ships change hands over the tables. Baldy has almost certainly been banned from somewhere here."
           },
@@ -1384,77 +1394,77 @@
             "id": "anvil",
             "name": "Anvil",
             "x": 0.5,
-            "y": 0.246,
+            "y": 0.2441,
             "hasData": false
           },
           {
             "id": "gallows",
             "name": "Gallows Reach",
-            "x": 0.194,
-            "y": 0.244,
+            "x": 0.1953,
+            "y": 0.2441,
             "hasData": true,
             "info": "Seat of the sector's most powerful pirate lords — a bounty-and-black-market hub where crews are hired, prizes fenced, and reputations made or ended."
           },
           {
             "id": "gallows-reach",
             "name": "Gallows Reach",
-            "x": 0.219,
-            "y": 0.278,
+            "x": 0.2168,
+            "y": 0.2783,
             "hasData": true,
             "info": "Seat of the sector's most powerful pirate lords — a bounty-and-black-market hub where crews are hired, prizes fenced, and reputations made or ended."
           },
           {
             "id": "cinder",
             "name": "Cinder",
-            "x": 0.846,
-            "y": 0.811,
+            "x": 0.8451,
+            "y": 0.8359,
             "hasData": true,
             "info": "The Ember Drift's star system, anchored by Cindermoor — a volcanic refinery world where cartels refine hyper-dense thermite and reactor fuel from the magma flats. A source of turret-grade materials."
           },
           {
             "id": "cindermoor",
             "name": "Cindermoor",
-            "x": 0.882,
-            "y": 0.874,
+            "x": 0.8737,
+            "y": 0.875,
             "hasData": true,
             "info": "A volcanic refinery world; cartels refine hyper-dense thermite and reactor fuel from the magma flats. Choking, wealthy, dangerous — a source of turret-grade materials."
           },
           {
             "id": "ossuary-fields",
             "name": "Ossuary Fields",
-            "x": 0.702,
-            "y": 0.642,
+            "x": 0.7018,
+            "y": 0.6426,
             "hasData": true,
             "info": "The Ember Drift's ship-graveyard system, anchored by Ossuary — centuries of wrecks dragged down its gravity well, now a sprawling salvage operation."
           },
           {
             "id": "ossuary",
             "name": "Ossuary",
-            "x": 0.736,
-            "y": 0.677,
+            "x": 0.724,
+            "y": 0.6768,
             "hasData": true,
             "info": "A ship-graveyard world: centuries of wrecks dragged down its gravity well, now a sprawling salvage settlement. Ferrocrystal, hyperfold cells and stranger things turn up here."
           },
           {
             "id": "tarn",
             "name": "Tarn",
-            "x": 0.788,
-            "y": 0.29,
+            "x": 0.8184,
+            "y": 0.2861,
             "hasData": true,
             "info": "A frozen cryo-mining world; cheap labor, colder politics. Ice hauled out, questions not asked."
           },
           {
             "id": "marrow",
             "name": "Marrow",
-            "x": 0.479,
-            "y": 0.211,
+            "x": 0.4805,
+            "y": 0.2109,
             "hasData": true,
             "info": "A cracked desert world where water is the black-market currency; hideouts and dust — perfect for disappearing."
           },
           {
             "id": "greenhollow-sys",
             "name": "Greenhollow (system)",
-            "x": 0.197,
+            "x": 0.1953,
             "y": 0.623,
             "hasData": true,
             "info": "The Verdant Fringe's star system — jungle worlds veined with Verdite, contested by rival prospector gangs. For Ronon Dex, the first place in this galaxy that could get his people's tech running again."
@@ -1462,31 +1472,31 @@
           {
             "id": "greenhollow",
             "name": "Greenhollow",
-            "x": 0.221,
-            "y": 0.659,
+            "x": 0.2168,
+            "y": 0.6592,
             "hasData": true,
             "info": "A lush jungle world veined with Verdite — the fuel for Satedan Aether-Core drives. For Ronon Dex, the first place that could revive his people's tech. Heavily contested by prospector gangs."
           },
           {
             "id": "sib-vael",
             "name": "Sib Vael",
-            "x": 0.168,
-            "y": 0.646,
+            "x": 0.1771,
+            "y": 0.667,
             "hasData": true,
             "info": "A warm ocean world of smuggler coves and floating markets, famous for exotic brews distilled from bioluminescent kelp and reef-spirits. Gobby would sell an arm to dock here."
           },
           {
             "id": "bexleys-landing",
             "name": "Bexley's Landing",
-            "x": 0.13,
-            "y": 0.57,
+            "x": 0.168,
+            "y": 0.5723,
             "hasData": true,
             "info": "A human-founded frontier town-world — the most 'ordinary' place in the sector: farms, a spaceport bar, and a sheriff who means well and is badly outgunned."
           },
           {
             "id": "choir-rim",
             "name": "Choir Rim",
-            "x": 0.853,
+            "x": 0.8346,
             "y": 0.249,
             "hasData": true,
             "info": "The Cold Rim's star system, anchored by The Choir — a spire-covered shrine world where the Apostles of the Threshold keep a mission, preaching the rifts and quietly recruiting."
@@ -1494,301 +1504,301 @@
           {
             "id": "the-choir",
             "name": "The Choir",
-            "x": 0.871,
-            "y": 0.284,
+            "x": 0.8704,
+            "y": 0.2822,
             "hasData": true,
             "info": "A spire-covered shrine world on the rim where the Apostles of the Threshold keep a mission — preaching the rifts and quietly recruiting. A foothold of the faithful, not a garrison. (The crew are already on the Apostles' bad side.)"
           },
           {
             "id": "ferrum-hold",
             "name": "Ferrum Hold",
-            "x": 0.835,
-            "y": 0.191,
+            "x": 0.8626,
+            "y": 0.2031,
             "hasData": true,
             "info": "A rim mining holding leaning toward the Iron Directorate, buying ore and loyalty in equal measure. Orderly, watchful, unwelcoming to outlaws — but not a garrison."
           },
           {
             "id": "vorrn",
             "name": "Vorrn (system)",
-            "x": 0.188,
-            "y": 0.848,
+            "x": 0.1895,
+            "y": 0.8789,
             "hasData": true,
             "info": "The crew's current corner of the Expanse — the system that holds Vorrn-7 and Keth Minor, and where the crew acquire the full sector chart."
           },
           {
             "id": "vorrn-7",
             "name": "Vorrn-7",
-            "x": 0.217,
-            "y": 0.913,
+            "x": 0.207,
+            "y": 0.9131,
             "hasData": true,
             "info": "A ringed ice/gas giant and a moon with a faint life reading and a signal ASTRA couldn't identify. The crew's current forward destination."
           },
           {
             "id": "keth-minor",
             "name": "Keth Minor",
-            "x": 0.116,
-            "y": 0.896,
+            "x": 0.1497,
+            "y": 0.8965,
             "hasData": true,
             "info": "A red-dwarf system with several planetoids; one oxygen-rich, with unnatural structures and many biosignatures. A future destination, unvisited."
           },
           {
             "id": "corrupted-ring",
             "name": "[CORRUPTED] Ring",
-            "x": 0.35,
-            "y": 0.917,
+            "x": 0.319,
+            "y": 0.916,
             "hasData": true,
             "info": "A large ring/torus megastructure whose designation failed to resolve — writing possibly older than ASTRA herself. A dead Ancient gate/station (distinct from the living Coil). Unvisited; an open lead."
           },
           {
             "id": "lockes-end",
             "name": "Locke's End",
-            "x": 0.077,
-            "y": 0.186,
+            "x": 0.0749,
+            "y": 0.1855,
             "hasData": false
           },
           {
             "id": "daggers-roost",
             "name": "Dagger's Roost",
-            "x": 0.096,
+            "x": 0.1706,
             "y": 0.207,
             "hasData": false
           },
           {
             "id": "harrow",
             "name": "Harrow",
-            "x": 0.254,
-            "y": 0.171,
+            "x": 0.2552,
+            "y": 0.1709,
             "hasData": false
           },
           {
             "id": "kite",
             "name": "Kite",
-            "x": 0.217,
-            "y": 0.202,
+            "x": 0.2168,
+            "y": 0.2031,
             "hasData": false
           },
           {
             "id": "blister",
             "name": "Blister",
-            "x": 0.096,
-            "y": 0.285,
+            "x": 0.1185,
+            "y": 0.2852,
             "hasData": false
           },
           {
             "id": "noose",
             "name": "Noose",
-            "x": 0.171,
-            "y": 0.286,
+            "x": 0.1745,
+            "y": 0.2852,
             "hasData": false
           },
           {
             "id": "ashfall",
             "name": "Ashfall",
-            "x": 0.202,
-            "y": 0.397,
+            "x": 0.2018,
+            "y": 0.3975,
             "hasData": false
           },
           {
             "id": "redoubt",
             "name": "Redoubt",
-            "x": 0.116,
-            "y": 0.421,
+            "x": 0.1159,
+            "y": 0.4199,
             "hasData": false
           },
           {
             "id": "halcyon",
             "name": "Halcyon",
-            "x": 0.409,
+            "x": 0.4089,
             "y": 0.209,
             "hasData": false
           },
           {
             "id": "threshold-watch",
             "name": "Threshold Watch",
-            "x": 0.521,
-            "y": 0.203,
+            "x": 0.5195,
+            "y": 0.2031,
             "hasData": false
           },
           {
             "id": "gospel",
             "name": "Gospel",
-            "x": 0.464,
-            "y": 0.322,
+            "x": 0.4642,
+            "y": 0.3223,
             "hasData": false
           },
           {
             "id": "vantage",
             "name": "Vantage",
-            "x": 0.546,
-            "y": 0.341,
+            "x": 0.5384,
+            "y": 0.3389,
             "hasData": false
           },
           {
             "id": "tamsin",
             "name": "Tamsin",
-            "x": 0.396,
-            "y": 0.358,
+            "x": 0.3958,
+            "y": 0.3584,
             "hasData": false
           },
           {
             "id": "pallas",
             "name": "Pallas",
-            "x": 0.741,
-            "y": 0.171,
+            "x": 0.7409,
+            "y": 0.1709,
             "hasData": false
           },
           {
             "id": "palewater",
             "name": "Palewater",
-            "x": 0.812,
-            "y": 0.215,
+            "x": 0.8125,
+            "y": 0.2148,
             "hasData": false
           },
           {
             "id": "coldharbor",
             "name": "Coldharbor",
-            "x": 0.907,
-            "y": 0.218,
+            "x": 0.9062,
+            "y": 0.2178,
             "hasData": false
           },
           {
             "id": "saint-vell",
             "name": "Saint Vell",
-            "x": 0.822,
-            "y": 0.356,
+            "x": 0.8171,
+            "y": 0.3564,
             "hasData": false
           },
           {
             "id": "weir",
             "name": "Weir",
-            "x": 0.742,
-            "y": 0.399,
+            "x": 0.7389,
+            "y": 0.4004,
             "hasData": false
           },
           {
             "id": "yarrow",
             "name": "Yarrow",
-            "x": 0.217,
-            "y": 0.586,
+            "x": 0.2135,
+            "y": 0.5859,
             "hasData": false
           },
           {
             "id": "drumlin",
             "name": "Drumlin",
-            "x": 0.096,
-            "y": 0.599,
+            "x": 0.1335,
+            "y": 0.5977,
             "hasData": false
           },
           {
             "id": "calloway",
             "name": "Calloway",
-            "x": 0.07,
-            "y": 0.664,
+            "x": 0.0553,
+            "y": 0.6641,
             "hasData": false
           },
           {
             "id": "mirefen",
             "name": "Mirefen",
-            "x": 0.116,
-            "y": 0.686,
+            "x": 0.1074,
+            "y": 0.6855,
             "hasData": false
           },
           {
             "id": "sable",
             "name": "Sable",
-            "x": 0.177,
-            "y": 0.754,
+            "x": 0.1771,
+            "y": 0.7539,
             "hasData": false
           },
           {
             "id": "sett",
             "name": "Sett",
-            "x": 0.199,
-            "y": 0.827,
+            "x": 0.1966,
+            "y": 0.8271,
             "hasData": false
           },
           {
             "id": "lowtide",
             "name": "Lowtide",
-            "x": 0.373,
-            "y": 0.618,
+            "x": 0.3743,
+            "y": 0.6182,
             "hasData": false
           },
           {
             "id": "dunmoor",
             "name": "Dunmoor",
-            "x": 0.487,
-            "y": 0.723,
+            "x": 0.4831,
+            "y": 0.7227,
             "hasData": false
           },
           {
             "id": "junco",
             "name": "Junco",
-            "x": 0.506,
-            "y": 0.811,
+            "x": 0.5046,
+            "y": 0.8105,
             "hasData": false
           },
           {
             "id": "thorne",
             "name": "Thorne",
-            "x": 0.461,
-            "y": 0.852,
+            "x": 0.459,
+            "y": 0.8516,
             "hasData": false
           },
           {
             "id": "tolls-end",
             "name": "Tolls End",
-            "x": 0.713,
-            "y": 0.594,
+            "x": 0.7064,
+            "y": 0.5928,
             "hasData": false
           },
           {
             "id": "rustkeep",
             "name": "Rustkeep",
-            "x": 0.626,
-            "y": 0.662,
+            "x": 0.6758,
+            "y": 0.6592,
             "hasData": false
           },
           {
             "id": "bittern",
             "name": "Bittern",
-            "x": 0.773,
-            "y": 0.698,
+            "x": 0.7715,
+            "y": 0.6982,
             "hasData": false
           },
           {
             "id": "wrack",
             "name": "Wrack",
-            "x": 0.859,
-            "y": 0.739,
+            "x": 0.8542,
+            "y": 0.7393,
             "hasData": false
           },
           {
             "id": "emberlot",
             "name": "Emberlot",
-            "x": 0.861,
-            "y": 0.788,
+            "x": 0.8516,
+            "y": 0.7881,
             "hasData": false
           },
           {
             "id": "ferrik",
             "name": "Ferrik",
-            "x": 0.641,
-            "y": 0.813,
+            "x": 0.6393,
+            "y": 0.8125,
             "hasData": false
           },
           {
             "id": "slaghaven",
             "name": "Slaghaven",
-            "x": 0.812,
-            "y": 0.854,
+            "x": 0.8125,
+            "y": 0.8574,
             "hasData": false
           },
           {
             "id": "cutters-hold",
             "name": "Cutter's Hold",
-            "x": 0.728,
-            "y": 0.92,
+            "x": 0.7174,
+            "y": 0.918,
             "hasData": false
           }
         ]
