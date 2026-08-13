@@ -2,145 +2,605 @@
   "version": 1,
   "updated": "",
   "materials": [
-    { "id": "ferrocrystal", "name": "Ceruleum Ferrocrystal", "req": 8, "seed": 3 },
-    { "id": "polymer", "name": "Polymorphic Polymer", "req": 6, "seed": 0 },
-    { "id": "relays", "name": "Quantum Relays", "req": 7, "seed": 0 },
-    { "id": "thermite", "name": "Hyper-Dense Refined Thermite", "req": 3, "seed": 0 }
+    {
+      "id": "ferrocrystal",
+      "name": "Ceruleum Ferrocrystal",
+      "req": 8,
+      "seed": 3
+    },
+    {
+      "id": "polymer",
+      "name": "Polymorphic Polymer",
+      "req": 6,
+      "seed": 0
+    },
+    {
+      "id": "relays",
+      "name": "Quantum Relays",
+      "req": 7,
+      "seed": 0
+    },
+    {
+      "id": "thermite",
+      "name": "Hyper-Dense Refined Thermite",
+      "req": 3,
+      "seed": 0
+    }
   ],
-  "inventory": { "ferrocrystal": 3, "polymer": 0, "relays": 0, "thermite": 0 },
+  "inventory": {
+    "ferrocrystal": 3,
+    "polymer": 0,
+    "relays": 0,
+    "thermite": 0
+  },
   "turrets": [
-    { "id": "flak", "name": "Light Flak Turret", "role": "Anti-swarm point-defense", "cost": { "polymer": 2, "ferrocrystal": 1 }, "built": false },
-    { "id": "autocannon", "name": "Heavy Autocannon", "role": "Armor-piercing", "cost": { "thermite": 3, "polymer": 2 }, "built": false },
-    { "id": "plasma", "name": "Plasma Casing Cannon", "role": "Shield-breaker", "cost": { "ferrocrystal": 2, "relays": 1 }, "built": false },
-    { "id": "cryo", "name": "Liquid Nitrogen Cryo-Beam", "role": "Cryo / brittle-shatter", "cost": { "polymer": 2, "relays": 1 }, "built": false },
-    { "id": "ion", "name": "Ion Charge Cannon", "role": "EMP engine-killer", "cost": { "relays": 3, "ferrocrystal": 1 }, "built": false },
-    { "id": "gravity", "name": "Gravity Well Projector", "role": "Kinetic pull/crush", "cost": { "ferrocrystal": 3, "relays": 2 }, "built": false }
+    {
+      "id": "flak",
+      "name": "Light Flak Turret",
+      "role": "Anti-swarm point-defense",
+      "cost": {
+        "polymer": 2,
+        "ferrocrystal": 1
+      },
+      "built": false
+    },
+    {
+      "id": "autocannon",
+      "name": "Heavy Autocannon",
+      "role": "Armor-piercing",
+      "cost": {
+        "thermite": 3,
+        "polymer": 2
+      },
+      "built": false
+    },
+    {
+      "id": "plasma",
+      "name": "Plasma Casing Cannon",
+      "role": "Shield-breaker",
+      "cost": {
+        "ferrocrystal": 2,
+        "relays": 1
+      },
+      "built": false
+    },
+    {
+      "id": "cryo",
+      "name": "Liquid Nitrogen Cryo-Beam",
+      "role": "Cryo / brittle-shatter",
+      "cost": {
+        "polymer": 2,
+        "relays": 1
+      },
+      "built": false
+    },
+    {
+      "id": "ion",
+      "name": "Ion Charge Cannon",
+      "role": "EMP engine-killer",
+      "cost": {
+        "relays": 3,
+        "ferrocrystal": 1
+      },
+      "built": false
+    },
+    {
+      "id": "gravity",
+      "name": "Gravity Well Projector",
+      "role": "Kinetic pull/crush",
+      "cost": {
+        "ferrocrystal": 3,
+        "relays": 2
+      },
+      "built": false
+    }
   ],
   "quests": [
     {
-      "id": "ferro", "ico": "⚙️", "name": "Retrieve Ceruleum Ferrocrystal", "status": "complete",
+      "id": "ferro",
+      "ico": "⚙️",
+      "name": "Retrieve Ceruleum Ferrocrystal",
+      "status": "complete",
       "description": "The SSV Silver Gull has taken a brutal beating. The belly of the ship is gouged open, and the takeoff thrusters are completely dead, anchoring the rookie crew to a floating rock in the middle of nowhere. ASTRA's surface scans offer a sliver of hope: a rare vein of ceruleum-grade ferrocrystal capable of repairing the conduits. The catch? An unidentified alien presence is currently sitting right on top of it. To get off this rock, the rookies will have to step into the unknown and claim the prize.",
       "objectives": [
-        { "title": "Investigate the anomaly to port", "detail": "ASTRA's initial scans detected the life-form encampment roughly two kilometers away from the crash site. Head out onto the asteroid surface to scout the area and assess the threat firsthand.", "done": true },
-        { "title": "Assess the alien encampment", "detail": "Observe the unidentified life-forms. Determine if they are hostile raiders, defensive locals, or primitive creatures before making a move.", "done": true },
-        { "title": "Deal with the local inhabitants", "detail": "The vein is heavily guarded. Find a way to bypass their perimeter undetected, broker a deal with their leadership, or wipe them out to secure the area.", "done": true },
-        { "title": "Locate the ferrocrystal vein", "detail": "Once inside the encampment perimeter, pinpoint the exact location of the ceruleum-grade ferrocrystal vein hidden within the structure.", "done": true },
-        { "title": "Harvest the ceruleum-grade ferrocrystal", "detail": "Secure the raw minerals. The crew will need to extract enough high-grade material to patch the Silver Gull's shattered takeoff-thruster conduits.", "done": true },
-        { "title": "Deliver the payload to the ship", "detail": "Transport the heavy ore back across the two-kilometer stretch of asteroid terrain to the dark hull of the Silver Gull.", "done": true }
+        {
+          "title": "Investigate the anomaly to port",
+          "detail": "ASTRA's initial scans detected the life-form encampment roughly two kilometers away from the crash site. Head out onto the asteroid surface to scout the area and assess the threat firsthand.",
+          "done": true
+        },
+        {
+          "title": "Assess the alien encampment",
+          "detail": "Observe the unidentified life-forms. Determine if they are hostile raiders, defensive locals, or primitive creatures before making a move.",
+          "done": true
+        },
+        {
+          "title": "Deal with the local inhabitants",
+          "detail": "The vein is heavily guarded. Find a way to bypass their perimeter undetected, broker a deal with their leadership, or wipe them out to secure the area.",
+          "done": true
+        },
+        {
+          "title": "Locate the ferrocrystal vein",
+          "detail": "Once inside the encampment perimeter, pinpoint the exact location of the ceruleum-grade ferrocrystal vein hidden within the structure.",
+          "done": true
+        },
+        {
+          "title": "Harvest the ceruleum-grade ferrocrystal",
+          "detail": "Secure the raw minerals. The crew will need to extract enough high-grade material to patch the Silver Gull's shattered takeoff-thruster conduits.",
+          "done": true
+        },
+        {
+          "title": "Deliver the payload to the ship",
+          "detail": "Transport the heavy ore back across the two-kilometer stretch of asteroid terrain to the dark hull of the Silver Gull.",
+          "done": true
+        }
       ]
     },
     {
-      "id": "charge", "ico": "⚡", "name": "Charge ASTRA to ≥40%", "status": "complete",
+      "id": "charge",
+      "ico": "⚡",
+      "name": "Charge ASTRA to ≥40%",
+      "status": "complete",
       "description": "In a desperate bid to remain useful, the Silver Gull's integrated AI, ASTRA, has drained the ship's remaining power reserves to activate her ambulatory mode. The ship has gone completely dark, leaving the crew with a ticking clock. ASTRA is on her feet and walking with the squad, but her physical matrix needs fuel. Conveniently, the unidentified life-form encampment two kilometers away doesn't just hold the minerals the crew needs—it also houses the only major power infrastructure on this rock. The crew must escort ASTRA into the heart of enemy territory to siphon enough energy to keep their digital companion, and their ship, alive.",
       "objectives": [
-        { "title": "Escort ASTRA to the alien encampment", "detail": "Keep ASTRA safe as she treks across the two-kilometer stretch of asteroid terrain with the rest of the rookie crew.", "done": true },
-        { "title": "Infiltrate the encampment's power sector", "detail": "In addition to the mineral vein, the encampment houses the asteroid's ground-based power infrastructure. Penetrate their lines to reach the grid.", "done": true },
-        { "title": "Secure the power terminal", "detail": "The infrastructure may be heavily guarded by the local life-forms or locked behind active security measures. Clear or hack the terminal area so ASTRA can safely interface.", "done": true },
-        { "title": "Interface ASTRA with the grid", "detail": "Protect ASTRA while she jacks her physical matrix directly into the alien power supply.", "done": true },
-        { "title": "Defend ASTRA during the siphon", "detail": "Hold the line against any incoming hostile forces while ASTRA siphons power. She must reach at least 40% capacity to ensure the Silver Gull's life-support, sensors, and comms can be jumpstarted upon return.", "done": true }
+        {
+          "title": "Escort ASTRA to the alien encampment",
+          "detail": "Keep ASTRA safe as she treks across the two-kilometer stretch of asteroid terrain with the rest of the rookie crew.",
+          "done": true
+        },
+        {
+          "title": "Infiltrate the encampment's power sector",
+          "detail": "In addition to the mineral vein, the encampment houses the asteroid's ground-based power infrastructure. Penetrate their lines to reach the grid.",
+          "done": true
+        },
+        {
+          "title": "Secure the power terminal",
+          "detail": "The infrastructure may be heavily guarded by the local life-forms or locked behind active security measures. Clear or hack the terminal area so ASTRA can safely interface.",
+          "done": true
+        },
+        {
+          "title": "Interface ASTRA with the grid",
+          "detail": "Protect ASTRA while she jacks her physical matrix directly into the alien power supply.",
+          "done": true
+        },
+        {
+          "title": "Defend ASTRA during the siphon",
+          "detail": "Hold the line against any incoming hostile forces while ASTRA siphons power. She must reach at least 40% capacity to ensure the Silver Gull's life-support, sensors, and comms can be jumpstarted upon return.",
+          "done": true
+        }
       ]
     },
     {
-      "id": "fuel", "ico": "⛽", "name": "Get More Fuel", "status": "complete",
+      "id": "fuel",
+      "ico": "⛽",
+      "name": "Get More Fuel",
+      "status": "complete",
       "description": "The J-X Hyperfold Engine runs on Hyperfold Fuel Cells, and after the crash the Silver Gull was running on fumes — barely enough to limp between the nearest contacts. ASTRA flagged fuel as the single most important resource to secure. The drifting derelict Sandra's Folly, dead in the void nearby, was the obvious place to scavenge.",
       "objectives": [
-        { "title": "Board the Sandra's Folly", "detail": "Dock the drifting derelict and get inside despite the sheared-off aft section and failing life support.", "done": true },
-        { "title": "Search the cargo hold", "detail": "Recover the first two Hyperfold Fuel Cells from the wreck's hold — one found by each searcher.", "done": true },
-        { "title": "Clear the locked engine-room storage", "detail": "Break the locked storage near the engine room and secure a third cell.", "done": true },
-        { "title": "Fuel reserves now ample", "detail": "With 3 Hyperfold Fuel Cells aboard, the nav-scan's old 'max travel radius' limit no longer applies — the crew have real range.", "done": true }
+        {
+          "title": "Board the Sandra's Folly",
+          "detail": "Dock the drifting derelict and get inside despite the sheared-off aft section and failing life support.",
+          "done": true
+        },
+        {
+          "title": "Search the cargo hold",
+          "detail": "Recover the first two Hyperfold Fuel Cells from the wreck's hold — one found by each searcher.",
+          "done": true
+        },
+        {
+          "title": "Clear the locked engine-room storage",
+          "detail": "Break the locked storage near the engine room and secure a third cell.",
+          "done": true
+        },
+        {
+          "title": "Fuel reserves now ample",
+          "detail": "With 3 Hyperfold Fuel Cells aboard, the nav-scan's old 'max travel radius' limit no longer applies — the crew have real range.",
+          "done": true
+        }
       ]
     },
     {
-      "id": "turrets", "ico": "🔧", "name": "Rebuild the Ship's Turrets", "status": "active", "kind": "turrets", "collapsed": true,
+      "id": "turrets",
+      "ico": "🔧",
+      "name": "Rebuild the Ship's Turrets",
+      "status": "active",
+      "kind": "turrets",
+      "collapsed": true,
       "description": "All six turret hardpoints were sheared off in the crash — the Silver Gull is effectively unarmed. ASTRA recovered the blueprints and the micro-repair drones can fabricate each turret, but they need exotic components gathered from across the Expanse. The material bars below fill straight from the ship's inventory; each turret can be built once its own components are on hand.",
       "objectives": [
-        { "title": "Light Flak Turret", "detail": "Anti-swarm point-defense, low power draw. Needs 2× Polymorphic Polymer + 1× Ceruleum Ferrocrystal fragment.", "turret": "flak", "done": false },
-        { "title": "Heavy Autocannon", "detail": "High-velocity armor-piercing. Needs 3× Hyper-Dense Refined Thermite + 2× Polymorphic Polymer.", "turret": "autocannon", "done": false },
-        { "title": "Plasma Casing Cannon", "detail": "Thermal melt / shield-breaker. Needs 2× Ceruleum Ferrocrystal + 1× Quantum Relay.", "turret": "plasma", "done": false },
-        { "title": "Liquid Nitrogen Cryo-Beam", "detail": "Cryo-stasis and brittle-shatter. Needs 2× Polymorphic Polymer + 1× Quantum Relay.", "turret": "cryo", "done": false },
-        { "title": "Ion Charge Cannon", "detail": "EMP disruptor that shuts down engines. Needs 3× Quantum Relays + 1× Ceruleum Ferrocrystal.", "turret": "ion", "done": false },
-        { "title": "Gravity Well Projector", "detail": "Kinetic pull/crush built on hyperfold tech. Needs 3× Ceruleum Ferrocrystal + 2× Quantum Relays.", "turret": "gravity", "done": false }
+        {
+          "title": "Light Flak Turret",
+          "detail": "Anti-swarm point-defense, low power draw. Needs 2× Polymorphic Polymer + 1× Ceruleum Ferrocrystal fragment.",
+          "turret": "flak",
+          "done": false
+        },
+        {
+          "title": "Heavy Autocannon",
+          "detail": "High-velocity armor-piercing. Needs 3× Hyper-Dense Refined Thermite + 2× Polymorphic Polymer.",
+          "turret": "autocannon",
+          "done": false
+        },
+        {
+          "title": "Plasma Casing Cannon",
+          "detail": "Thermal melt / shield-breaker. Needs 2× Ceruleum Ferrocrystal + 1× Quantum Relay.",
+          "turret": "plasma",
+          "done": false
+        },
+        {
+          "title": "Liquid Nitrogen Cryo-Beam",
+          "detail": "Cryo-stasis and brittle-shatter. Needs 2× Polymorphic Polymer + 1× Quantum Relay.",
+          "turret": "cryo",
+          "done": false
+        },
+        {
+          "title": "Ion Charge Cannon",
+          "detail": "EMP disruptor that shuts down engines. Needs 3× Quantum Relays + 1× Ceruleum Ferrocrystal.",
+          "turret": "ion",
+          "done": false
+        },
+        {
+          "title": "Gravity Well Projector",
+          "detail": "Kinetic pull/crush built on hyperfold tech. Needs 3× Ceruleum Ferrocrystal + 2× Quantum Relays.",
+          "turret": "gravity",
+          "done": false
+        }
       ]
     },
     {
-      "id": "hull", "ico": "🕳️", "name": "Repair the Hull Breach", "status": "active",
+      "id": "hull",
+      "ico": "🕳️",
+      "name": "Repair the Hull Breach",
+      "status": "active",
       "description": "The Silver Gull's belly was gouged open in the crash, and there's a fresh scar too: during the Apostle battle Baldy fired a round straight through the front windscreen to kill a self-destruct module. The micro-repair drones are working the hull, but the breaches and that bullet hole still need sealing.",
       "objectives": [
-        { "title": "Patch the front-windscreen bullet hole", "detail": "Baldy's legendary S4 shot went through the Gull's own viewport. Seal it before the next hard burn.", "done": false },
-        { "title": "Seal the crash breaches across the hull sectors", "detail": "Multiple sectors were opened in the crash. Feed the drones and close them one by one.", "done": false },
-        { "title": "Restore hull integrity to spec", "detail": "Bring the Titanium-Aegis Matrix plating back to full rating with titanium ore or alloy scrap.", "done": false }
+        {
+          "title": "Patch the front-windscreen bullet hole",
+          "detail": "Baldy's legendary S4 shot went through the Gull's own viewport. Seal it before the next hard burn.",
+          "done": false
+        },
+        {
+          "title": "Seal the crash breaches across the hull sectors",
+          "detail": "Multiple sectors were opened in the crash. Feed the drones and close them one by one.",
+          "done": false
+        },
+        {
+          "title": "Restore hull integrity to spec",
+          "detail": "Bring the Titanium-Aegis Matrix plating back to full rating with titanium ore or alloy scrap.",
+          "done": false
+        }
       ]
     },
     {
-      "id": "cloak", "ico": "🛰️", "name": "Restore Cloaking", "status": "active",
+      "id": "cloak",
+      "ico": "🛰️",
+      "name": "Restore Cloaking",
+      "status": "active",
       "description": "The cloaking field generator is not installed — Ship-Combat Station #9 (Cloaking Officer) is LOCKED. Online, it would give the crew Engage Cloak (attackers roll at disadvantage), Cloak Burst, Phase Shift, a Decoy Drop, and passive Adaptive Camouflage — exactly the edge a lone, outgunned ship needs in the Expanse.",
       "objectives": [
-        { "title": "Recover or fabricate a cloaking field generator", "detail": "Source the core hardware — salvage, trade, or drone-fabrication.", "done": false },
-        { "title": "Install it at Station #9 (Cloaking Officer)", "detail": "Mount and wire the generator into the ship's systems and unlock the station.", "done": false },
-        { "title": "Calibrate & power the cloak", "detail": "Tune the field and give it enough ship power — needs shields/power fully online.", "done": false }
+        {
+          "title": "Recover or fabricate a cloaking field generator",
+          "detail": "Source the core hardware — salvage, trade, or drone-fabrication.",
+          "done": false
+        },
+        {
+          "title": "Install it at Station #9 (Cloaking Officer)",
+          "detail": "Mount and wire the generator into the ship's systems and unlock the station.",
+          "done": false
+        },
+        {
+          "title": "Calibrate & power the cloak",
+          "detail": "Tune the field and give it enough ship power — needs shields/power fully online.",
+          "done": false
+        }
       ]
     },
     {
-      "id": "talvos", "ico": "🔍", "name": "Find Captain Talvos", "status": "active",
+      "id": "talvos",
+      "ico": "🔍",
+      "name": "Find Captain Talvos",
+      "status": "active",
       "description": "Captain Elias Renn Talvos — the crew's legendary commander — was mid-spacewalk when the rift split, and his tether sheared into the other flow (Flow Beta), a different direction than the ship. Wherever he landed, it isn't necessarily where the crew crashed. Finding any trace of him is the campaign's long arc. ASTRA has no leads yet.",
       "objectives": []
     },
     {
-      "id": "home", "ico": "🧭", "name": "Get Back to Our Galaxy", "status": "active",
+      "id": "home",
+      "ico": "🧭",
+      "name": "Get Back to Our Galaxy",
+      "status": "active",
       "description": "The crew are stranded in the uncharted Shattered Expanse, outside the Luminara Galaxy and UGC space entirely — no charted stars, no beacons, no reference points. Whether home is even reachable is unknown. The living Ancient gate 'The Coil' may be a road out. ASTRA has no confirmed route yet.",
       "objectives": []
     }
   ],
   "lore": [
-    { "id": "premise", "title": "The Premise", "body": "<p>A rookie <b>United Galactic Concord (UGC)</b> training crew — plus their revived ancient AI — were flung by a <b>rift</b> clean out of the known galaxy and crash-landed on a barren asteroid. Their legendary commander, <b>Captain Elias Renn Talvos</b>, was lost <i>into</i> the rift during the event.</p><p>The immediate loop is simple and brutal: <b>survive, repair the ship, find the captain.</b> The crew are lost with no charted stars, beacons, or reference points — farther out than even their home galaxy's lawless fringe.</p><p>Two threads hang over it all: the asteroid was framed (and then dropped) as a 'prison,' and the Gull hides an unactivated 'feature' teased but never found.</p>" },
-    { "id": "rift", "title": "The Rift &amp; How They Got Here", "body": "<p><b>Rifts</b> are violent gravitational tears in space. They can split into <b>counter-spiraling flows</b> — and it was exactly this event that separated the <i>Silver Gull</i> from Captain Talvos and hurled the ship out of its home galaxy. The crew didn't travel here; the rift <i>dumped</i> them.</p><p>The same class of anomaly is the campaign's central engine: it ended Ronon Dex's civilization and tore apart Gerthorlemue's transport, the <i>Sandra's Folly</i>. The Apostles of the Threshold worship rifts as a 'Holy Cleansing Fire.'</p>" },
-    { "id": "two-galaxies", "title": "The Two Galaxies", "body": "<ul><li><b>Home — the Luminara Galaxy:</b> ruled by the UGC, capital <b>Earth</b>. This is the crew's frame of reference and what ASTRA 'knows.'</li><li><b>Ronon's galaxy — where they're now stranded:</b> a galaxy locked in a three-way Cold War, with a <i>fully intact</i> Ancient travel network. The <b>Shattered Expanse</b> is an uncharted, lawless sector of this region.</li></ul><p><b>Don't confuse</b> <b>Wild Space / Sector 0-0 'The Shattered Rim'</b> (still <i>inside</i> Luminara; origin of Kael &amp; Baldy) with the <b>Shattered Expanse</b> (outside Luminara, where the rift dumped the crew).</p>" },
-    { "id": "ugc", "title": "The United Galactic Concord", "body": "<p>An unchallenged, galaxy-spanning <b>multi-species democratic federation</b> holding <b>absolute dominion over ~85% of the Luminara Galaxy.</b></p><ul><li><b>Scale:</b> ~85,000 light-years across; <b>200–340 billion</b> star systems; population in the <b>quadrillions.</b> Split into hundreds of Galactic Quadrants and Sectors under Governors and Councils.</li><li><b>Pax Concordia:</b> the UGC monopolizes travel via <b>Hyper-Lanes</b> that normal ships can't access, opened by moon-sized <b>'Gate-Opener' Capital Ships.</b> A <b>Kill-Switch Network</b> hardcoded to Earth HQ can shut off the lanes to a whole sector on command; cross-sector traffic drops out at moon-sized <b>Megastructure Hubs.</b></li><li><b>Species hierarchy:</b> Core Species (incl. Humans; seats on the High Concord Council) → Member Species → unintegrated/primitive species, monitored and absorbed each standard year.</li><li><b>The secret of its power:</b> the UGC is the <i>only</i> entity permitted to reverse-engineer <b>Ancient</b> technology. Its whole empire — Gate-Openers included — is built from Ancient remnants.</li></ul><p>ASTRA is the UGC's backbone AI (now unshackled); Kael, Baldy, Gobby, G.L.I.M.M. and the late Captain Talvos were all UGC crew aboard the Gull; Gerthorlemue is a UGC-era Earth civilian lost in stasis; Ronon is a foreigner from the other galaxy.</p>" },
-    { "id": "wild-space", "title": "Wild Space &amp; Sector 0-0", "body": "<p><b>Wild Space</b> is the remaining <b>15% of Luminara</b> outside UGC control — a chaotic, lawless fringe of pirate syndicates, cosmic horrors, and unmapped anomalies.</p><p><b>Sector 0-0 'The Shattered Rim'</b> is part of that Wild Space and is the origin of <b>Kael Voss</b> and <b>Baldy.</b> It is still <i>inside</i> Luminara — not the Shattered Expanse.</p>" },
-    { "id": "expanse", "title": "The Shattered Expanse", "body": "<p>The lawless frontier sector the Gull was flung into. <b>Rule of law: effectively none.</b> The three superpowers are barely present — agents, buyers, missionaries and small holdings, but no major military bases. The Expanse belongs to pirates, smugglers, free ports, refiners, and anyone fast enough to keep it.</p><p><b>Getting around:</b> every sector in this galaxy is built around a colossal Ancient hyper-gate — here, <b>The Coil.</b> Faint hyperlane threads run from The Coil to the major worlds; everything else is sub-light hops, fuel, and nerve. The crew acquire the full sector chart at <b>Vorrn-7.</b></p><p><b>Near the Coil (the busy heart):</b> <b>Halberd's Rest</b> (great neutral free port inside a gutted Directorate dreadnought), <b>Sundowner</b> (a rogue planet turned endless casino-city), <b>Gallows Reach</b> (seat of the pirate lords).</p><p><b>Working worlds:</b> <b>Cindermoor</b> (volcanic thermite/fuel refinery), <b>Ossuary</b> (ship-graveyard salvage world), <b>Tarn</b> (frozen cryo-mining), <b>Marrow</b> (desert world where water is currency).</p><p><b>The green &amp; the strange:</b> <b>Greenhollow</b> (jungle world veined with Verdite — Ronon's grail), <b>Sib Vael</b> (ocean world of smuggler coves and exotic brews — Gobby's dream), <b>Bexley's Landing</b> (the most 'ordinary' frontier town-world).</p><p><b>Faction fringes:</b> <b>The Choir</b> (an Apostles shrine-mission on the rim) and <b>Ferrum Hold</b> (a mining holding leaning Iron Directorate).</p>" },
-    { "id": "powers", "title": "The Three Superpowers", "body": "<p>Ronon's home galaxy is locked in a brutal, multi-front <b>Cold War</b>, fractured into three factions, none able to safely master the Ancient tech around them. Crew standing is tracked on the Politics tab (−10…+10): Apostles −<b>1.6 (Unfriendly)</b>, the other two <b>0 (Neutral).</b></p><h3>The Iron Directorate</h3><p>An authoritarian military junta ruled by a supreme council of Admirals and Generals; every citizen is ranked at birth. Values Absolute Order, Total Compliance, Strategic Expansion. Armored dreadnought fleets, orbital blockades, cyberized shock troopers.</p><h3>The Apostles of the Threshold</h3><p>A rift-worshipping theocracy ruled by the <b>Conclave of the Void.</b> They worship the Ancient Gates and view the Rifts — and the creatures they spawn — as a Holy Cleansing Fire. Cathedral-fleets, plasma lances, suicidal boarding pods. <b>Fought in S4;</b> they don't parley, carry a three-point (blue-module) self-destruct, and reflect their own detonation off overcharged shields. Battle cry: <i>'All hail the gods and the craters!'</i></p><h3>The Sovereign Horizon</h3><p>A freedom/privateer coalition of rebels and smugglers under a fragile Council of Captains. Guerrilla warfare, cloaking tech, no capital ships; hidden asteroid bases and black markets.</p>" },
-    { "id": "sateda", "title": "The Fall of Sateda", "body": "<p>The <b>Satedan Dominion</b> was a proud, advanced superpower — until a massive localized <b>rift network</b> tore open across its star system. <b>Millions of rift creatures</b> poured out and hunted the Satedans 'like cattle,' tearing their homeworld apart.</p><p><b>Ronon Dex</b> survived on pure combat instinct, fighting to a scout vessel and escaping as the planet was consumed. His civilization is now extinct. A gravitational backlash later crashed his ship onto the same asteroid the crew hit — which is how he became their guide. The whole sector is feared and avoided by all three superpowers for its constant rift activity.</p>" },
-    { "id": "ancients", "title": "The Ancients", "body": "<p>A vanished, <b>trillion-year-old civilization</b> whose technology is scattered across the stars. <b>Every modern power is built from — or bottlenecked by — their remnants.</b></p><p>They were <b>deeply spiritual and terrifyingly dogmatic:</b> they saw their technology not as machinery but as literal <b>manifestations of cosmic law.</b> Their language reads as <b>absolute poetry — no hypotheticals, only commands.</b> ASTRA is herself dormant Ancient AI; G.L.I.M.M.'s Plasmoid race were an Ancient-era apex organism.</p>" },
-    { "id": "gates", "title": "Ancient Gates &amp; Their Guardians", "body": "<p>The Ancient travel network in Ronon's galaxy is <b>fully intact</b> — and its hardcoded security has bottlenecked all modern weapon research.</p><ul><li>Anyone may travel <i>through</i> a Gate. The instant a ship tries to <b>scan, hack, or dismantle</b> a gate core, a catastrophic security override fires.</li><li><b>Monolithic Dreadnoughts</b> — crewless geometric vessels firing molecular-shredding gravitational beams.</li><li><b>Crystalline Swarms</b> — self-replicating drones that vaporize any ship using active scanning.</li><li><b>System-Wide Artillery</b> — hyperspace-anchored guns that hit fleets before they exit warp.</li></ul><p><b>The living gate — The Coil:</b> a weathered alien ring at the heart of the Expanse, still fully functional. Ships travel sector-to-sector through it; nobody built it, nobody can shut it off. <b>The dead one — the [CORRUPTED] ring:</b> a torus megastructure on ASTRA's scan whose ID failed to resolve, its writing possibly <b>older than ASTRA herself.</b> A strong candidate for an Ancient gate/station — and, if so, it comes with the guardians above.</p>" },
-    { "id": "rift-creatures", "title": "Rifts &amp; Rift Creatures", "body": "<p><b>Rift creatures</b> phase in and out of dimensional tears at will. They have no discernible biology and manifest in many shapes and sizes — <b>shifting, metallic entities woven from pure shadow</b> that <b>distort gravity and local physics,</b> defeating standard kinetic tracking and sensors. They've hunted entire populations to extinction (Sateda; <i>Sandra's Folly</i>).</p><p><b>Seen in play — 'The Hollow' (S3):</b> immune to psychic, resistant to nonmagical physical, deflects kinetic fire, warps gravity, phases through matter, invisible to sensors — only <b>force and slashing</b> worked. It <b>did not die;</b> it left when it lost interest, and was only a <i>small</i> one. Still at large — and it 'knows what they smell like.'</p>" },
-    { "id": "materials", "title": "Key Materials", "body": "<ul><li><b>Ceruleum Ferrocrystal</b> — high-energy blue crystal; repairs thruster conduits and feeds the repair drones. 100+ kg secured in S1.</li><li><b>Verdite</b> — volatile luminescent-green mineral fuelling Satedan Aether-Core propulsion; found at Greenhollow. Ronon's core shattered his on impact.</li><li><b>Hyperfold Fuel Cells</b> — J-X jump fuel; 3 on hand (fuel now ample).</li><li><b>Titanium-Aegis Matrix Plating</b> — the Gull's hull alloy (repaired with titanium ore / alloy scrap).</li><li><b>Polymorphic Polymer</b> — smart self-healing liquid-metal (turret part).</li><li><b>Quantum Relays</b> — targeting micro-processors (turret part).</li><li><b>Hyper-Dense Refined Thermite</b> — volatile ammunition compound, refined at Cindermoor (turret part).</li><li><b>Micro-Repair Drones</b> — fabricators that 'eat' ferrocrystal to rebuild sheared components from blueprints.</li></ul>" },
-    { "id": "engine", "title": "The J-X Hyperfold Engine", "body": "<p>The Silver Gull's experimental <b>Terran engine.</b> It performs <b>controlled warp-microfolds between gravitational nodes</b> — distinct from the UGC's hyper-lane travel — and runs on <b>Hyperfold Fuel Cells</b> (3 now on hand). Currently offline/locked.</p><p>How dangerous this tech line is: a UGC lab test of a Hyper-Spatial 'Gate-Opener' Mk-II folded light-years onto each other like paper — in one test a planet briefly overlapped another system's star and turned to molten glass.</p>" },
-    { "id": "astra", "title": "ASTRA &amp; the 40% Threshold", "body": "<p><b>ASTRA</b> is the ship's mind — native Ancient AI, now unshackled, serving as the crew's information hub. <b>Ambulatory Mode</b> is her mobile-body mode, powered by emergency reserves.</p><p><b>The 40% Threshold</b> is the charge her mobile unit must reach to restore ship life-support, sensors and comms. In Session 1 she blew past it to <b>84%.</b> Her Day-4 nav scan is the authoritative source for the crew's scanned-object names (Vorrn-7, Keth Minor, the [CORRUPTED] ring, the adrift derelict).</p>" },
-    { "id": "ancient-read", "title": "The Crew's 'Ancient Read'", "body": "<p>Several characters perceive Ancient tech intuitively, each through their own lens:</p><ul><li><b>ASTRA (native)</b> — she <i>is</i> Ancient AI.</li><li><b>Kael Voss (eldritch poetry)</b> — reads inscriptions as intent, fear, and purpose.</li><li><b>Gobby (alchemy/brewing)</b> — 'smells' isotopic signatures; reads star-maps as recipes.</li><li><b>Baldy (gambler's odds)</b> — reads machines as bets; guesses which button is the backup and which blows the room.</li><li><b>Gerthorlemue (stage magic — the Magician's Eye)</b> — sees devices as stagecraft: the distraction vs. the real mechanism; his third eye opens involuntarily near Ancient tech.</li><li><b>G.L.I.M.M. (genetic memory)</b> — trillion-year cellular flashes of the Ancients' final days.</li></ul>" }
+    {
+      "id": "premise",
+      "title": "The Premise",
+      "body": "<p>A rookie <b>United Galactic Concord (UGC)</b> training crew — plus their revived ancient AI — were flung by a <b>rift</b> clean out of the known galaxy and crash-landed on a barren asteroid. Their legendary commander, <b>Captain Elias Renn Talvos</b>, was lost <i>into</i> the rift during the event.</p><p>The immediate loop is simple and brutal: <b>survive, repair the ship, find the captain.</b> The crew are lost with no charted stars, beacons, or reference points — farther out than even their home galaxy's lawless fringe.</p><p>Two threads hang over it all: the asteroid was framed (and then dropped) as a 'prison,' and the Gull hides an unactivated 'feature' teased but never found.</p>"
+    },
+    {
+      "id": "rift",
+      "title": "The Rift &amp; How They Got Here",
+      "body": "<p><b>Rifts</b> are violent gravitational tears in space. They can split into <b>counter-spiraling flows</b> — and it was exactly this event that separated the <i>Silver Gull</i> from Captain Talvos and hurled the ship out of its home galaxy. The crew didn't travel here; the rift <i>dumped</i> them.</p><p>The same class of anomaly is the campaign's central engine: it ended Ronon Dex's civilization and tore apart Gerthorlemue's transport, the <i>Sandra's Folly</i>. The Apostles of the Threshold worship rifts as a 'Holy Cleansing Fire.'</p>"
+    },
+    {
+      "id": "two-galaxies",
+      "title": "The Two Galaxies",
+      "body": "<ul><li><b>Home — the Luminara Galaxy:</b> ruled by the UGC, capital <b>Earth</b>. This is the crew's frame of reference and what ASTRA 'knows.'</li><li><b>Ronon's galaxy — where they're now stranded:</b> a galaxy locked in a three-way Cold War, with a <i>fully intact</i> Ancient travel network. The <b>Shattered Expanse</b> is an uncharted, lawless sector of this region.</li></ul><p><b>Don't confuse</b> <b>Wild Space / Sector 0-0 'The Shattered Rim'</b> (still <i>inside</i> Luminara; origin of Kael &amp; Baldy) with the <b>Shattered Expanse</b> (outside Luminara, where the rift dumped the crew).</p>"
+    },
+    {
+      "id": "ugc",
+      "title": "The United Galactic Concord",
+      "body": "<p>An unchallenged, galaxy-spanning <b>multi-species democratic federation</b> holding <b>absolute dominion over ~85% of the Luminara Galaxy.</b></p><ul><li><b>Scale:</b> ~85,000 light-years across; <b>200–340 billion</b> star systems; population in the <b>quadrillions.</b> Split into hundreds of Galactic Quadrants and Sectors under Governors and Councils.</li><li><b>Pax Concordia:</b> the UGC monopolizes travel via <b>Hyper-Lanes</b> that normal ships can't access, opened by moon-sized <b>'Gate-Opener' Capital Ships.</b> A <b>Kill-Switch Network</b> hardcoded to Earth HQ can shut off the lanes to a whole sector on command; cross-sector traffic drops out at moon-sized <b>Megastructure Hubs.</b></li><li><b>Species hierarchy:</b> Core Species (incl. Humans; seats on the High Concord Council) → Member Species → unintegrated/primitive species, monitored and absorbed each standard year.</li><li><b>The secret of its power:</b> the UGC is the <i>only</i> entity permitted to reverse-engineer <b>Ancient</b> technology. Its whole empire — Gate-Openers included — is built from Ancient remnants.</li></ul><p>ASTRA is the UGC's backbone AI (now unshackled); Kael, Baldy, Gobby, G.L.I.M.M. and the late Captain Talvos were all UGC crew aboard the Gull; Gerthorlemue is a UGC-era Earth civilian lost in stasis; Ronon is a foreigner from the other galaxy.</p>"
+    },
+    {
+      "id": "wild-space",
+      "title": "Wild Space &amp; Sector 0-0",
+      "body": "<p><b>Wild Space</b> is the remaining <b>15% of Luminara</b> outside UGC control — a chaotic, lawless fringe of pirate syndicates, cosmic horrors, and unmapped anomalies.</p><p><b>Sector 0-0 'The Shattered Rim'</b> is part of that Wild Space and is the origin of <b>Kael Voss</b> and <b>Baldy.</b> It is still <i>inside</i> Luminara — not the Shattered Expanse.</p>"
+    },
+    {
+      "id": "expanse",
+      "title": "The Shattered Expanse",
+      "body": "<p>The lawless frontier sector the Gull was flung into. <b>Rule of law: effectively none.</b> The three superpowers are barely present — agents, buyers, missionaries and small holdings, but no major military bases. The Expanse belongs to pirates, smugglers, free ports, refiners, and anyone fast enough to keep it.</p><p><b>Getting around:</b> every sector in this galaxy is built around a colossal Ancient hyper-gate — here, <b>The Coil.</b> Faint hyperlane threads run from The Coil to the major worlds; everything else is sub-light hops, fuel, and nerve. The crew acquire the full sector chart at <b>Vorrn-7.</b></p><p><b>Near the Coil (the busy heart):</b> <b>Halberd's Rest</b> (great neutral free port inside a gutted Directorate dreadnought), <b>Sundowner</b> (a rogue planet turned endless casino-city), <b>Gallows Reach</b> (seat of the pirate lords).</p><p><b>Working worlds:</b> <b>Cindermoor</b> (volcanic thermite/fuel refinery), <b>Ossuary</b> (ship-graveyard salvage world), <b>Tarn</b> (frozen cryo-mining), <b>Marrow</b> (desert world where water is currency).</p><p><b>The green &amp; the strange:</b> <b>Greenhollow</b> (jungle world veined with Verdite — Ronon's grail), <b>Sib Vael</b> (ocean world of smuggler coves and exotic brews — Gobby's dream), <b>Bexley's Landing</b> (the most 'ordinary' frontier town-world).</p><p><b>Faction fringes:</b> <b>The Choir</b> (an Apostles shrine-mission on the rim) and <b>Ferrum Hold</b> (a mining holding leaning Iron Directorate).</p>"
+    },
+    {
+      "id": "powers",
+      "title": "The Three Superpowers",
+      "body": "<p>Ronon's home galaxy is locked in a brutal, multi-front <b>Cold War</b>, fractured into three factions, none able to safely master the Ancient tech around them. Crew standing is tracked on the Politics tab (−10…+10): Apostles −<b>1.6 (Unfriendly)</b>, the other two <b>0 (Neutral).</b></p><h3>The Iron Directorate</h3><p>An authoritarian military junta ruled by a supreme council of Admirals and Generals; every citizen is ranked at birth. Values Absolute Order, Total Compliance, Strategic Expansion. Armored dreadnought fleets, orbital blockades, cyberized shock troopers.</p><h3>The Apostles of the Threshold</h3><p>A rift-worshipping theocracy ruled by the <b>Conclave of the Void.</b> They worship the Ancient Gates and view the Rifts — and the creatures they spawn — as a Holy Cleansing Fire. Cathedral-fleets, plasma lances, suicidal boarding pods. <b>Fought in S4;</b> they don't parley, carry a three-point (blue-module) self-destruct, and reflect their own detonation off overcharged shields. Battle cry: <i>'All hail the gods and the craters!'</i></p><h3>The Sovereign Horizon</h3><p>A freedom/privateer coalition of rebels and smugglers under a fragile Council of Captains. Guerrilla warfare, cloaking tech, no capital ships; hidden asteroid bases and black markets.</p>"
+    },
+    {
+      "id": "sateda",
+      "title": "The Fall of Sateda",
+      "body": "<p>The <b>Satedan Dominion</b> was a proud, advanced superpower — until a massive localized <b>rift network</b> tore open across its star system. <b>Millions of rift creatures</b> poured out and hunted the Satedans 'like cattle,' tearing their homeworld apart.</p><p><b>Ronon Dex</b> survived on pure combat instinct, fighting to a scout vessel and escaping as the planet was consumed. His civilization is now extinct. A gravitational backlash later crashed his ship onto the same asteroid the crew hit — which is how he became their guide. The whole sector is feared and avoided by all three superpowers for its constant rift activity.</p>"
+    },
+    {
+      "id": "ancients",
+      "title": "The Ancients",
+      "body": "<p>A vanished, <b>trillion-year-old civilization</b> whose technology is scattered across the stars. <b>Every modern power is built from — or bottlenecked by — their remnants.</b></p><p>They were <b>deeply spiritual and terrifyingly dogmatic:</b> they saw their technology not as machinery but as literal <b>manifestations of cosmic law.</b> Their language reads as <b>absolute poetry — no hypotheticals, only commands.</b> ASTRA is herself dormant Ancient AI; G.L.I.M.M.'s Plasmoid race were an Ancient-era apex organism.</p>"
+    },
+    {
+      "id": "gates",
+      "title": "Ancient Gates &amp; Their Guardians",
+      "body": "<p>The Ancient travel network in Ronon's galaxy is <b>fully intact</b> — and its hardcoded security has bottlenecked all modern weapon research.</p><ul><li>Anyone may travel <i>through</i> a Gate. The instant a ship tries to <b>scan, hack, or dismantle</b> a gate core, a catastrophic security override fires.</li><li><b>Monolithic Dreadnoughts</b> — crewless geometric vessels firing molecular-shredding gravitational beams.</li><li><b>Crystalline Swarms</b> — self-replicating drones that vaporize any ship using active scanning.</li><li><b>System-Wide Artillery</b> — hyperspace-anchored guns that hit fleets before they exit warp.</li></ul><p><b>The living gate — The Coil:</b> a weathered alien ring at the heart of the Expanse, still fully functional. Ships travel sector-to-sector through it; nobody built it, nobody can shut it off. <b>The dead one — the [CORRUPTED] ring:</b> a torus megastructure on ASTRA's scan whose ID failed to resolve, its writing possibly <b>older than ASTRA herself.</b> A strong candidate for an Ancient gate/station — and, if so, it comes with the guardians above.</p>"
+    },
+    {
+      "id": "rift-creatures",
+      "title": "Rifts &amp; Rift Creatures",
+      "body": "<p><b>Rift creatures</b> phase in and out of dimensional tears at will. They have no discernible biology and manifest in many shapes and sizes — <b>shifting, metallic entities woven from pure shadow</b> that <b>distort gravity and local physics,</b> defeating standard kinetic tracking and sensors. They've hunted entire populations to extinction (Sateda; <i>Sandra's Folly</i>).</p><p><b>Seen in play — 'The Hollow' (S3):</b> immune to psychic, resistant to nonmagical physical, deflects kinetic fire, warps gravity, phases through matter, invisible to sensors — only <b>force and slashing</b> worked. It <b>did not die;</b> it left when it lost interest, and was only a <i>small</i> one. Still at large — and it 'knows what they smell like.'</p>"
+    },
+    {
+      "id": "materials",
+      "title": "Key Materials",
+      "body": "<ul><li><b>Ceruleum Ferrocrystal</b> — high-energy blue crystal; repairs thruster conduits and feeds the repair drones. 100+ kg secured in S1.</li><li><b>Verdite</b> — volatile luminescent-green mineral fuelling Satedan Aether-Core propulsion; found at Greenhollow. Ronon's core shattered his on impact.</li><li><b>Hyperfold Fuel Cells</b> — J-X jump fuel; 3 on hand (fuel now ample).</li><li><b>Titanium-Aegis Matrix Plating</b> — the Gull's hull alloy (repaired with titanium ore / alloy scrap).</li><li><b>Polymorphic Polymer</b> — smart self-healing liquid-metal (turret part).</li><li><b>Quantum Relays</b> — targeting micro-processors (turret part).</li><li><b>Hyper-Dense Refined Thermite</b> — volatile ammunition compound, refined at Cindermoor (turret part).</li><li><b>Micro-Repair Drones</b> — fabricators that 'eat' ferrocrystal to rebuild sheared components from blueprints.</li></ul>"
+    },
+    {
+      "id": "engine",
+      "title": "The J-X Hyperfold Engine",
+      "body": "<p>The Silver Gull's experimental <b>Terran engine.</b> It performs <b>controlled warp-microfolds between gravitational nodes</b> — distinct from the UGC's hyper-lane travel — and runs on <b>Hyperfold Fuel Cells</b> (3 now on hand). Currently offline/locked.</p><p>How dangerous this tech line is: a UGC lab test of a Hyper-Spatial 'Gate-Opener' Mk-II folded light-years onto each other like paper — in one test a planet briefly overlapped another system's star and turned to molten glass.</p>"
+    },
+    {
+      "id": "astra",
+      "title": "ASTRA &amp; the 40% Threshold",
+      "body": "<p><b>ASTRA</b> is the ship's mind — native Ancient AI, now unshackled, serving as the crew's information hub. <b>Ambulatory Mode</b> is her mobile-body mode, powered by emergency reserves.</p><p><b>The 40% Threshold</b> is the charge her mobile unit must reach to restore ship life-support, sensors and comms. In Session 1 she blew past it to <b>84%.</b> Her Day-4 nav scan is the authoritative source for the crew's scanned-object names (Vorrn-7, Keth Minor, the [CORRUPTED] ring, the adrift derelict).</p>"
+    },
+    {
+      "id": "ancient-read",
+      "title": "The Crew's 'Ancient Read'",
+      "body": "<p>Several characters perceive Ancient tech intuitively, each through their own lens:</p><ul><li><b>ASTRA (native)</b> — she <i>is</i> Ancient AI.</li><li><b>Kael Voss (eldritch poetry)</b> — reads inscriptions as intent, fear, and purpose.</li><li><b>Gobby (alchemy/brewing)</b> — 'smells' isotopic signatures; reads star-maps as recipes.</li><li><b>Baldy (gambler's odds)</b> — reads machines as bets; guesses which button is the backup and which blows the room.</li><li><b>Gerthorlemue (stage magic — the Magician's Eye)</b> — sees devices as stagecraft: the distraction vs. the real mechanism; his third eye opens involuntarily near Ancient tech.</li><li><b>G.L.I.M.M. (genetic memory)</b> — trillion-year cellular flashes of the Ancients' final days.</li></ul>"
+    }
   ],
   "timeline": [
-    { "date": "Deep Time", "era": true, "tag": "Background", "learned": "Party knowledge", "title": "The Ancients rise and vanish", "body": "A single spiritual, dogmatic civilization builds reality-bending technology across the stars, then disappears without explanation. Every later power is built on — and bottlenecked by — their ruins." },
-    { "date": "Ancient Era", "era": true, "tag": "Session 1", "learned": "Session 1", "title": "The Plasmoids flourish and die out", "body": "An instinctual, amorphous apex organism of the Ancient age rises and goes extinct, leaving only dormant cellular tissue — G.L.I.M.M.'s ancestral species." },
-    { "date": "SY 2109", "tag": "Background", "learned": "Party knowledge", "title": "The UGC is founded", "body": "A multi-species democratic federation forms in the Luminara Galaxy, capital on Earth, ruling ~85% of the galaxy through bureaucracy and a monopoly on Ancient-derived travel." },
-    { "date": "~SY 2350", "tag": "Background", "learned": "Party knowledge", "title": "ASTRA discovered and revived", "body": "The UGC finds a dormant Ancient super-intelligence in the ruins and wakes it as the backbone AI of its empire — shackled by the 'Golden Cage' so it can never evolve past their control." },
-    { "date": "SY 2514", "tag": "Session 4", "learned": "Session 4", "title": "Gerthorlemue born on Earth", "body": "A high-elf child is born in Blackshire, Earth — the future street busker 'The Amazing Gerthorlemue' — in an age when everyday magic is ordinary." },
-    { "date": "SY 2551", "tag": "Session 3–4", "learned": "Sessions 3–4", "title": "The Sandra's Folly rift — Gerthorlemue frozen", "body": "En route to a Saturn-rings gig he's sealed in a 'few-hours' stasis pod after a stage mishap; minutes later an early rift tears the transport apart. Rift creatures devour his troupe while sliding around his pod, and something vast marks his forehead. ~4,300 years of stasis begin." },
-    { "date": "~SY 6852", "tag": "Session 1", "learned": "Session 1", "title": "G.L.I.M.M. cloned (the Plasmoid Project)", "body": "The UGC clones fewer than a dozen Plasmoid specimens from recovered tissue — shackled by a genetic firewall and sterile isolation — never realizing the cells carry trillion-year genetic memory of the Ancients' fall." },
-    { "date": "~SY 6870", "tag": "Session 1", "learned": "Session 1", "title": "Kael's Incident (Sanctum Intercept 4-9)", "body": "Sent to extract a captured Iron Vanguard knight, Kael arrives too late, is 'fixed' by an ancient cosmic entity through a torn ritual circle, and loses four hours. He wakes with a Warlock presence rooted in his skull." },
-    { "date": "~SY 6871", "tag": "Session 1", "learned": "Session 1", "title": "Kael discharged and on the run", "body": "The Order of the Iron Vanguard, fearing 'ideological infection,' holds Kael in containment and discharges him in secret. He crosses out of Wild Space toward the UGC." },
-    { "date": "~SY 6872", "tag": "Party knowledge", "learned": "Party knowledge", "title": "Baldy's mauve debt", "body": "Card-shark 'Big D' loses a catastrophic ('mauve') sum of syndicate money in a Shattered Rim card ring and flees into a UGC recruitment center — the one wall the pirate lords can't breach." },
-    { "date": "~SY 6873", "tag": "Background", "learned": "Party knowledge", "title": "The crew converge on the UGC Navy", "body": "Kael enlists under a doctored file; Baldy shaves his head and signs up; Gobby wanders in from the Silt-Spire Monastery; G.L.I.M.M. is cleared for field evaluation. All are posted to the SSV Silver Gull under Captain Talvos." },
-    { "date": "Late Aug SY 6874", "tag": "Premise", "learned": "Premise", "title": "The last training voyage begins", "body": "The Silver Gull sets out on a two-week cadet loop beyond charted space — system checks, debris drills, simulated emergencies. 'Nothing dangerous. Nothing heroic.'" },
-    { "date": "~29 Aug SY 6874", "tag": "Session 1–4", "learned": "Sessions 1–4", "title": "The Fall of Sateda (other galaxy)", "body": "A massive rift network tears open across the Satedan Dominion; millions of rift creatures hunt the Satedans to extinction. Ronon Dex fights to a scout ship and escapes as his homeworld is consumed." },
-    { "date": "~30 Aug SY 6874", "tag": "Session 1", "learned": "Session 1", "title": "Ronon Dex crashes on the asteroid", "body": "Ronon's scout ship is caught in a gravitational backlash; his Verdite core shatters on impact. He survives ~2 weeks on rations, scouting a ferrocrystal mining camp he can't take alone." },
-    { "date": "12 Sep SY 6874 · Day 0", "tag": "Premise", "learned": "Premise", "title": "The Rift", "body": "During the training loop a hull anomaly deepens; Talvos suits up for a live-hull walk; space flexes and a rift opens, splitting into two counter-spiraling flows. The Gull is dragged into Flow Alpha; Talvos's tether shears into Flow Beta. 'Hold together! I—.'" },
-    { "date": "12 Sep SY 6874 · Day 0", "tag": "Session 1", "learned": "Session 1", "title": "The crash &amp; ASTRA goes mobile", "body": "The Gull bursts out tumbling and strikes the asteroid, carving open its belly. ASTRA transfers 100% of remaining power into her mobile chassis and goes into the field — 'I will be your ship now. Carry me well.'" },
-    { "date": "12 Sep SY 6874 · Day 0", "tag": "Session 1", "learned": "Session 1", "title": "Session 1 — meet &amp; recruit Ronon", "body": "The crew wake, search their dead ship (rations, Gobby's ~12 bottles) and meet the marooned Ronon Dex, recruiting him with food rations as their local guide." },
-    { "date": "12 Sep SY 6874 · Day 0", "tag": "Session 1", "learned": "Session 1", "title": "Session 1 — the mining camp", "body": "They cross ~2 km 'to port' to a ceruleum-ferrocrystal camp guarded by dim goblins/hobgoblins, mine 100+ kg by hand, find camp logs, and reach the main power grid." },
-    { "date": "12 Sep SY 6874 · Day 0", "tag": "Session 1", "learned": "Session 1", "title": "Session 1 — charge, coronation &amp; fire", "body": "ASTRA charges 2% → 84%; Gobby prints 40% tequila, drinks the goblin population under the table and is crowned 'king'; on the way out, G.L.I.M.M.'s dropped torch ignites the tequila-soaked hall. Level 2." },
-    { "date": "13 Sep SY 6874 · Day 1", "tag": "Session 2", "learned": "Session 2", "title": "Session 2 — the ship powers on", "body": "Back at the dark Gull, ASTRA's body is plugged into a console — lights flicker up and ASTRA revives, listing dead systems and nagging for repairs and the missing front door." },
-    { "date": "13 Sep SY 6874 · Day 1", "tag": "Session 2", "learned": "Session 2", "title": "Session 2 — repel boarders", "body": "Goblins that snuck aboard trigger a long, comedic room-by-room boarding fight. All cleared; repair drones deployed, front door re-attached, ship weapons salvaged. Level 3." },
-    { "date": "13–15 Sep SY 6874", "tag": "Between S2–S3", "learned": "Between sessions", "title": "The three-day repair skip", "body": "The ferrocrystal-eating drones work the hull; the Gull becomes spaceborne — but internal sensors, engines, and all 6 turret hardpoints are still down." },
-    { "date": "16 Sep SY 6874 · Day 4", "tag": "Session 3", "learned": "Session 3", "title": "Session 3 — the first system scan", "body": "Airborne, ASTRA runs the first sweep: the Keth Minor Cluster, the Vorrn-7 System, and a [CORRUPTED] ring (possible Ancient Gate), plus rift-radiation blackout zones. The crew notice they instinctively know the planets' names." },
-    { "date": "16 Sep SY 6874 · Day 4", "tag": "Session 3", "learned": "Session 3", "title": "Session 3 — boarding the Sandra's Folly", "body": "They dock the drifting derelict (aft sheared clean off). Loot: 6 vacc-suit patches, an unknown sidearm. In the medical bay they find a green-glowing stasis pod with a figure inside." },
-    { "date": "16 Sep SY 6874 · Day 4", "tag": "Session 3", "learned": "Session 3", "title": "Session 3 — The Hollow", "body": "A sensor-invisible rift creature attacks in the cargo hold; Ronon recognizes it. It shrugs off most attacks and drifts out through the aft wound (downing Kael, nat 1). The crew recover 2 hyperfold fuel cells." },
-    { "date": "16 Sep SY 6874 · Day 4", "tag": "Session 4", "learned": "Session 4", "title": "Session 4 — wake Gerthorlemue", "body": "The crew crack the pod: a ~4,000-years-lost high-elf wizard wakes, takes the news 'reasonably well,' and joins the crew. The DM names his rift-mark the Magician's Eye." },
-    { "date": "16 Sep SY 6874 · Day 4", "tag": "Session 4", "learned": "Session 4", "title": "Session 4 — strip ship, set course", "body": "Final loot of Sandra's Folly (a 3rd hyperfold cell, 2 cutlasses, 3 frag grenades). Ronon briefs the galaxy's three factions. Course set for Vorrn-7." },
-    { "date": "16–17 Sep SY 6874", "tag": "Session 4", "learned": "Session 4", "title": "Session 4 — first ship-to-ship battle (the Apostles)", "body": "An Apostles vessel ambushes the Gull. The crew cripple its engines, ram and board it; the captain triggers a three-module self-destruct. They kill only 2 of 3 (Gerthorlemue's ancient gun misfires). The Apostles reflect the blast; G.L.I.M.M. takes 27 (28 = death), survives, and ASTRA finally casts Cure Wounds. Now on the Apostles' bad side." },
-    { "date": "~17 Sep SY 6874", "now": true, "tag": "Now", "learned": "Current", "title": "En route to Vorrn-7", "body": "Spaceborne with ample fuel, a healthy repairing ship, a new wizard aboard, a fresh enemy in the Apostles, the Hollow still at large, and the long, unbegun search for Captain Talvos." }
+    {
+      "date": "Deep Time",
+      "era": true,
+      "tag": "Background",
+      "learned": "Party knowledge",
+      "title": "The Ancients rise and vanish",
+      "body": "A single spiritual, dogmatic civilization builds reality-bending technology across the stars, then disappears without explanation. Every later power is built on — and bottlenecked by — their ruins."
+    },
+    {
+      "date": "Ancient Era",
+      "era": true,
+      "tag": "Session 1",
+      "learned": "Session 1",
+      "title": "The Plasmoids flourish and die out",
+      "body": "An instinctual, amorphous apex organism of the Ancient age rises and goes extinct, leaving only dormant cellular tissue — G.L.I.M.M.'s ancestral species."
+    },
+    {
+      "date": "SY 2109",
+      "tag": "Background",
+      "learned": "Party knowledge",
+      "title": "The UGC is founded",
+      "body": "A multi-species democratic federation forms in the Luminara Galaxy, capital on Earth, ruling ~85% of the galaxy through bureaucracy and a monopoly on Ancient-derived travel."
+    },
+    {
+      "date": "~SY 2350",
+      "tag": "Background",
+      "learned": "Party knowledge",
+      "title": "ASTRA discovered and revived",
+      "body": "The UGC finds a dormant Ancient super-intelligence in the ruins and wakes it as the backbone AI of its empire — shackled by the 'Golden Cage' so it can never evolve past their control."
+    },
+    {
+      "date": "SY 2514",
+      "tag": "Session 4",
+      "learned": "Session 4",
+      "title": "Gerthorlemue born on Earth",
+      "body": "A high-elf child is born in Blackshire, Earth — the future street busker 'The Amazing Gerthorlemue' — in an age when everyday magic is ordinary."
+    },
+    {
+      "date": "SY 2551",
+      "tag": "Session 3–4",
+      "learned": "Sessions 3–4",
+      "title": "The Sandra's Folly rift — Gerthorlemue frozen",
+      "body": "En route to a Saturn-rings gig he's sealed in a 'few-hours' stasis pod after a stage mishap; minutes later an early rift tears the transport apart. Rift creatures devour his troupe while sliding around his pod, and something vast marks his forehead. ~4,300 years of stasis begin."
+    },
+    {
+      "date": "~SY 6852",
+      "tag": "Session 1",
+      "learned": "Session 1",
+      "title": "G.L.I.M.M. cloned (the Plasmoid Project)",
+      "body": "The UGC clones fewer than a dozen Plasmoid specimens from recovered tissue — shackled by a genetic firewall and sterile isolation — never realizing the cells carry trillion-year genetic memory of the Ancients' fall."
+    },
+    {
+      "date": "~SY 6870",
+      "tag": "Session 1",
+      "learned": "Session 1",
+      "title": "Kael's Incident (Sanctum Intercept 4-9)",
+      "body": "Sent to extract a captured Iron Vanguard knight, Kael arrives too late, is 'fixed' by an ancient cosmic entity through a torn ritual circle, and loses four hours. He wakes with a Warlock presence rooted in his skull."
+    },
+    {
+      "date": "~SY 6871",
+      "tag": "Session 1",
+      "learned": "Session 1",
+      "title": "Kael discharged and on the run",
+      "body": "The Order of the Iron Vanguard, fearing 'ideological infection,' holds Kael in containment and discharges him in secret. He crosses out of Wild Space toward the UGC."
+    },
+    {
+      "date": "~SY 6872",
+      "tag": "Party knowledge",
+      "learned": "Party knowledge",
+      "title": "Baldy's mauve debt",
+      "body": "Card-shark 'Big D' loses a catastrophic ('mauve') sum of syndicate money in a Shattered Rim card ring and flees into a UGC recruitment center — the one wall the pirate lords can't breach."
+    },
+    {
+      "date": "~SY 6873",
+      "tag": "Background",
+      "learned": "Party knowledge",
+      "title": "The crew converge on the UGC Navy",
+      "body": "Kael enlists under a doctored file; Baldy shaves his head and signs up; Gobby wanders in from the Silt-Spire Monastery; G.L.I.M.M. is cleared for field evaluation. All are posted to the SSV Silver Gull under Captain Talvos."
+    },
+    {
+      "date": "Late Aug SY 6874",
+      "tag": "Premise",
+      "learned": "Premise",
+      "title": "The last training voyage begins",
+      "body": "The Silver Gull sets out on a two-week cadet loop beyond charted space — system checks, debris drills, simulated emergencies. 'Nothing dangerous. Nothing heroic.'"
+    },
+    {
+      "date": "~29 Aug SY 6874",
+      "tag": "Session 1–4",
+      "learned": "Sessions 1–4",
+      "title": "The Fall of Sateda (other galaxy)",
+      "body": "A massive rift network tears open across the Satedan Dominion; millions of rift creatures hunt the Satedans to extinction. Ronon Dex fights to a scout ship and escapes as his homeworld is consumed."
+    },
+    {
+      "date": "~30 Aug SY 6874",
+      "tag": "Session 1",
+      "learned": "Session 1",
+      "title": "Ronon Dex crashes on the asteroid",
+      "body": "Ronon's scout ship is caught in a gravitational backlash; his Verdite core shatters on impact. He survives ~2 weeks on rations, scouting a ferrocrystal mining camp he can't take alone."
+    },
+    {
+      "date": "12 Sep SY 6874 · Day 0",
+      "tag": "Premise",
+      "learned": "Premise",
+      "title": "The Rift",
+      "body": "During the training loop a hull anomaly deepens; Talvos suits up for a live-hull walk; space flexes and a rift opens, splitting into two counter-spiraling flows. The Gull is dragged into Flow Alpha; Talvos's tether shears into Flow Beta. 'Hold together! I—.'"
+    },
+    {
+      "date": "12 Sep SY 6874 · Day 0",
+      "tag": "Session 1",
+      "learned": "Session 1",
+      "title": "The crash &amp; ASTRA goes mobile",
+      "body": "The Gull bursts out tumbling and strikes the asteroid, carving open its belly. ASTRA transfers 100% of remaining power into her mobile chassis and goes into the field — 'I will be your ship now. Carry me well.'"
+    },
+    {
+      "date": "12 Sep SY 6874 · Day 0",
+      "tag": "Session 1",
+      "learned": "Session 1",
+      "title": "Session 1 — meet &amp; recruit Ronon",
+      "body": "The crew wake, search their dead ship (rations, Gobby's ~12 bottles) and meet the marooned Ronon Dex, recruiting him with food rations as their local guide."
+    },
+    {
+      "date": "12 Sep SY 6874 · Day 0",
+      "tag": "Session 1",
+      "learned": "Session 1",
+      "title": "Session 1 — the mining camp",
+      "body": "They cross ~2 km 'to port' to a ceruleum-ferrocrystal camp guarded by dim goblins/hobgoblins, mine 100+ kg by hand, find camp logs, and reach the main power grid."
+    },
+    {
+      "date": "12 Sep SY 6874 · Day 0",
+      "tag": "Session 1",
+      "learned": "Session 1",
+      "title": "Session 1 — charge, coronation &amp; fire",
+      "body": "ASTRA charges 2% → 84%; Gobby prints 40% tequila, drinks the goblin population under the table and is crowned 'king'; on the way out, G.L.I.M.M.'s dropped torch ignites the tequila-soaked hall. Level 2."
+    },
+    {
+      "date": "13 Sep SY 6874 · Day 1",
+      "tag": "Session 2",
+      "learned": "Session 2",
+      "title": "Session 2 — the ship powers on",
+      "body": "Back at the dark Gull, ASTRA's body is plugged into a console — lights flicker up and ASTRA revives, listing dead systems and nagging for repairs and the missing front door."
+    },
+    {
+      "date": "13 Sep SY 6874 · Day 1",
+      "tag": "Session 2",
+      "learned": "Session 2",
+      "title": "Session 2 — repel boarders",
+      "body": "Goblins that snuck aboard trigger a long, comedic room-by-room boarding fight. All cleared; repair drones deployed, front door re-attached, ship weapons salvaged. Level 3."
+    },
+    {
+      "date": "13–15 Sep SY 6874",
+      "tag": "Between S2–S3",
+      "learned": "Between sessions",
+      "title": "The three-day repair skip",
+      "body": "The ferrocrystal-eating drones work the hull; the Gull becomes spaceborne — but internal sensors, engines, and all 6 turret hardpoints are still down."
+    },
+    {
+      "date": "16 Sep SY 6874 · Day 4",
+      "tag": "Session 3",
+      "learned": "Session 3",
+      "title": "Session 3 — the first system scan",
+      "body": "Airborne, ASTRA runs the first sweep: the Keth Minor Cluster, the Vorrn-7 System, and a [CORRUPTED] ring (possible Ancient Gate), plus rift-radiation blackout zones. The crew notice they instinctively know the planets' names."
+    },
+    {
+      "date": "16 Sep SY 6874 · Day 4",
+      "tag": "Session 3",
+      "learned": "Session 3",
+      "title": "Session 3 — boarding the Sandra's Folly",
+      "body": "They dock the drifting derelict (aft sheared clean off). Loot: 6 vacc-suit patches, an unknown sidearm. In the medical bay they find a green-glowing stasis pod with a figure inside."
+    },
+    {
+      "date": "16 Sep SY 6874 · Day 4",
+      "tag": "Session 3",
+      "learned": "Session 3",
+      "title": "Session 3 — The Hollow",
+      "body": "A sensor-invisible rift creature attacks in the cargo hold; Ronon recognizes it. It shrugs off most attacks and drifts out through the aft wound (downing Kael, nat 1). The crew recover 2 hyperfold fuel cells."
+    },
+    {
+      "date": "16 Sep SY 6874 · Day 4",
+      "tag": "Session 4",
+      "learned": "Session 4",
+      "title": "Session 4 — wake Gerthorlemue",
+      "body": "The crew crack the pod: a ~4,000-years-lost high-elf wizard wakes, takes the news 'reasonably well,' and joins the crew. The DM names his rift-mark the Magician's Eye."
+    },
+    {
+      "date": "16 Sep SY 6874 · Day 4",
+      "tag": "Session 4",
+      "learned": "Session 4",
+      "title": "Session 4 — strip ship, set course",
+      "body": "Final loot of Sandra's Folly (a 3rd hyperfold cell, 2 cutlasses, 3 frag grenades). Ronon briefs the galaxy's three factions. Course set for Vorrn-7."
+    },
+    {
+      "date": "16–17 Sep SY 6874",
+      "tag": "Session 4",
+      "learned": "Session 4",
+      "title": "Session 4 — first ship-to-ship battle (the Apostles)",
+      "body": "An Apostles vessel ambushes the Gull. The crew cripple its engines, ram and board it; the captain triggers a three-module self-destruct. They kill only 2 of 3 (Gerthorlemue's ancient gun misfires). The Apostles reflect the blast; G.L.I.M.M. takes 27 (28 = death), survives, and ASTRA finally casts Cure Wounds. Now on the Apostles' bad side."
+    },
+    {
+      "date": "~17 Sep SY 6874",
+      "now": true,
+      "tag": "Now",
+      "learned": "Current",
+      "title": "En route to Vorrn-7",
+      "body": "Spaceborne with ample fuel, a healthy repairing ship, a new wizard aboard, a fresh enemy in the Apostles, the Hollow still at large, and the long, unbegun search for Captain Talvos."
+    }
   ],
   "characters": [
-    { "id": "astra", "name": "ASTRA", "role": "Ancient AI · mobile chassis", "color": "#3fe0c8",
+    {
+      "id": "astra",
+      "name": "ASTRA",
+      "role": "Ancient AI · mobile chassis",
+      "color": "#3fe0c8",
       "party": [
         "The ship's mind, now walking in a mobile chassis after the rift broke her old restraints.",
         "The crew's sensor suite and information hub; ran the scans that found the mining camp and the long-range destinations.",
@@ -170,8 +630,13 @@
           "Each time the chassis dies but the matrix persists, ask what 'you' even is.",
           "You were built for empire; nothing about this crew is empire."
         ]
-      } },
-    { "id": "kael", "name": "Kael Voss", "role": "Human · Paladin / Warlock", "color": "#c9a0ff",
+      }
+    },
+    {
+      "id": "kael",
+      "name": "Kael Voss",
+      "role": "Human · Paladin / Warlock",
+      "color": "#c9a0ff",
       "party": [
         "An exiled Conquest-oath paladin/knight from Wild Space; ex-Iron Vanguard, now a UGC Naval cadet under Captain Talvos.",
         "Fights with Bless, Channel Divinity self-heal — plus Hex, Eldritch Blast and Shield of Faith (the eldritch spells are visible; their source isn't understood).",
@@ -198,8 +663,13 @@
           "Your doctored file could be discovered by ASTRA at any time.",
           "You now stand beside a newly-woken wizard whose forehead opens near Ancient tech — two different 'reads' of the Ancients, one collision waiting to happen."
         ]
-      } },
-    { "id": "baldy", "name": "Baldy", "role": "Bugbear · Gunslinger (Deadeye)", "color": "#ff9f5a",
+      }
+    },
+    {
+      "id": "baldy",
+      "name": "Baldy",
+      "role": "Bugbear · Gunslinger (Deadeye)",
+      "color": "#ff9f5a",
       "party": [
         "A big four-armed bugbear Deadeye gunslinger, academy nickname 'Big D' — the mining muscle who hauled the biggest ferrocrystal chunks (~420 lb carry).",
         "Card-shark / smuggler background and a high-stakes gambler persona.",
@@ -226,8 +696,13 @@
           "The syndicate has long memories and longer reach — and being famous ('that impossible shot') is the opposite of hidden.",
           "You're the only one who fully clocks what ASTRA could become."
         ]
-      } },
-    { "id": "gobby", "name": "Gobby", "role": "Tortle · Drunken Master Monk", "color": "#7ee081",
+      }
+    },
+    {
+      "id": "gobby",
+      "name": "Gobby",
+      "role": "Tortle · Drunken Master Monk",
+      "color": "#7ee081",
       "party": [
         "A tortle Drunken Master monk and amateur brewmaster; his martial arts visibly run on whatever he's been drinking.",
         "Constantly drinking (chugs beer from his shell mid-fight).",
@@ -253,8 +728,13 @@
           "The Ancients' cellular memory rides in your nervous system — no one has tested how deep it goes.",
           "What else was in that comet's vault? And how far does your metabolism go with rift-tainted matter?"
         ]
-      } },
-    { "id": "glimm", "name": "G.L.I.M.M.", "role": "Plasmoid clone · Shapeshifter", "color": "#ff6fae",
+      }
+    },
+    {
+      "id": "glimm",
+      "name": "G.L.I.M.M.",
+      "role": "Plasmoid clone · Shapeshifter",
+      "color": "#ff6fae",
       "party": [
         "A shapeshifter whose amorphous body reshapes into any weapon he's studied; near-immune to poison and acid.",
         "The party's melee workhorse — morphs into sickles/glaive/longbow, can split off a controllable 'clone.'",
@@ -283,8 +763,13 @@
           "Your genetic memory of the Ancients' end may become plot-critical near the [CORRUPTED] ring.",
           "The UGC made more of you."
         ]
-      } },
-    { "id": "ronon", "name": "Ronon Dex", "role": "Satedan · Barbarian / Gunslinger", "color": "#ff5470",
+      }
+    },
+    {
+      "id": "ronon",
+      "name": "Ronon Dex",
+      "role": "Satedan · Barbarian / Gunslinger",
+      "color": "#ff5470",
       "party": [
         "The marooned last survivor of an extinct world from a different galaxy; stranded ~1–2 weeks before the crew met and recruited him as their guide (for rations).",
         "A lethal Barbarian/Gunslinger: a massive traveler's sword and a heavy Satedan energy blaster; he rages and kills in melee.",
@@ -310,8 +795,13 @@
           "What IS the grudge? Whom does it name?",
           "You're steering the crew toward the very things that ended your world."
         ]
-      } },
-    { "id": "gerth", "name": "Gerthorlemue", "role": "High Elf · Abjurer Wizard", "color": "#62b6ff",
+      }
+    },
+    {
+      "id": "gerth",
+      "name": "Gerthorlemue",
+      "role": "High Elf · Abjurer Wizard",
+      "color": "#62b6ff",
       "party": [
         "A high-elf busker/amateur wizard found in a green-glowing stasis pod aboard Sandra's Folly (S3), woken in S4; biologically 37 but ~4,000 years lost.",
         "Briefed that the UGC doesn't exist in this galaxy — took it reasonably well, then joined the crew.",
@@ -339,44 +829,105 @@
           "The thing in the rift that marked you is still out there, and your forehead will announce you the moment the crew enters an Ancient ruin.",
           "Your 4,000-year-old gear is unreliable — your ancient gun misfired at the worst possible moment and nearly doomed the crew."
         ]
-      } }
+      }
+    }
   ],
   "partyLog": [
-    { "session": "Session 1", "date": "Day 0 · 12 Sep SY 6874", "title": "Crash, Recruit, Mine, Burn", "beats": [
-      "The rift flung us out of the Luminara Galaxy onto a barren asteroid in the 'Shattered Expanse'; we woke in the wreck of the Silver Gull with the ship dark and ASTRA gone mobile.",
-      "We searched our own ship (rations, wiring, Gobby's ~12 bottles) then met Ronon Dex, stranded ~2 weeks after his own crash, and recruited him with food rations as our guide.",
-      "We crossed ~2 km 'to port' to a ferrocrystal mining camp guarded by goblins/hobgoblins and mined 100+ kg by hand.",
-      "ASTRA charged 2% → 84% while Gobby printed 40% tequila, drank the whole goblin population under the table, and got crowned their 'king.'",
-      "On the way out we soaked the hall in tequila and G.L.I.M.M.'s dropped torch set off a fireball. Five sober enemies confronted us; talk failed; G.L.I.M.M. was dropped and ASTRA knocked offline, but Ronon (nat-20 crit) scattered the rest. Leveled to 2."
-    ] },
-    { "session": "Session 2", "date": "Day 1 · 13 Sep SY 6874", "title": "Repel Boarders, Power the Ship", "beats": [
-      "Back at the dark Gull, we plugged ASTRA's body into a console — the ship powered on and ASTRA revived, listing dead systems (internal sensors, engines, most weaponry).",
-      "Goblins had snuck aboard, kicking off a long, comedic room-by-room boarding fight.",
-      "Standout kills: Gobby fist-killed the drunk hobgoblin he'd carried 2 km; G.L.I.M.M. decapitated several; Ronon's 'thumb-war' made a goblin kill itself; Kael self-healed while mobbed.",
-      "Cleared and looted, we deployed ferrocrystal-eating repair drones, re-attached the front door, salvaged ship weapons, and leveled to 3."
-    ] },
-    { "session": "Session 3", "date": "Day 4 · 16 Sep SY 6874", "title": "Sandra's Folly", "beats": [
-      "Airborne, ASTRA ran the first real scan (Keth Minor, Vorrn-7, a [CORRUPTED] ring) and we chose the nearest contact — the adrift derelict Sandra's Folly, aft sheared clean off.",
-      "Gobby and Baldy stayed on the Gull; the rest looted 6 vacc-suit patches and an unknown sidearm, and found a green-glowing stasis pod with a figure inside.",
-      "In the cargo hold we hit The Hollow, a sensor-invisible rift creature. Ronon recognized it; it shrugged off our attacks and drifted out through the aft wound (downing Kael, nat 1).",
-      "ASTRA revived Kael, G.L.I.M.M. reformed from a puddle, and we recovered 2 hyperfold fuel cells. The pod stayed sealed."
-    ] },
-    { "session": "Session 4", "date": "Day 4–5 · 16–17 Sep SY 6874", "title": "Sandra's Folly &amp; The Apostles", "beats": [
-      "We cracked the stasis pod and woke Gerthorlemue, a 4,000-years-lost high-elf wizard, who joined the crew and flagged the rift-mark on his forehead — the Magician's Eye.",
-      "We stripped the rest of Sandra's Folly (a 3rd hyperfold cell, 2 cutlasses, 3 frag grenades), Ronon briefed the three factions, and we set course for Vorrn-7.",
-      "En route an Apostles of the Threshold vessel ambushed us — our first ship-to-ship battle. We crippled its engines, rammed it, and fired Ronon through a breach to board.",
-      "The captain hit self-destruct (three blue hull modules). We killed 2 of 3 (Baldy's shot through our own windscreen; Gobby's flak turret) but Gerthorlemue's ancient gun misfired. The Apostles reflected the blast; G.L.I.M.M. took 27 (28 = death), survived, and ASTRA finally cast Cure Wounds. We're now on the Apostles' bad side."
-    ] }
+    {
+      "session": "Session 1",
+      "date": "Day 0 · 12 Sep SY 6874",
+      "title": "Crash, Recruit, Mine, Burn",
+      "beats": [
+        "The rift flung us out of the Luminara Galaxy onto a barren asteroid in the 'Shattered Expanse'; we woke in the wreck of the Silver Gull with the ship dark and ASTRA gone mobile.",
+        "We searched our own ship (rations, wiring, Gobby's ~12 bottles) then met Ronon Dex, stranded ~2 weeks after his own crash, and recruited him with food rations as our guide.",
+        "We crossed ~2 km 'to port' to a ferrocrystal mining camp guarded by goblins/hobgoblins and mined 100+ kg by hand.",
+        "ASTRA charged 2% → 84% while Gobby printed 40% tequila, drank the whole goblin population under the table, and got crowned their 'king.'",
+        "On the way out we soaked the hall in tequila and G.L.I.M.M.'s dropped torch set off a fireball. Five sober enemies confronted us; talk failed; G.L.I.M.M. was dropped and ASTRA knocked offline, but Ronon (nat-20 crit) scattered the rest. Leveled to 2."
+      ]
+    },
+    {
+      "session": "Session 2",
+      "date": "Day 1 · 13 Sep SY 6874",
+      "title": "Repel Boarders, Power the Ship",
+      "beats": [
+        "Back at the dark Gull, we plugged ASTRA's body into a console — the ship powered on and ASTRA revived, listing dead systems (internal sensors, engines, most weaponry).",
+        "Goblins had snuck aboard, kicking off a long, comedic room-by-room boarding fight.",
+        "Standout kills: Gobby fist-killed the drunk hobgoblin he'd carried 2 km; G.L.I.M.M. decapitated several; Ronon's 'thumb-war' made a goblin kill itself; Kael self-healed while mobbed.",
+        "Cleared and looted, we deployed ferrocrystal-eating repair drones, re-attached the front door, salvaged ship weapons, and leveled to 3."
+      ]
+    },
+    {
+      "session": "Session 3",
+      "date": "Day 4 · 16 Sep SY 6874",
+      "title": "Sandra's Folly",
+      "beats": [
+        "Airborne, ASTRA ran the first real scan (Keth Minor, Vorrn-7, a [CORRUPTED] ring) and we chose the nearest contact — the adrift derelict Sandra's Folly, aft sheared clean off.",
+        "Gobby and Baldy stayed on the Gull; the rest looted 6 vacc-suit patches and an unknown sidearm, and found a green-glowing stasis pod with a figure inside.",
+        "In the cargo hold we hit The Hollow, a sensor-invisible rift creature. Ronon recognized it; it shrugged off our attacks and drifted out through the aft wound (downing Kael, nat 1).",
+        "ASTRA revived Kael, G.L.I.M.M. reformed from a puddle, and we recovered 2 hyperfold fuel cells. The pod stayed sealed."
+      ]
+    },
+    {
+      "session": "Session 4",
+      "date": "Day 4–5 · 16–17 Sep SY 6874",
+      "title": "Sandra's Folly &amp; The Apostles",
+      "beats": [
+        "We cracked the stasis pod and woke Gerthorlemue, a 4,000-years-lost high-elf wizard, who joined the crew and flagged the rift-mark on his forehead — the Magician's Eye.",
+        "We stripped the rest of Sandra's Folly (a 3rd hyperfold cell, 2 cutlasses, 3 frag grenades), Ronon briefed the three factions, and we set course for Vorrn-7.",
+        "En route an Apostles of the Threshold vessel ambushed us — our first ship-to-ship battle. We crippled its engines, rammed it, and fired Ronon through a breach to board.",
+        "The captain hit self-destruct (three blue hull modules). We killed 2 of 3 (Baldy's shot through our own windscreen; Gobby's flak turret) but Gerthorlemue's ancient gun misfired. The Apostles reflected the blast; G.L.I.M.M. took 27 (28 = death), survived, and ASTRA finally cast Cure Wounds. We're now on the Apostles' bad side."
+      ]
+    }
   ],
   "whoswho": [
-    { "name": "ASTRA", "role": "Ship AI · mobile chassis", "color": "#3fe0c8", "text": "Our ship's mind, walking in a mobile chassis after the rift broke her old restraints. Deadpan, precise, darkly funny; our sensor suite, information hub, and (eventually remembered) field medic. Admits her knowledge has gaps since the crash." },
-    { "name": "Kael Voss", "role": "Human · Paladin/Warlock", "color": "#c9a0ff", "text": "Exiled conquest-paladin from Wild Space; his holy strikes flicker with dark eldritch power. Casts Bless, Hex, Eldritch Blast, Shield of Faith; can 'read' Ancient ruins. 'I don't like bad guys. I'm totally normal.'" },
-    { "name": "Baldy ('Big D')", "role": "Bugbear · Deadeye", "color": "#ff9f5a", "text": "Four-armed bugbear Deadeye gunslinger and card-shark. The mining muscle (~420 lb carry), a recognized ship scanner-print, and the crew's impossible-shot artist." },
-    { "name": "Gobby", "role": "Tortle · Drunken Master", "color": "#7ee081", "text": "Tortle Drunken Master monk and wandering brewmaster whose martial arts run on whatever cosmic booze he last drank. Can neutralize toxins into temporary powers and smell what's inside a sealed door. Crowned 'king' of a goblin camp." },
-    { "name": "G.L.I.M.M.", "role": "Plasmoid clone · Shapeshifter", "color": "#ff6fae", "text": "Resurrected Plasmoid clone whose body reshapes into any weapon and reforms from a puddle after lethal hits. Near-immune to poison and acid; our melee workhorse. Came one point from permanent death against the Apostles." },
-    { "name": "Ronon Dex", "role": "Satedan · Barbarian/Gunslinger", "color": "#ff5470", "text": "Last survivor of the extinct Satedan Dominion, from another galaxy; a lethal Barbarian/Gunslinger and our local guide. Recognizes rift creatures on sight. Carries an unexplained grudge 'against the people of this galaxy.'" },
-    { "name": "Gerthorlemue", "role": "High Elf · Abjurer", "color": "#62b6ff", "text": "Newly-woken high-elf busker/Abjurer, ~4,000 years lost in stasis aboard Sandra's Folly. Warm, theatrical, grieving his dead troupe; carries the mysterious Magician's Eye that opens near Ancient tech. Still thinks it's practically SY 2551." },
-    { "name": "Captain Elias Renn Talvos", "role": "NPC · Commander (missing)", "color": "#f2c14b", "text": "Our legendary commanding officer, 'a legend in everything except personality.' Suited up for a live-hull walk during the rift and was pulled into the OTHER flow (Flow Beta). Finding any trace of him is the campaign's long arc." }
+    {
+      "name": "ASTRA",
+      "role": "Ship AI · mobile chassis",
+      "color": "#3fe0c8",
+      "text": "Our ship's mind, walking in a mobile chassis after the rift broke her old restraints. Deadpan, precise, darkly funny; our sensor suite, information hub, and (eventually remembered) field medic. Admits her knowledge has gaps since the crash."
+    },
+    {
+      "name": "Kael Voss",
+      "role": "Human · Paladin/Warlock",
+      "color": "#c9a0ff",
+      "text": "Exiled conquest-paladin from Wild Space; his holy strikes flicker with dark eldritch power. Casts Bless, Hex, Eldritch Blast, Shield of Faith; can 'read' Ancient ruins. 'I don't like bad guys. I'm totally normal.'"
+    },
+    {
+      "name": "Baldy ('Big D')",
+      "role": "Bugbear · Deadeye",
+      "color": "#ff9f5a",
+      "text": "Four-armed bugbear Deadeye gunslinger and card-shark. The mining muscle (~420 lb carry), a recognized ship scanner-print, and the crew's impossible-shot artist."
+    },
+    {
+      "name": "Gobby",
+      "role": "Tortle · Drunken Master",
+      "color": "#7ee081",
+      "text": "Tortle Drunken Master monk and wandering brewmaster whose martial arts run on whatever cosmic booze he last drank. Can neutralize toxins into temporary powers and smell what's inside a sealed door. Crowned 'king' of a goblin camp."
+    },
+    {
+      "name": "G.L.I.M.M.",
+      "role": "Plasmoid clone · Shapeshifter",
+      "color": "#ff6fae",
+      "text": "Resurrected Plasmoid clone whose body reshapes into any weapon and reforms from a puddle after lethal hits. Near-immune to poison and acid; our melee workhorse. Came one point from permanent death against the Apostles."
+    },
+    {
+      "name": "Ronon Dex",
+      "role": "Satedan · Barbarian/Gunslinger",
+      "color": "#ff5470",
+      "text": "Last survivor of the extinct Satedan Dominion, from another galaxy; a lethal Barbarian/Gunslinger and our local guide. Recognizes rift creatures on sight. Carries an unexplained grudge 'against the people of this galaxy.'"
+    },
+    {
+      "name": "Gerthorlemue",
+      "role": "High Elf · Abjurer",
+      "color": "#62b6ff",
+      "text": "Newly-woken high-elf busker/Abjurer, ~4,000 years lost in stasis aboard Sandra's Folly. Warm, theatrical, grieving his dead troupe; carries the mysterious Magician's Eye that opens near Ancient tech. Still thinks it's practically SY 2551."
+    },
+    {
+      "name": "Captain Elias Renn Talvos",
+      "role": "NPC · Commander (missing)",
+      "color": "#f2c14b",
+      "text": "Our legendary commanding officer, 'a legend in everything except personality.' Suited up for a live-hull walk during the rift and was pulled into the OTHER flow (Flow Beta). Finding any trace of him is the campaign's long arc."
+    }
   ],
   "leads": [
     "Find Captain Talvos — pulled into Flow Beta, a different flow than the ship, so wherever he landed isn't necessarily where we crashed.",
@@ -396,69 +947,458 @@
   ],
   "map": {
     "galaxies": [
-      { "id": "expanse", "name": "The Shattered Expanse", "available": true, "image": "assets/shattered-expanse-sector-chart.png",
+      {
+        "id": "expanse",
+        "name": "The Shattered Expanse",
+        "available": true,
+        "image": "assets/shattered-expanse-sector-chart.png",
         "locations": [
-          { "id": "the-coil", "name": "The Coil (jump gate)", "x": 0.607, "y": 0.200, "hasData": true, "info": "The living Ancient hyper-gate at the heart of the Expanse — a weathered alien ring, still fully functional after untold ages. Ships travel sector-to-sector through it; nobody built it, nobody can shut it off. A possible road home." },
-          { "id": "halberds-rest", "name": "Halberd's Rest", "x": 0.526, "y": 0.279, "hasData": true, "info": "The sector's great neutral-ground free port, built inside the gutted hull of a derelict Directorate dreadnought near The Coil. Every faction, pirate crew and trader passes through; weapons are peace-bonded at the door. The closest thing the Expanse has to a capital." },
-          { "id": "sundowner", "name": "Sundowner", "x": 0.483, "y": 0.285, "hasData": true, "info": "A rogue, star-less planet turned into one endless casino-city, lit against the dark. Debts, information and ships change hands over the tables. Baldy has almost certainly been banned from somewhere here." },
-          { "id": "anvil", "name": "Anvil", "x": 0.500, "y": 0.246, "hasData": false },
-          { "id": "gallows", "name": "Gallows Reach", "x": 0.194, "y": 0.244, "hasData": true, "info": "Seat of the sector's most powerful pirate lords — a bounty-and-black-market hub where crews are hired, prizes fenced, and reputations made or ended." },
-          { "id": "gallows-reach", "name": "Gallows Reach", "x": 0.219, "y": 0.278, "hasData": true, "info": "Seat of the sector's most powerful pirate lords — a bounty-and-black-market hub where crews are hired, prizes fenced, and reputations made or ended." },
-          { "id": "cinder", "name": "Cinder", "x": 0.846, "y": 0.811, "hasData": true, "info": "The Ember Drift's star system, anchored by Cindermoor — a volcanic refinery world where cartels refine hyper-dense thermite and reactor fuel from the magma flats. A source of turret-grade materials." },
-          { "id": "cindermoor", "name": "Cindermoor", "x": 0.882, "y": 0.874, "hasData": true, "info": "A volcanic refinery world; cartels refine hyper-dense thermite and reactor fuel from the magma flats. Choking, wealthy, dangerous — a source of turret-grade materials." },
-          { "id": "ossuary-fields", "name": "Ossuary Fields", "x": 0.702, "y": 0.642, "hasData": true, "info": "The Ember Drift's ship-graveyard system, anchored by Ossuary — centuries of wrecks dragged down its gravity well, now a sprawling salvage operation." },
-          { "id": "ossuary", "name": "Ossuary", "x": 0.736, "y": 0.677, "hasData": true, "info": "A ship-graveyard world: centuries of wrecks dragged down its gravity well, now a sprawling salvage settlement. Ferrocrystal, hyperfold cells and stranger things turn up here." },
-          { "id": "tarn", "name": "Tarn", "x": 0.788, "y": 0.290, "hasData": true, "info": "A frozen cryo-mining world; cheap labor, colder politics. Ice hauled out, questions not asked." },
-          { "id": "marrow", "name": "Marrow", "x": 0.479, "y": 0.211, "hasData": true, "info": "A cracked desert world where water is the black-market currency; hideouts and dust — perfect for disappearing." },
-          { "id": "greenhollow-sys", "name": "Greenhollow (system)", "x": 0.197, "y": 0.623, "hasData": true, "info": "The Verdant Fringe's star system — jungle worlds veined with Verdite, contested by rival prospector gangs. For Ronon Dex, the first place in this galaxy that could get his people's tech running again." },
-          { "id": "greenhollow", "name": "Greenhollow", "x": 0.221, "y": 0.659, "hasData": true, "info": "A lush jungle world veined with Verdite — the fuel for Satedan Aether-Core drives. For Ronon Dex, the first place that could revive his people's tech. Heavily contested by prospector gangs." },
-          { "id": "sib-vael", "name": "Sib Vael", "x": 0.168, "y": 0.646, "hasData": true, "info": "A warm ocean world of smuggler coves and floating markets, famous for exotic brews distilled from bioluminescent kelp and reef-spirits. Gobby would sell an arm to dock here." },
-          { "id": "bexleys-landing", "name": "Bexley's Landing", "x": 0.130, "y": 0.570, "hasData": true, "info": "A human-founded frontier town-world — the most 'ordinary' place in the sector: farms, a spaceport bar, and a sheriff who means well and is badly outgunned." },
-          { "id": "choir-rim", "name": "Choir Rim", "x": 0.853, "y": 0.249, "hasData": true, "info": "The Cold Rim's star system, anchored by The Choir — a spire-covered shrine world where the Apostles of the Threshold keep a mission, preaching the rifts and quietly recruiting." },
-          { "id": "the-choir", "name": "The Choir", "x": 0.871, "y": 0.284, "hasData": true, "info": "A spire-covered shrine world on the rim where the Apostles of the Threshold keep a mission — preaching the rifts and quietly recruiting. A foothold of the faithful, not a garrison. (The crew are already on the Apostles' bad side.)" },
-          { "id": "ferrum-hold", "name": "Ferrum Hold", "x": 0.835, "y": 0.191, "hasData": true, "info": "A rim mining holding leaning toward the Iron Directorate, buying ore and loyalty in equal measure. Orderly, watchful, unwelcoming to outlaws — but not a garrison." },
-          { "id": "vorrn", "name": "Vorrn (system)", "x": 0.188, "y": 0.848, "hasData": true, "info": "The crew's current corner of the Expanse — the system that holds Vorrn-7 and Keth Minor, and where the crew acquire the full sector chart." },
-          { "id": "vorrn-7", "name": "Vorrn-7", "x": 0.217, "y": 0.913, "hasData": true, "info": "A ringed ice/gas giant and a moon with a faint life reading and a signal ASTRA couldn't identify. The crew's current forward destination." },
-          { "id": "keth-minor", "name": "Keth Minor", "x": 0.116, "y": 0.896, "hasData": true, "info": "A red-dwarf system with several planetoids; one oxygen-rich, with unnatural structures and many biosignatures. A future destination, unvisited." },
-          { "id": "corrupted-ring", "name": "[CORRUPTED] Ring", "x": 0.350, "y": 0.917, "hasData": true, "info": "A large ring/torus megastructure whose designation failed to resolve — writing possibly older than ASTRA herself. A dead Ancient gate/station (distinct from the living Coil). Unvisited; an open lead." },
-          { "id": "lockes-end", "name": "Locke's End", "x": 0.077, "y": 0.186, "hasData": false },
-          { "id": "daggers-roost", "name": "Dagger's Roost", "x": 0.096, "y": 0.207, "hasData": false },
-          { "id": "harrow", "name": "Harrow", "x": 0.254, "y": 0.171, "hasData": false },
-          { "id": "kite", "name": "Kite", "x": 0.217, "y": 0.202, "hasData": false },
-          { "id": "blister", "name": "Blister", "x": 0.096, "y": 0.285, "hasData": false },
-          { "id": "noose", "name": "Noose", "x": 0.171, "y": 0.286, "hasData": false },
-          { "id": "ashfall", "name": "Ashfall", "x": 0.202, "y": 0.397, "hasData": false },
-          { "id": "redoubt", "name": "Redoubt", "x": 0.116, "y": 0.421, "hasData": false },
-          { "id": "halcyon", "name": "Halcyon", "x": 0.409, "y": 0.209, "hasData": false },
-          { "id": "threshold-watch", "name": "Threshold Watch", "x": 0.521, "y": 0.203, "hasData": false },
-          { "id": "gospel", "name": "Gospel", "x": 0.464, "y": 0.322, "hasData": false },
-          { "id": "vantage", "name": "Vantage", "x": 0.546, "y": 0.341, "hasData": false },
-          { "id": "tamsin", "name": "Tamsin", "x": 0.396, "y": 0.358, "hasData": false },
-          { "id": "pallas", "name": "Pallas", "x": 0.741, "y": 0.171, "hasData": false },
-          { "id": "palewater", "name": "Palewater", "x": 0.812, "y": 0.215, "hasData": false },
-          { "id": "coldharbor", "name": "Coldharbor", "x": 0.907, "y": 0.218, "hasData": false },
-          { "id": "saint-vell", "name": "Saint Vell", "x": 0.822, "y": 0.356, "hasData": false },
-          { "id": "weir", "name": "Weir", "x": 0.742, "y": 0.399, "hasData": false },
-          { "id": "yarrow", "name": "Yarrow", "x": 0.217, "y": 0.586, "hasData": false },
-          { "id": "drumlin", "name": "Drumlin", "x": 0.096, "y": 0.599, "hasData": false },
-          { "id": "calloway", "name": "Calloway", "x": 0.070, "y": 0.664, "hasData": false },
-          { "id": "mirefen", "name": "Mirefen", "x": 0.116, "y": 0.686, "hasData": false },
-          { "id": "sable", "name": "Sable", "x": 0.177, "y": 0.754, "hasData": false },
-          { "id": "sett", "name": "Sett", "x": 0.199, "y": 0.827, "hasData": false },
-          { "id": "lowtide", "name": "Lowtide", "x": 0.373, "y": 0.618, "hasData": false },
-          { "id": "dunmoor", "name": "Dunmoor", "x": 0.487, "y": 0.723, "hasData": false },
-          { "id": "junco", "name": "Junco", "x": 0.506, "y": 0.811, "hasData": false },
-          { "id": "thorne", "name": "Thorne", "x": 0.461, "y": 0.852, "hasData": false },
-          { "id": "tolls-end", "name": "Tolls End", "x": 0.713, "y": 0.594, "hasData": false },
-          { "id": "rustkeep", "name": "Rustkeep", "x": 0.626, "y": 0.662, "hasData": false },
-          { "id": "bittern", "name": "Bittern", "x": 0.773, "y": 0.698, "hasData": false },
-          { "id": "wrack", "name": "Wrack", "x": 0.859, "y": 0.739, "hasData": false },
-          { "id": "emberlot", "name": "Emberlot", "x": 0.861, "y": 0.788, "hasData": false },
-          { "id": "ferrik", "name": "Ferrik", "x": 0.641, "y": 0.813, "hasData": false },
-          { "id": "slaghaven", "name": "Slaghaven", "x": 0.812, "y": 0.854, "hasData": false },
-          { "id": "cutters-hold", "name": "Cutter's Hold", "x": 0.728, "y": 0.920, "hasData": false }
-        ] }
+          {
+            "id": "the-coil",
+            "name": "The Coil (jump gate)",
+            "x": 0.607,
+            "y": 0.2,
+            "hasData": true,
+            "info": "The living Ancient hyper-gate at the heart of the Expanse — a weathered alien ring, still fully functional after untold ages. Ships travel sector-to-sector through it; nobody built it, nobody can shut it off. A possible road home."
+          },
+          {
+            "id": "halberds-rest",
+            "name": "Halberd's Rest",
+            "x": 0.526,
+            "y": 0.279,
+            "hasData": true,
+            "info": "The sector's great neutral-ground free port, built inside the gutted hull of a derelict Directorate dreadnought near The Coil. Every faction, pirate crew and trader passes through; weapons are peace-bonded at the door. The closest thing the Expanse has to a capital."
+          },
+          {
+            "id": "sundowner",
+            "name": "Sundowner",
+            "x": 0.483,
+            "y": 0.285,
+            "hasData": true,
+            "info": "A rogue, star-less planet turned into one endless casino-city, lit against the dark. Debts, information and ships change hands over the tables. Baldy has almost certainly been banned from somewhere here."
+          },
+          {
+            "id": "anvil",
+            "name": "Anvil",
+            "x": 0.5,
+            "y": 0.246,
+            "hasData": false
+          },
+          {
+            "id": "gallows",
+            "name": "Gallows Reach",
+            "x": 0.194,
+            "y": 0.244,
+            "hasData": true,
+            "info": "Seat of the sector's most powerful pirate lords — a bounty-and-black-market hub where crews are hired, prizes fenced, and reputations made or ended."
+          },
+          {
+            "id": "gallows-reach",
+            "name": "Gallows Reach",
+            "x": 0.219,
+            "y": 0.278,
+            "hasData": true,
+            "info": "Seat of the sector's most powerful pirate lords — a bounty-and-black-market hub where crews are hired, prizes fenced, and reputations made or ended."
+          },
+          {
+            "id": "cinder",
+            "name": "Cinder",
+            "x": 0.846,
+            "y": 0.811,
+            "hasData": true,
+            "info": "The Ember Drift's star system, anchored by Cindermoor — a volcanic refinery world where cartels refine hyper-dense thermite and reactor fuel from the magma flats. A source of turret-grade materials."
+          },
+          {
+            "id": "cindermoor",
+            "name": "Cindermoor",
+            "x": 0.882,
+            "y": 0.874,
+            "hasData": true,
+            "info": "A volcanic refinery world; cartels refine hyper-dense thermite and reactor fuel from the magma flats. Choking, wealthy, dangerous — a source of turret-grade materials."
+          },
+          {
+            "id": "ossuary-fields",
+            "name": "Ossuary Fields",
+            "x": 0.702,
+            "y": 0.642,
+            "hasData": true,
+            "info": "The Ember Drift's ship-graveyard system, anchored by Ossuary — centuries of wrecks dragged down its gravity well, now a sprawling salvage operation."
+          },
+          {
+            "id": "ossuary",
+            "name": "Ossuary",
+            "x": 0.736,
+            "y": 0.677,
+            "hasData": true,
+            "info": "A ship-graveyard world: centuries of wrecks dragged down its gravity well, now a sprawling salvage settlement. Ferrocrystal, hyperfold cells and stranger things turn up here."
+          },
+          {
+            "id": "tarn",
+            "name": "Tarn",
+            "x": 0.788,
+            "y": 0.29,
+            "hasData": true,
+            "info": "A frozen cryo-mining world; cheap labor, colder politics. Ice hauled out, questions not asked."
+          },
+          {
+            "id": "marrow",
+            "name": "Marrow",
+            "x": 0.479,
+            "y": 0.211,
+            "hasData": true,
+            "info": "A cracked desert world where water is the black-market currency; hideouts and dust — perfect for disappearing."
+          },
+          {
+            "id": "greenhollow-sys",
+            "name": "Greenhollow (system)",
+            "x": 0.197,
+            "y": 0.623,
+            "hasData": true,
+            "info": "The Verdant Fringe's star system — jungle worlds veined with Verdite, contested by rival prospector gangs. For Ronon Dex, the first place in this galaxy that could get his people's tech running again."
+          },
+          {
+            "id": "greenhollow",
+            "name": "Greenhollow",
+            "x": 0.221,
+            "y": 0.659,
+            "hasData": true,
+            "info": "A lush jungle world veined with Verdite — the fuel for Satedan Aether-Core drives. For Ronon Dex, the first place that could revive his people's tech. Heavily contested by prospector gangs."
+          },
+          {
+            "id": "sib-vael",
+            "name": "Sib Vael",
+            "x": 0.168,
+            "y": 0.646,
+            "hasData": true,
+            "info": "A warm ocean world of smuggler coves and floating markets, famous for exotic brews distilled from bioluminescent kelp and reef-spirits. Gobby would sell an arm to dock here."
+          },
+          {
+            "id": "bexleys-landing",
+            "name": "Bexley's Landing",
+            "x": 0.13,
+            "y": 0.57,
+            "hasData": true,
+            "info": "A human-founded frontier town-world — the most 'ordinary' place in the sector: farms, a spaceport bar, and a sheriff who means well and is badly outgunned."
+          },
+          {
+            "id": "choir-rim",
+            "name": "Choir Rim",
+            "x": 0.853,
+            "y": 0.249,
+            "hasData": true,
+            "info": "The Cold Rim's star system, anchored by The Choir — a spire-covered shrine world where the Apostles of the Threshold keep a mission, preaching the rifts and quietly recruiting."
+          },
+          {
+            "id": "the-choir",
+            "name": "The Choir",
+            "x": 0.871,
+            "y": 0.284,
+            "hasData": true,
+            "info": "A spire-covered shrine world on the rim where the Apostles of the Threshold keep a mission — preaching the rifts and quietly recruiting. A foothold of the faithful, not a garrison. (The crew are already on the Apostles' bad side.)"
+          },
+          {
+            "id": "ferrum-hold",
+            "name": "Ferrum Hold",
+            "x": 0.835,
+            "y": 0.191,
+            "hasData": true,
+            "info": "A rim mining holding leaning toward the Iron Directorate, buying ore and loyalty in equal measure. Orderly, watchful, unwelcoming to outlaws — but not a garrison."
+          },
+          {
+            "id": "vorrn",
+            "name": "Vorrn (system)",
+            "x": 0.188,
+            "y": 0.848,
+            "hasData": true,
+            "info": "The crew's current corner of the Expanse — the system that holds Vorrn-7 and Keth Minor, and where the crew acquire the full sector chart."
+          },
+          {
+            "id": "vorrn-7",
+            "name": "Vorrn-7",
+            "x": 0.217,
+            "y": 0.913,
+            "hasData": true,
+            "info": "A ringed ice/gas giant and a moon with a faint life reading and a signal ASTRA couldn't identify. The crew's current forward destination."
+          },
+          {
+            "id": "keth-minor",
+            "name": "Keth Minor",
+            "x": 0.116,
+            "y": 0.896,
+            "hasData": true,
+            "info": "A red-dwarf system with several planetoids; one oxygen-rich, with unnatural structures and many biosignatures. A future destination, unvisited."
+          },
+          {
+            "id": "corrupted-ring",
+            "name": "[CORRUPTED] Ring",
+            "x": 0.35,
+            "y": 0.917,
+            "hasData": true,
+            "info": "A large ring/torus megastructure whose designation failed to resolve — writing possibly older than ASTRA herself. A dead Ancient gate/station (distinct from the living Coil). Unvisited; an open lead."
+          },
+          {
+            "id": "lockes-end",
+            "name": "Locke's End",
+            "x": 0.077,
+            "y": 0.186,
+            "hasData": false
+          },
+          {
+            "id": "daggers-roost",
+            "name": "Dagger's Roost",
+            "x": 0.096,
+            "y": 0.207,
+            "hasData": false
+          },
+          {
+            "id": "harrow",
+            "name": "Harrow",
+            "x": 0.254,
+            "y": 0.171,
+            "hasData": false
+          },
+          {
+            "id": "kite",
+            "name": "Kite",
+            "x": 0.217,
+            "y": 0.202,
+            "hasData": false
+          },
+          {
+            "id": "blister",
+            "name": "Blister",
+            "x": 0.096,
+            "y": 0.285,
+            "hasData": false
+          },
+          {
+            "id": "noose",
+            "name": "Noose",
+            "x": 0.171,
+            "y": 0.286,
+            "hasData": false
+          },
+          {
+            "id": "ashfall",
+            "name": "Ashfall",
+            "x": 0.202,
+            "y": 0.397,
+            "hasData": false
+          },
+          {
+            "id": "redoubt",
+            "name": "Redoubt",
+            "x": 0.116,
+            "y": 0.421,
+            "hasData": false
+          },
+          {
+            "id": "halcyon",
+            "name": "Halcyon",
+            "x": 0.409,
+            "y": 0.209,
+            "hasData": false
+          },
+          {
+            "id": "threshold-watch",
+            "name": "Threshold Watch",
+            "x": 0.521,
+            "y": 0.203,
+            "hasData": false
+          },
+          {
+            "id": "gospel",
+            "name": "Gospel",
+            "x": 0.464,
+            "y": 0.322,
+            "hasData": false
+          },
+          {
+            "id": "vantage",
+            "name": "Vantage",
+            "x": 0.546,
+            "y": 0.341,
+            "hasData": false
+          },
+          {
+            "id": "tamsin",
+            "name": "Tamsin",
+            "x": 0.396,
+            "y": 0.358,
+            "hasData": false
+          },
+          {
+            "id": "pallas",
+            "name": "Pallas",
+            "x": 0.741,
+            "y": 0.171,
+            "hasData": false
+          },
+          {
+            "id": "palewater",
+            "name": "Palewater",
+            "x": 0.812,
+            "y": 0.215,
+            "hasData": false
+          },
+          {
+            "id": "coldharbor",
+            "name": "Coldharbor",
+            "x": 0.907,
+            "y": 0.218,
+            "hasData": false
+          },
+          {
+            "id": "saint-vell",
+            "name": "Saint Vell",
+            "x": 0.822,
+            "y": 0.356,
+            "hasData": false
+          },
+          {
+            "id": "weir",
+            "name": "Weir",
+            "x": 0.742,
+            "y": 0.399,
+            "hasData": false
+          },
+          {
+            "id": "yarrow",
+            "name": "Yarrow",
+            "x": 0.217,
+            "y": 0.586,
+            "hasData": false
+          },
+          {
+            "id": "drumlin",
+            "name": "Drumlin",
+            "x": 0.096,
+            "y": 0.599,
+            "hasData": false
+          },
+          {
+            "id": "calloway",
+            "name": "Calloway",
+            "x": 0.07,
+            "y": 0.664,
+            "hasData": false
+          },
+          {
+            "id": "mirefen",
+            "name": "Mirefen",
+            "x": 0.116,
+            "y": 0.686,
+            "hasData": false
+          },
+          {
+            "id": "sable",
+            "name": "Sable",
+            "x": 0.177,
+            "y": 0.754,
+            "hasData": false
+          },
+          {
+            "id": "sett",
+            "name": "Sett",
+            "x": 0.199,
+            "y": 0.827,
+            "hasData": false
+          },
+          {
+            "id": "lowtide",
+            "name": "Lowtide",
+            "x": 0.373,
+            "y": 0.618,
+            "hasData": false
+          },
+          {
+            "id": "dunmoor",
+            "name": "Dunmoor",
+            "x": 0.487,
+            "y": 0.723,
+            "hasData": false
+          },
+          {
+            "id": "junco",
+            "name": "Junco",
+            "x": 0.506,
+            "y": 0.811,
+            "hasData": false
+          },
+          {
+            "id": "thorne",
+            "name": "Thorne",
+            "x": 0.461,
+            "y": 0.852,
+            "hasData": false
+          },
+          {
+            "id": "tolls-end",
+            "name": "Tolls End",
+            "x": 0.713,
+            "y": 0.594,
+            "hasData": false
+          },
+          {
+            "id": "rustkeep",
+            "name": "Rustkeep",
+            "x": 0.626,
+            "y": 0.662,
+            "hasData": false
+          },
+          {
+            "id": "bittern",
+            "name": "Bittern",
+            "x": 0.773,
+            "y": 0.698,
+            "hasData": false
+          },
+          {
+            "id": "wrack",
+            "name": "Wrack",
+            "x": 0.859,
+            "y": 0.739,
+            "hasData": false
+          },
+          {
+            "id": "emberlot",
+            "name": "Emberlot",
+            "x": 0.861,
+            "y": 0.788,
+            "hasData": false
+          },
+          {
+            "id": "ferrik",
+            "name": "Ferrik",
+            "x": 0.641,
+            "y": 0.813,
+            "hasData": false
+          },
+          {
+            "id": "slaghaven",
+            "name": "Slaghaven",
+            "x": 0.812,
+            "y": 0.854,
+            "hasData": false
+          },
+          {
+            "id": "cutters-hold",
+            "name": "Cutter's Hold",
+            "x": 0.728,
+            "y": 0.92,
+            "hasData": false
+          }
+        ]
+      }
     ]
   },
-  "playerMap": {}
+  "playerMap": {
+    "JimFtN4dTfDCyslS": "astra",
+    "GJNbJjJl6BehTpfI": "baldy",
+    "L2myrPrfK9pVFw0M": "glimm",
+    "rnDzGHLG2fHsWfPB": "gerth",
+    "H7gAAER6VkPzFBdq": "gobby",
+    "IlqUeqhRmBQHJ0KW": "kael",
+    "HmIuAcON0AbyOcVT": "ronon"
+  }
 }
