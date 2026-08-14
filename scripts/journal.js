@@ -328,12 +328,18 @@ function logTabs() {
 /* -------------------------------------------------------------------------- */
 /*  ESC-to-close for the journal                                              */
 /* -------------------------------------------------------------------------- */
-function onEscape(e) {
-  if (e.key !== "Escape") return;
+// Escape or J closes the journal when it's open; we run in the capture phase and stop the event so
+// Foundry never sees it (no game menu on Escape, no re-open on J). When the journal is closed we do
+// nothing, so Escape/J behave normally (J still opens it via Simple Quest).
+function onKey(e) {
   const sq = ui.simpleQuest; if (!sq?.rendered) return;
+  const k = e.key;
+  const isEsc = k === "Escape", isJ = (k === "j" || k === "J") && !e.ctrlKey && !e.metaKey && !e.altKey;
+  if (!isEsc && !isJ) return;
   const ae = document.activeElement;
-  if (ae && (ae.tagName === "INPUT" || ae.tagName === "TEXTAREA" || ae.isContentEditable)) return;
-  if (document.querySelector(".dialog, dialog[open]")) return;   // let dialogs handle their own Escape
+  if (ae && (ae.tagName === "INPUT" || ae.tagName === "TEXTAREA" || ae.isContentEditable)) return;  // don't hijack typing
+  if (isEsc && document.querySelector(".dialog, dialog[open], .window-app.dialog")) return;          // let dialogs handle Escape
+  e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation();
   try { sq.close(); } catch (err) {}
 }
 
@@ -364,7 +370,7 @@ Hooks.once("ready", async () => {
   const api = { pull, push, refresh: refreshOpen, logTabs, openSync: openSyncMenu, get content() { return CONTENT; } };
   if (mod) mod.api = api;
   globalThis.SilverGullJournal = api;
-  window.addEventListener("keydown", onEscape, true);
+  window.addEventListener("keydown", onKey, true);
   if (ui.simpleQuest?.rendered) bindPanels(currentRoot());
   // Check GitHub for a newer version (skips if unchanged).
   pull({ manual: false });

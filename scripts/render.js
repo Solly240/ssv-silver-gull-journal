@@ -58,6 +58,9 @@
     .ssvj .pill.active{background:rgba(242,193,75,.14);color:var(--gold);border:1px solid rgba(242,193,75,.4);}
     .ssvj .pill.open{background:rgba(98,182,255,.14);color:var(--blue);border:1px solid rgba(98,182,255,.4);}
     .ssvj .q-next{color:var(--dim);font-size:13px;margin:8px 0 0;}
+    .ssvj .q-section{margin:16px 0 8px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--line);padding-bottom:4px;}
+    .ssvj .done-head{margin:18px 0 6px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#5f7a94;cursor:pointer;user-select:none;}
+    .ssvj .done-head:hover{color:var(--teal2);}
     .ssvj .q-next b{color:var(--teal2);font-weight:700;}
     .ssvj .q-blurb{color:#b9cbe4;font-size:13.5px;margin:9px 0 4px;}
     .ssvj .chev{color:var(--dim);font-size:13px;transition:transform .15s;}
@@ -199,6 +202,7 @@
   S._questOpen = null;      // quest id in detail view
   S._objOpen = {};          // "qid:idx" -> bool (expanded detail)
   S._collapsed = {};        // qid -> bool (turret group)
+  S._doneOpen = false;      // Completed section collapsed by default
 
   function turretReady(data, t) { return Object.entries(t.cost).every(([k, v]) => Number(data.inventory[k] || 0) >= v); }
 
@@ -233,16 +237,32 @@
 
     const done = data.quests.filter((q) => q.status === "complete");
     const active = data.quests.filter((q) => q.status !== "complete");
+
+    // Active quests grouped into categories (Main / Repairing the Ship / Side / …), then any uncategorised.
+    const cats = data.questCategories || [];
+    const sectionHead = (t) => `<div class="q-section">${esc(t)}</div>`;
+    let activeHtml = "";
+    const usedIds = new Set();
+    for (const cat of cats) {
+      const inCat = active.filter((q) => q.category === cat.id);
+      inCat.forEach((q) => usedIds.add(q.id));
+      if (inCat.length) activeHtml += sectionHead(cat.label) + inCat.map(card).join("");
+    }
+    const uncat = active.filter((q) => !usedIds.has(q.id));
+    if (uncat.length) activeHtml += sectionHead(cats.length ? "Other Objectives" : "Objectives") + uncat.map(card).join("");
+
+    const doneOpen = S._doneOpen === true;   // collapsed by default
     el.innerHTML = `
       <h1 class="ssvj-title">Ship's Quest Board</h1>
       <p class="ssvj-sub">Click any quest for the full briefing &amp; checklist. Turret bars fill from the ship's inventory.</p>
-      ${active.map(card).join("")}
-      <div class="muted" style="margin:14px 0 8px;text-transform:uppercase;letter-spacing:1px;color:#5f7a94;">Completed</div>
-      ${done.map(card).join("")}
-      ${ctx.isGM ? `<div class="gm-row"><span class="gm-tag">GM</span><button class="btn mini" data-addquest>+ new quest</button></div>` : ""}`;
+      ${activeHtml}
+      <div class="done-head" data-donetoggle><span class="chev">${doneOpen ? "▾" : "▸"}</span> Completed (${done.length})</div>
+      ${doneOpen ? done.map(card).join("") : ""}
+      ${ctx.isGM ? `<div class="gm-row" style="margin-top:12px;"><span class="gm-tag">GM</span><button class="btn mini" data-addquest>+ new quest</button></div>` : ""}`;
 
     el.querySelectorAll("[data-open]").forEach((h) => h.onclick = () => { S._questOpen = h.dataset.open; S.renderQuests(ctx, body); });
     el.querySelectorAll("[data-collapse]").forEach((a) => a.onclick = (e) => { e.stopPropagation(); const id = a.dataset.collapse; const cur = S._collapsed[id] !== undefined ? S._collapsed[id] : true; S._collapsed[id] = !cur; S.renderQuests(ctx, body); });
+    const dh = el.querySelector("[data-donetoggle]"); if (dh) dh.onclick = () => { S._doneOpen = !doneOpen; S.renderQuests(ctx, body); };
     wireTurretGroup(ctx, el, body);
     const aq = el.querySelector("[data-addquest]"); if (aq) aq.onclick = async () => { const t = await ctx.promptText?.("New quest name", ""); if (t) ctx.addQuest?.(t); };
   };

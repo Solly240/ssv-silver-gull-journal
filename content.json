@@ -249,7 +249,8 @@
           "turret": "gravity",
           "done": false
         }
-      ]
+      ],
+      "category": "repair"
     },
     {
       "id": "hull",
@@ -273,7 +274,8 @@
           "detail": "Bring the Titanium-Aegis Matrix plating back to full rating with titanium ore or alloy scrap.",
           "done": false
         }
-      ]
+      ],
+      "category": "repair"
     },
     {
       "id": "cloak",
@@ -297,7 +299,8 @@
           "detail": "Tune the field and give it enough ship power — needs shields/power fully online.",
           "done": false
         }
-      ]
+      ],
+      "category": "repair"
     },
     {
       "id": "talvos",
@@ -305,7 +308,8 @@
       "name": "Find Captain Talvos",
       "status": "active",
       "description": "Captain Elias Renn Talvos — the crew's legendary commander — was mid-spacewalk when the rift split, and his tether sheared into the other flow (Flow Beta), a different direction than the ship. Wherever he landed, it isn't necessarily where the crew crashed. Finding any trace of him is the campaign's long arc. ASTRA has no leads yet.",
-      "objectives": []
+      "objectives": [],
+      "category": "main"
     },
     {
       "id": "home",
@@ -313,7 +317,8 @@
       "name": "Get Back to Our Galaxy",
       "status": "active",
       "description": "The crew are stranded in the uncharted Shattered Expanse, outside the Luminara Galaxy and UGC space entirely — no charted stars, no beacons, no reference points. Whether home is even reachable is unknown. The living Ancient gate 'The Coil' may be a road out. ASTRA has no confirmed route yet.",
-      "objectives": []
+      "objectives": [],
+      "category": "main"
     }
   ],
   "lore": [
@@ -1813,5 +1818,19 @@
     "H7gAAER6VkPzFBdq": "gobby",
     "IlqUeqhRmBQHJ0KW": "kael",
     "HmIuAcON0AbyOcVT": "ronon"
-  }
+  },
+  "questCategories": [
+    {
+      "id": "main",
+      "label": "Main Quest"
+    },
+    {
+      "id": "repair",
+      "label": "Repairing the Ship"
+    },
+    {
+      "id": "side",
+      "label": "Side Quest"
+    }
+  ]
 }
