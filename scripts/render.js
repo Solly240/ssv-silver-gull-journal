@@ -58,9 +58,16 @@
     .ssvj .pill.active{background:rgba(242,193,75,.14);color:var(--gold);border:1px solid rgba(242,193,75,.4);}
     .ssvj .pill.open{background:rgba(98,182,255,.14);color:var(--blue);border:1px solid rgba(98,182,255,.4);}
     .ssvj .q-next{color:var(--dim);font-size:13px;margin:8px 0 0;}
-    .ssvj .q-section{margin:16px 0 8px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--line);padding-bottom:4px;}
-    .ssvj .done-head{margin:18px 0 6px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#5f7a94;cursor:pointer;user-select:none;}
-    .ssvj .done-head:hover{color:var(--teal2);}
+    .ssvj .q-section{margin:16px 0 8px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--line);padding-bottom:4px;cursor:pointer;user-select:none;}
+    .ssvj .q-section:hover{color:var(--teal2);}
+    .ssvj .q-section .q-count{color:var(--dim);font-weight:400;letter-spacing:0;}
+    .ssvj .q-meta{font-size:12px;color:var(--dim);margin-top:6px;}
+    .ssvj .ssvj-card.possible{border-style:dashed;border-color:#4a5f7a;background:linear-gradient(160deg,rgba(242,193,75,.05),rgba(0,0,0,.25));}
+    .ssvj .qd-meta{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:10px 0;font-size:13px;}
+    .ssvj .qd-meta dt{color:var(--dim);text-transform:uppercase;font-size:11px;letter-spacing:.06em;}
+    .ssvj .qd-meta dd{margin:0;color:#c6d6ec;}
+    .ssvj .qd-meta dd.reward{color:var(--gold);}
+    .ssvj .qd-note{border:1px solid rgba(255,84,112,.4);background:rgba(255,84,112,.06);border-radius:7px;padding:7px 10px;margin:8px 0;color:#ff9db0;font-size:12.5px;}
     .ssvj .q-next b{color:var(--teal2);font-weight:700;}
     .ssvj .q-blurb{color:#b9cbe4;font-size:13.5px;margin:9px 0 4px;}
     .ssvj .chev{color:var(--dim);font-size:13px;transition:transform .15s;}
@@ -214,55 +221,66 @@
     return `<span class="q-next">Next: <b>${esc(next.title)}</b></span>`;
   }
 
+  S._secOpen = {};          // section key -> open bool
   S.renderQuests = function (ctx, body) {
     const el = root(body, "quests");
     const data = ctx.data;
     if (S._questOpen) { const q = data.quests.find((x) => x.id === S._questOpen); if (q) return questDetail(ctx, el, q); S._questOpen = null; }
 
-    const card = (q) => {
+    const card = (q, possible) => {
       const pillCls = q.status === "complete" ? "done" : (q.objectives && q.objectives.length ? "active" : "open");
       const pillTxt = q.status === "complete" ? "Complete" : (q.objectives && q.objectives.length ? "In Progress" : "Long Arc");
+      const meta = [];
+      if (q.location) meta.push(`📍 ${esc(q.location)}`);
+      if (q.reward) meta.push(`🎁 ${esc(q.reward)}`);
+      const metaHtml = meta.length ? `<div class="q-meta">${meta.join(" &nbsp;·&nbsp; ")}</div>` : "";
       let extra = "";
       if (q.kind === "turrets") {
         const collapsed = S._collapsed[q.id] !== undefined ? S._collapsed[q.id] : (q.collapsed !== false);
         extra = `<div style="margin-top:8px;"><span class="link" data-collapse="${q.id}">${collapsed ? "▸ show" : "▾ hide"} the 6 turrets &amp; materials</span></div>`;
         if (!collapsed) extra += turretGroup(ctx, q);
       }
-      return `<div class="ssvj-card">
+      const reveal = possible ? `<div class="gm-row"><span class="gm-tag">GM only</span><button class="btn mini" data-reveal="${q.id}">reveal to players</button></div>` : "";
+      return `<div class="ssvj-card ${possible ? "possible" : ""}">
         <div class="q-head" data-open="${q.id}"><span class="q-ico">${q.ico || "•"}</span><span class="q-name">${esc(q.name)}</span><span class="pill ${pillCls}">${pillTxt}</span></div>
         ${questNextText(q)}
-        ${extra}
+        ${metaHtml}${extra}${reveal}
       </div>`;
     };
+    const secHead = (key, label, n, open) => `<div class="q-section" data-sec="${key}"><span class="chev">${open ? "▾" : "▸"}</span> ${esc(label)} <span class="q-count">(${n})</span></div>`;
+    const section = (key, label, quests, defOpen, possible) => {
+      if (!quests.length) return "";
+      const open = S._secOpen[key] !== undefined ? S._secOpen[key] : defOpen;
+      return secHead(key, label, quests.length, open) + (open ? quests.map((q) => card(q, possible)).join("") : "");
+    };
 
-    const done = data.quests.filter((q) => q.status === "complete");
-    const active = data.quests.filter((q) => q.status !== "complete");
-
-    // Active quests grouped into categories (Main / Repairing the Ship / Side / …), then any uncategorised.
+    const all = data.quests || [];
+    const visible = all.filter((q) => q.status !== "complete" && !q.hidden);
+    const hidden = ctx.isGM ? all.filter((q) => q.status !== "complete" && q.hidden) : [];
+    const done = all.filter((q) => q.status === "complete" && !q.hidden);
     const cats = data.questCategories || [];
-    const sectionHead = (t) => `<div class="q-section">${esc(t)}</div>`;
-    let activeHtml = "";
-    const usedIds = new Set();
-    for (const cat of cats) {
-      const inCat = active.filter((q) => q.category === cat.id);
-      inCat.forEach((q) => usedIds.add(q.id));
-      if (inCat.length) activeHtml += sectionHead(cat.label) + inCat.map(card).join("");
-    }
-    const uncat = active.filter((q) => !usedIds.has(q.id));
-    if (uncat.length) activeHtml += sectionHead(cats.length ? "Other Objectives" : "Objectives") + uncat.map(card).join("");
 
-    const doneOpen = S._doneOpen === true;   // collapsed by default
+    let html = "";
+    const used = new Set();
+    for (const cat of cats) {
+      const inCat = visible.filter((q) => q.category === cat.id);
+      inCat.forEach((q) => used.add(q.id));
+      html += section("cat-" + cat.id, cat.label, inCat, true, false);
+    }
+    html += section("cat-other", cats.length ? "Other Objectives" : "Objectives", visible.filter((q) => !used.has(q.id)), true, false);
+    if (hidden.length) html += section("possible", "Possible Quests — GM only", hidden, true, true);
+    html += section("completed", "Completed", done, false, false);
+
     el.innerHTML = `
       <h1 class="ssvj-title">Ship's Quest Board</h1>
-      <p class="ssvj-sub">Click any quest for the full briefing &amp; checklist. Turret bars fill from the ship's inventory.</p>
-      ${activeHtml}
-      <div class="done-head" data-donetoggle><span class="chev">${doneOpen ? "▾" : "▸"}</span> Completed (${done.length})</div>
-      ${doneOpen ? done.map(card).join("") : ""}
-      ${ctx.isGM ? `<div class="gm-row" style="margin-top:12px;"><span class="gm-tag">GM</span><button class="btn mini" data-addquest>+ new quest</button></div>` : ""}`;
+      <p class="ssvj-sub">Click a section to collapse it, or a quest for the full briefing. Turret bars fill from the ship's inventory.</p>
+      ${html}
+      ${ctx.isGM ? `<div class="gm-row" style="margin-top:14px;"><span class="gm-tag">GM</span><button class="btn mini" data-addquest>+ new quest</button></div>` : ""}`;
 
-    el.querySelectorAll("[data-open]").forEach((h) => h.onclick = () => { S._questOpen = h.dataset.open; S.renderQuests(ctx, body); });
+    el.querySelectorAll("[data-sec]").forEach((h) => h.onclick = () => { const k = h.dataset.sec; const def = k !== "completed"; const cur = S._secOpen[k] !== undefined ? S._secOpen[k] : def; S._secOpen[k] = !cur; S.renderQuests(ctx, body); });
+    el.querySelectorAll("[data-open]").forEach((h) => h.onclick = (e) => { e.stopPropagation(); S._questOpen = h.dataset.open; S.renderQuests(ctx, body); });
     el.querySelectorAll("[data-collapse]").forEach((a) => a.onclick = (e) => { e.stopPropagation(); const id = a.dataset.collapse; const cur = S._collapsed[id] !== undefined ? S._collapsed[id] : true; S._collapsed[id] = !cur; S.renderQuests(ctx, body); });
-    const dh = el.querySelector("[data-donetoggle]"); if (dh) dh.onclick = () => { S._doneOpen = !doneOpen; S.renderQuests(ctx, body); };
+    el.querySelectorAll("[data-reveal]").forEach((b) => b.onclick = (e) => { e.stopPropagation(); ctx.revealQuest?.(b.dataset.reveal); });
     wireTurretGroup(ctx, el, body);
     const aq = el.querySelector("[data-addquest]"); if (aq) aq.onclick = async () => { const t = await ctx.promptText?.("New quest name", ""); if (t) ctx.addQuest?.(t); };
   };
@@ -323,11 +341,19 @@
         }).join("")
       : `<p class="muted">No objectives yet.${ctx.isGM ? " Use “+ add task” below." : " ASTRA will update this."}</p>`);
 
+    const metaRows = [
+      q.location ? `<dt>Location</dt><dd>${esc(q.location)}</dd>` : "",
+      q.handIn && q.handIn !== "—" ? `<dt>Hand in at</dt><dd>${esc(q.handIn)}</dd>` : "",
+      q.giver ? `<dt>From</dt><dd>${esc(q.giver)}</dd>` : "",
+      q.reward ? `<dt>Reward</dt><dd class="reward">${esc(q.reward)}</dd>` : ""
+    ].filter(Boolean).join("");
     el.innerHTML = `
       <div class="backbtn" data-back>◀ All quests</div>
       <div class="q-head" style="cursor:default;"><span class="q-ico">${q.ico || "•"}</span><span class="q-name">${esc(q.name)}</span>
         <span class="pill ${q.status === "complete" ? "done" : "active"}">${q.status === "complete" ? "Complete" : "In Progress"}</span></div>
       <p class="q-blurb" style="margin-top:10px;">${esc(q.description || "")}</p>
+      ${metaRows ? `<dl class="qd-meta">${metaRows}</dl>` : ""}
+      ${q.note ? `<div class="qd-note">⚠ ${esc(q.note)}</div>` : ""}
       <div class="doc"><h3>Quest Log &amp; Checklist</h3></div>
       ${isTurret ? turretGroup(ctx, q) : objs}
       ${ctx.isGM ? `<div class="gm-row"><span class="gm-tag">GM</span>
@@ -393,7 +419,8 @@
   S._mapSel = null;       // selected location id (info / red popup)
   S.renderMap = function (ctx, body) {
     const el = root(body, "map");
-    const M = (ctx.data && ctx.data.map) || {};
+    const data = ctx.data || {};
+    const M = data.map || {};
     const nodes = M.nodes || {};
     const startId = M.start || Object.keys(nodes)[0];
     if (!startId || !nodes[startId]) { el.innerHTML = `<h1 class="ssvj-title">Star Map</h1><p class="muted">No map loaded.</p>`; return; }
@@ -417,7 +444,7 @@
       <h1 class="ssvj-title">Star Map</h1>
       <div class="crumbs">${back}${crumbs}</div>
       <div class="mapstage">
-        <img src="${au(ctx, node.image)}" alt="${esc(node.name)}"/>
+        <img src="${au(ctx, (node.imageNamed && (data.galaxyRevealed || (data.quests || []).some((q) => q.revealsGalaxy && q.status === "complete"))) ? node.imageNamed : node.image)}" alt="${esc(node.name)}"/>
         ${locs.map((l) => { const drill = l.child && nodes[l.child]; const nd = (l.hasData || drill) ? "" : "nodata"; return `<button class="hot ${nd} ${loc && loc.id === l.id ? "sel" : ""}" data-loc="${l.id}" title="${esc(l.name)}" style="left:${(l.x * 100).toFixed(2)}%;top:${(l.y * 100).toFixed(2)}%;"></button>`; }).join("")}
       </div>
       <div class="legend">

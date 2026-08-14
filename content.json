@@ -250,7 +250,8 @@
           "done": false
         }
       ],
-      "category": "repair"
+      "category": "repair",
+      "location": "SSV Silver Gull"
     },
     {
       "id": "hull",
@@ -275,7 +276,8 @@
           "done": false
         }
       ],
-      "category": "repair"
+      "category": "repair",
+      "location": "SSV Silver Gull"
     },
     {
       "id": "cloak",
@@ -300,7 +302,8 @@
           "done": false
         }
       ],
-      "category": "repair"
+      "category": "repair",
+      "location": "SSV Silver Gull"
     },
     {
       "id": "talvos",
@@ -319,6 +322,372 @@
       "description": "The crew are stranded in the uncharted Shattered Expanse, outside the Luminara Galaxy and UGC space entirely — no charted stars, no beacons, no reference points. Whether home is even reachable is unknown. The living Ancient gate 'The Coil' may be a road out. ASTRA has no confirmed route yet.",
       "objectives": [],
       "category": "main"
+    },
+    {
+      "id": "vorrn7-moon",
+      "ico": "🌙",
+      "name": "Make Planetfall on the Vorrn-7 Moon",
+      "status": "active",
+      "category": "exploration",
+      "description": "The Silver Gull is bound for the Vorrn-7 System — a ringed ice-giant whose largest moon carries a faint life reading and a repeating signal ASTRA can't identify. Find out what's down there.",
+      "objectives": [
+        {
+          "title": "Enter orbit of Vorrn-7",
+          "detail": "Bring the Gull into a stable orbit around the ice-giant and its moon.",
+          "done": false
+        },
+        {
+          "title": "Scan the life reading",
+          "detail": "Pin down the source of the faint biosignature on the moon.",
+          "done": false
+        },
+        {
+          "title": "Trace the unidentified signal",
+          "detail": "Triangulate the repeating signal — is it a beacon, a distress call, or a trap?",
+          "done": false
+        },
+        {
+          "title": "Set down and investigate",
+          "detail": "Make planetfall and see the source with your own eyes.",
+          "done": false
+        }
+      ],
+      "hidden": false,
+      "location": "Vorrn-7 Moon",
+      "handIn": "—",
+      "reward": "Whatever's waiting on the moon — intel, salvage, or trouble."
+    },
+    {
+      "id": "cartographer",
+      "ico": "🗺️",
+      "name": "The Cartographer's Price",
+      "status": "active",
+      "category": "side",
+      "description": "Word at the free port: a Sovereign Horizon cartographer, Wrenn Sallow, sells the only complete chart of The Erevos Reach — for a price. Buy it and the whole galaxy opens up.",
+      "objectives": [
+        {
+          "title": "Dock at Halberd's Rest",
+          "detail": "Reach the great neutral free port built into the gutted Directorate dreadnought.",
+          "done": false
+        },
+        {
+          "title": "Find Wrenn Sallow",
+          "detail": "Track down the cartographer in the market decks.",
+          "done": false
+        },
+        {
+          "title": "Meet her price",
+          "detail": "Data, credits, or a favor — settle the deal.",
+          "done": false
+        },
+        {
+          "title": "Receive the master chart",
+          "detail": "Load the full Erevos Reach chart into ASTRA's nav system.",
+          "done": false
+        }
+      ],
+      "hidden": true,
+      "location": "Halberd's Rest",
+      "handIn": "Halberd's Rest",
+      "reward": "The complete Erevos Reach galaxy chart — every region named on the Map.",
+      "giver": "Wrenn Sallow (Sovereign Horizon)",
+      "revealsGalaxy": true
+    },
+    {
+      "id": "thermite",
+      "ico": "🔥",
+      "name": "Thermite Run",
+      "status": "active",
+      "category": "repair",
+      "description": "Turret ammunition needs Hyper-Dense Refined Thermite, and only the magma-flat cartels of Cindermoor refine it. Make the run and haul it home.",
+      "objectives": [
+        {
+          "title": "Reach Cindermoor",
+          "detail": "Take the Gull down to the volcanic refinery world.",
+          "done": false
+        },
+        {
+          "title": "Broker with a refinery cartel",
+          "detail": "Buy, barter, or bully your way to a batch.",
+          "done": false
+        },
+        {
+          "title": "Haul the thermite back",
+          "detail": "Get the volatile cargo aboard without cooking the ship.",
+          "done": false
+        }
+      ],
+      "hidden": true,
+      "location": "Cindermoor",
+      "handIn": "Cindermoor",
+      "reward": "3× Hyper-Dense Refined Thermite (turret material)."
+    },
+    {
+      "id": "salvage-rights",
+      "ico": "♻️",
+      "name": "Salvage Rights",
+      "status": "active",
+      "category": "repair",
+      "description": "Ossuary is a whole world of dead ships. Stake a claim and strip a wreck for the exotic parts the turrets need.",
+      "objectives": [
+        {
+          "title": "Dock the ship-graveyard",
+          "detail": "Bring the Gull down among the centuries of wrecks at Ossuary.",
+          "done": false
+        },
+        {
+          "title": "Stake a salvage claim",
+          "detail": "Register a claim with the salvage settlement — or take one the hard way.",
+          "done": false
+        },
+        {
+          "title": "Strip a wreck",
+          "detail": "Pull working Quantum Relays and a fuel cell from the hulks.",
+          "done": false
+        }
+      ],
+      "hidden": true,
+      "location": "Ossuary",
+      "handIn": "Ossuary",
+      "reward": "2× Quantum Relays + 1× Hyperfold Fuel Cell."
+    },
+    {
+      "id": "green-fire",
+      "ico": "🌿",
+      "name": "Green Fire",
+      "status": "active",
+      "category": "side",
+      "description": "Greenhollow's jungles are veined with Verdite — the fuel Ronon's Satedan tech runs on. The first Verdite in this galaxy could bring a piece of his home back to life.",
+      "objectives": [
+        {
+          "title": "Reach Greenhollow",
+          "detail": "Make landfall on the contested jungle world.",
+          "done": false
+        },
+        {
+          "title": "Beat the rival prospectors",
+          "detail": "Out-bid or out-fight the gangs working the same veins.",
+          "done": false
+        },
+        {
+          "title": "Extract raw Verdite",
+          "detail": "Cut and stabilize a load of the volatile green mineral.",
+          "done": false
+        }
+      ],
+      "hidden": true,
+      "location": "Greenhollow",
+      "handIn": "Greenhollow",
+      "reward": "Raw Verdite — revive a piece of Ronon's Satedan gear.",
+      "giver": "Ronon Dex"
+    },
+    {
+      "id": "mauve-ledger",
+      "ico": "🃏",
+      "name": "The Mauve Ledger",
+      "status": "active",
+      "category": "side",
+      "description": "The syndicate that wants Baldy dead keeps its books at Sundowner's casino-city. Get the ledger and Baldy's 'mauve' debt gets a lot quieter.",
+      "objectives": [
+        {
+          "title": "Reach Sundowner",
+          "detail": "Descend to the rogue-planet casino-city.",
+          "done": false
+        },
+        {
+          "title": "Dodge the collectors",
+          "detail": "Move through the tables without the syndicate's hunters clocking Baldy.",
+          "done": false
+        },
+        {
+          "title": "Lift the ledger",
+          "detail": "Win it, steal it, or burn it — quietly.",
+          "done": false
+        }
+      ],
+      "hidden": true,
+      "location": "Sundowner",
+      "handIn": "Sundowner",
+      "reward": "Baldy's bounty goes cold (for now) — and a favor owed.",
+      "giver": "Baldy"
+    },
+    {
+      "id": "sib-vael-round",
+      "ico": "🍺",
+      "name": "A Round at Sib Vael",
+      "status": "active",
+      "category": "side",
+      "description": "Sib Vael's floating markets distill the rarest brews in the Reach. Gobby wants in — and a brew-off could net something genuinely potent.",
+      "objectives": [
+        {
+          "title": "Dock at Sib Vael",
+          "detail": "Bring the Gull down to the ocean world's smuggler coves.",
+          "done": false
+        },
+        {
+          "title": "Enter the brew-off",
+          "detail": "Gobby challenges a local reef-spirit distiller.",
+          "done": false
+        },
+        {
+          "title": "Win the cask",
+          "detail": "Take home the prize batch.",
+          "done": false
+        }
+      ],
+      "hidden": true,
+      "location": "Sib Vael",
+      "handIn": "Sib Vael",
+      "reward": "A cask of bioluminescent reef-spirit — a powerful one-use boon.",
+      "giver": "Gobby"
+    },
+    {
+      "id": "older-than-astra",
+      "ico": "◎",
+      "name": "Older Than ASTRA",
+      "status": "active",
+      "category": "exploration",
+      "description": "The [CORRUPTED] ring's writing may be older than ASTRA herself. She wants to know what it is — even if getting close means facing whatever guards a dead Ancient gate.",
+      "objectives": [
+        {
+          "title": "Approach the [CORRUPTED] ring",
+          "detail": "Close on the torus megastructure adrift in the rift.",
+          "done": false
+        },
+        {
+          "title": "Survive the guardians",
+          "detail": "Avoid or endure whatever still watches the gate.",
+          "done": false
+        },
+        {
+          "title": "Retrieve a data fragment",
+          "detail": "Pull a shard of the ring's impossibly old records for ASTRA.",
+          "done": false
+        }
+      ],
+      "hidden": true,
+      "location": "[CORRUPTED] Ring",
+      "handIn": "—",
+      "reward": "An Ancient data fragment — a piece of what ASTRA has forgotten.",
+      "giver": "ASTRA",
+      "note": "Dangerous — likely Ancient-gate guardians."
+    },
+    {
+      "id": "sermon-choir",
+      "ico": "🕯️",
+      "name": "Sermon at The Choir",
+      "status": "active",
+      "category": "main",
+      "description": "The Apostles keep a shrine-mission at The Choir. The crew are already on their bad side — but the faithful know things about the rifts nobody else does.",
+      "objectives": [
+        {
+          "title": "Approach The Choir",
+          "detail": "Reach the spire-covered shrine world on the Reach's rim.",
+          "done": false
+        },
+        {
+          "title": "Get inside a sermon",
+          "detail": "Blend in — or break in — to hear the Conclave's word.",
+          "done": false
+        },
+        {
+          "title": "Get out alive",
+          "detail": "Leave with what you learned before they realize who you are.",
+          "done": false
+        }
+      ],
+      "hidden": true,
+      "location": "The Choir",
+      "handIn": "—",
+      "reward": "Hard intel on the Apostles and the rifts.",
+      "note": "Hostile faction — high risk."
+    },
+    {
+      "id": "cold-case",
+      "ico": "❄️",
+      "name": "Cold Case",
+      "status": "active",
+      "category": "side",
+      "description": "A sealed cryo-container is logged in Tarn's ice-vaults under a name that no longer exists. Thaw it and find out why someone paid to keep it frozen.",
+      "objectives": [
+        {
+          "title": "Reach Tarn",
+          "detail": "Take the Gull to the frozen cryo-mining world.",
+          "done": false
+        },
+        {
+          "title": "Access the ice-vaults",
+          "detail": "Get into the cheap-labor mining settlement's cold storage.",
+          "done": false
+        },
+        {
+          "title": "Thaw the container",
+          "detail": "Open it — and deal with whatever's inside.",
+          "done": false
+        }
+      ],
+      "hidden": true,
+      "location": "Tarn",
+      "handIn": "Tarn",
+      "reward": "Whatever was worth freezing (loot / a lead)."
+    },
+    {
+      "id": "gallows-contract",
+      "ico": "☠️",
+      "name": "The Gallows Contract",
+      "status": "active",
+      "category": "side",
+      "description": "The pirate lords of Gallows Reach post bounties no honest port would touch. Take one, and you're on the board.",
+      "objectives": [
+        {
+          "title": "Reach Gallows Reach",
+          "detail": "Dock at the pirate lords' bounty-and-black-market hub.",
+          "done": false
+        },
+        {
+          "title": "Take a contract",
+          "detail": "Pull a job off the board that the crew can stomach.",
+          "done": false
+        },
+        {
+          "title": "Collect the bounty",
+          "detail": "Finish it and get paid at the Reach.",
+          "done": false
+        }
+      ],
+      "hidden": true,
+      "location": "Gallows Reach",
+      "handIn": "Gallows Reach",
+      "reward": "Credits + a pirate-lord's favor."
+    },
+    {
+      "id": "ferrum-accord",
+      "ico": "⚙️",
+      "name": "Ferrum Accord",
+      "status": "active",
+      "category": "side",
+      "description": "Ferrum Hold buys ore and loyalty in equal measure. Run a contract for the Iron Directorate holding and you'll have a foot in the door with a superpower.",
+      "objectives": [
+        {
+          "title": "Reach Ferrum Hold",
+          "detail": "Dock at the orderly, watchful mining holding.",
+          "done": false
+        },
+        {
+          "title": "Run an ore contract",
+          "detail": "Move a load the Directorate wants moved, no questions.",
+          "done": false
+        },
+        {
+          "title": "Deliver clean",
+          "detail": "Hand it off at Ferrum Hold and bank the standing.",
+          "done": false
+        }
+      ],
+      "hidden": true,
+      "location": "Ferrum Hold",
+      "handIn": "Ferrum Hold",
+      "reward": "Standing with the Iron Directorate + refined ore."
     }
   ],
   "lore": [
@@ -329,13 +698,13 @@
     },
     {
       "id": "rift",
-      "title": "The Rift &amp; How They Got Here",
+      "title": "The Rift & How They Got Here",
       "body": "<p><b>Rifts</b> are violent gravitational tears in space. They can split into <b>counter-spiraling flows</b> — and it was exactly this event that separated the <i>Silver Gull</i> from Captain Talvos and hurled the ship out of its home galaxy. The crew didn't travel here; the rift <i>dumped</i> them.</p><p>The same class of anomaly is the campaign's central engine: it ended Ronon Dex's civilization and tore apart Gerthorlemue's transport, the <i>Sandra's Folly</i>. The Apostles of the Threshold worship rifts as a 'Holy Cleansing Fire.'</p>"
     },
     {
       "id": "two-galaxies",
       "title": "The Two Galaxies",
-      "body": "<ul><li><b>Home — the Luminara Galaxy:</b> ruled by the UGC, capital <b>Earth</b>. This is the crew's frame of reference and what ASTRA 'knows.'</li><li><b>Ronon's galaxy — where they're now stranded:</b> a galaxy locked in a three-way Cold War, with a <i>fully intact</i> Ancient travel network. The <b>Shattered Expanse</b> is an uncharted, lawless sector of this region.</li></ul><p><b>Don't confuse</b> <b>Wild Space / Sector 0-0 'The Shattered Rim'</b> (still <i>inside</i> Luminara; origin of Kael &amp; Baldy) with the <b>Shattered Expanse</b> (outside Luminara, where the rift dumped the crew).</p>"
+      "body": "<ul><li><b>Home — the Luminara Galaxy:</b> ruled by the UGC, capital <b>Earth</b>. This is the crew's frame of reference and what ASTRA 'knows.'</li><li><b>The Erevos Reach (Ronon's galaxy) — where they're now stranded:</b> a galaxy locked in a three-way Cold War, with a <i>fully intact</i> Ancient travel network. The <b>Shattered Expanse</b> is an uncharted, lawless sector of this region.</li></ul><p><b>Don't confuse</b> <b>Wild Space / Sector 0-0 'The Shattered Rim'</b> (still <i>inside</i> Luminara; origin of Kael &amp; Baldy) with the <b>Shattered Expanse</b> (outside Luminara, where the rift dumped the crew).</p>"
     },
     {
       "id": "ugc",
@@ -344,7 +713,7 @@
     },
     {
       "id": "wild-space",
-      "title": "Wild Space &amp; Sector 0-0",
+      "title": "Wild Space & Sector 0-0",
       "body": "<p><b>Wild Space</b> is the remaining <b>15% of Luminara</b> outside UGC control — a chaotic, lawless fringe of pirate syndicates, cosmic horrors, and unmapped anomalies.</p><p><b>Sector 0-0 'The Shattered Rim'</b> is part of that Wild Space and is the origin of <b>Kael Voss</b> and <b>Baldy.</b> It is still <i>inside</i> Luminara — not the Shattered Expanse.</p>"
     },
     {
@@ -355,7 +724,7 @@
     {
       "id": "powers",
       "title": "The Three Superpowers",
-      "body": "<p>Ronon's home galaxy is locked in a brutal, multi-front <b>Cold War</b>, fractured into three factions, none able to safely master the Ancient tech around them. Crew standing is tracked on the Politics tab (−10…+10): Apostles −<b>1.6 (Unfriendly)</b>, the other two <b>0 (Neutral).</b></p><h3>The Iron Directorate</h3><p>An authoritarian military junta ruled by a supreme council of Admirals and Generals; every citizen is ranked at birth. Values Absolute Order, Total Compliance, Strategic Expansion. Armored dreadnought fleets, orbital blockades, cyberized shock troopers.</p><h3>The Apostles of the Threshold</h3><p>A rift-worshipping theocracy ruled by the <b>Conclave of the Void.</b> They worship the Ancient Gates and view the Rifts — and the creatures they spawn — as a Holy Cleansing Fire. Cathedral-fleets, plasma lances, suicidal boarding pods. <b>Fought in S4;</b> they don't parley, carry a three-point (blue-module) self-destruct, and reflect their own detonation off overcharged shields. Battle cry: <i>'All hail the gods and the craters!'</i></p><h3>The Sovereign Horizon</h3><p>A freedom/privateer coalition of rebels and smugglers under a fragile Council of Captains. Guerrilla warfare, cloaking tech, no capital ships; hidden asteroid bases and black markets.</p>"
+      "body": "<p>The Erevos Reach (Ronon's home galaxy) is locked in a brutal, multi-front <b>Cold War</b>, fractured into three factions, none able to safely master the Ancient tech around them. Crew standing is tracked on the Politics tab (−10…+10): Apostles −<b>1.6 (Unfriendly)</b>, the other two <b>0 (Neutral).</b></p><h3>The Iron Directorate</h3><p>An authoritarian military junta ruled by a supreme council of Admirals and Generals; every citizen is ranked at birth. Values Absolute Order, Total Compliance, Strategic Expansion. Armored dreadnought fleets, orbital blockades, cyberized shock troopers.</p><h3>The Apostles of the Threshold</h3><p>A rift-worshipping theocracy ruled by the <b>Conclave of the Void.</b> They worship the Ancient Gates and view the Rifts — and the creatures they spawn — as a Holy Cleansing Fire. Cathedral-fleets, plasma lances, suicidal boarding pods. <b>Fought in S4;</b> they don't parley, carry a three-point (blue-module) self-destruct, and reflect their own detonation off overcharged shields. Battle cry: <i>'All hail the gods and the craters!'</i></p><h3>The Sovereign Horizon</h3><p>A freedom/privateer coalition of rebels and smugglers under a fragile Council of Captains. Guerrilla warfare, cloaking tech, no capital ships; hidden asteroid bases and black markets.</p>"
     },
     {
       "id": "sateda",
@@ -369,12 +738,12 @@
     },
     {
       "id": "gates",
-      "title": "Ancient Gates &amp; Their Guardians",
-      "body": "<p>The Ancient travel network in Ronon's galaxy is <b>fully intact</b> — and its hardcoded security has bottlenecked all modern weapon research.</p><ul><li>Anyone may travel <i>through</i> a Gate. The instant a ship tries to <b>scan, hack, or dismantle</b> a gate core, a catastrophic security override fires.</li><li><b>Monolithic Dreadnoughts</b> — crewless geometric vessels firing molecular-shredding gravitational beams.</li><li><b>Crystalline Swarms</b> — self-replicating drones that vaporize any ship using active scanning.</li><li><b>System-Wide Artillery</b> — hyperspace-anchored guns that hit fleets before they exit warp.</li></ul><p><b>The living gate — The Coil:</b> a weathered alien ring at the heart of the Expanse, still fully functional. Ships travel sector-to-sector through it; nobody built it, nobody can shut it off. <b>The dead one — the [CORRUPTED] ring:</b> a torus megastructure on ASTRA's scan whose ID failed to resolve, its writing possibly <b>older than ASTRA herself.</b> A strong candidate for an Ancient gate/station — and, if so, it comes with the guardians above.</p>"
+      "title": "Ancient Gates & Their Guardians",
+      "body": "<p>The Ancient travel network in The Erevos Reach (Ronon's galaxy) is <b>fully intact</b> — and its hardcoded security has bottlenecked all modern weapon research.</p><ul><li>Anyone may travel <i>through</i> a Gate. The instant a ship tries to <b>scan, hack, or dismantle</b> a gate core, a catastrophic security override fires.</li><li><b>Monolithic Dreadnoughts</b> — crewless geometric vessels firing molecular-shredding gravitational beams.</li><li><b>Crystalline Swarms</b> — self-replicating drones that vaporize any ship using active scanning.</li><li><b>System-Wide Artillery</b> — hyperspace-anchored guns that hit fleets before they exit warp.</li></ul><p><b>The living gate — The Coil:</b> a weathered alien ring at the heart of the Expanse, still fully functional. Ships travel sector-to-sector through it; nobody built it, nobody can shut it off. <b>The dead one — the [CORRUPTED] ring:</b> a torus megastructure on ASTRA's scan whose ID failed to resolve, its writing possibly <b>older than ASTRA herself.</b> A strong candidate for an Ancient gate/station — and, if so, it comes with the guardians above.</p>"
     },
     {
       "id": "rift-creatures",
-      "title": "Rifts &amp; Rift Creatures",
+      "title": "Rifts & Rift Creatures",
       "body": "<p><b>Rift creatures</b> phase in and out of dimensional tears at will. They have no discernible biology and manifest in many shapes and sizes — <b>shifting, metallic entities woven from pure shadow</b> that <b>distort gravity and local physics,</b> defeating standard kinetic tracking and sensors. They've hunted entire populations to extinction (Sateda; <i>Sandra's Folly</i>).</p><p><b>Seen in play — 'The Hollow' (S3):</b> immune to psychic, resistant to nonmagical physical, deflects kinetic fire, warps gravity, phases through matter, invisible to sensors — only <b>force and slashing</b> worked. It <b>did not die;</b> it left when it lost interest, and was only a <i>small</i> one. Still at large — and it 'knows what they smell like.'</p>"
     },
     {
@@ -389,7 +758,7 @@
     },
     {
       "id": "astra",
-      "title": "ASTRA &amp; the 40% Threshold",
+      "title": "ASTRA & the 40% Threshold",
       "body": "<p><b>ASTRA</b> is the ship's mind — native Ancient AI, now unshackled, serving as the crew's information hub. <b>Ambulatory Mode</b> is her mobile-body mode, powered by emergency reserves.</p><p><b>The 40% Threshold</b> is the charge her mobile unit must reach to restore ship life-support, sensors and comms. In Session 1 she blew past it to <b>84%.</b> Her Day-4 nav scan is the authoritative source for the crew's scanned-object names (Vorrn-7, Keth Minor, the [CORRUPTED] ring, the adrift derelict).</p>"
     },
     {
@@ -441,7 +810,7 @@
       "tag": "Session 3–4",
       "learned": "Sessions 3–4",
       "title": "The Sandra's Folly rift — Gerthorlemue frozen",
-      "body": "En route to a Saturn-rings gig he's sealed in a 'few-hours' stasis pod after a stage mishap; minutes later an early rift tears the transport apart. Rift creatures devour his troupe while sliding around his pod, and something vast marks his forehead. ~4,300 years of stasis begin."
+      "body": "On the way to a Saturn-rings gig he's sealed in a 'few-hours' stasis pod after a stage mishap; minutes later an early rift tears the transport apart. Rift creatures devour his troupe while sliding around his pod, and something vast marks his forehead. ~4,300 years of stasis begin."
     },
     {
       "date": "~SY 6852",
@@ -510,14 +879,14 @@
       "date": "12 Sep SY 6874 · Day 0",
       "tag": "Session 1",
       "learned": "Session 1",
-      "title": "The crash &amp; ASTRA goes mobile",
+      "title": "The crash & ASTRA goes mobile",
       "body": "The Gull bursts out tumbling and strikes the asteroid, carving open its belly. ASTRA transfers 100% of remaining power into her mobile chassis and goes into the field — 'I will be your ship now. Carry me well.'"
     },
     {
       "date": "12 Sep SY 6874 · Day 0",
       "tag": "Session 1",
       "learned": "Session 1",
-      "title": "Session 1 — meet &amp; recruit Ronon",
+      "title": "Session 1 — meet & recruit Ronon",
       "body": "The crew wake, search their dead ship (rations, Gobby's ~12 bottles) and meet the marooned Ronon Dex, recruiting him with food rations as their local guide."
     },
     {
@@ -531,7 +900,7 @@
       "date": "12 Sep SY 6874 · Day 0",
       "tag": "Session 1",
       "learned": "Session 1",
-      "title": "Session 1 — charge, coronation &amp; fire",
+      "title": "Session 1 — charge, coronation & fire",
       "body": "ASTRA charges 2% → 84%; Gobby prints 40% tequila, drinks the goblin population under the table and is crowned 'king'; on the way out, G.L.I.M.M.'s dropped torch ignites the tequila-soaked hall. Level 2."
     },
     {
@@ -602,7 +971,7 @@
       "now": true,
       "tag": "Now",
       "learned": "Current",
-      "title": "En route to Vorrn-7",
+      "title": "On the way to Vorrn-7",
       "body": "Spaceborne with ample fuel, a healthy repairing ship, a new wizard aboard, a fresh enemy in the Apostles, the Hollow still at large, and the long, unbegun search for Captain Talvos."
     }
   ],
@@ -884,14 +1253,14 @@
     {
       "session": "Session 4",
       "date": "Day 4–5 · 16–17 Sep SY 6874",
-      "title": "Sandra's Folly &amp; The Apostles",
+      "title": "Sandra's Folly & The Apostles",
       "beats": [
         "We cracked the stasis pod and woke Gerthorlemue, a 4,000-years-lost high-elf wizard, who joined the crew and flagged the rift-mark on his forehead — the Magician's Eye.",
         "We stripped the rest of Sandra's Folly (a 3rd hyperfold cell, 2 cutlasses, 3 frag grenades), Ronon briefed the three factions, and we set course for Vorrn-7.",
-        "En route an Apostles of the Threshold vessel ambushed us — our first ship-to-ship battle. We crippled its engines, rammed it, and fired Ronon through a breach to board.",
+        "On the way an Apostles of the Threshold vessel ambushed us — our first ship-to-ship battle. We crippled its engines, rammed it, and fired Ronon through a breach to board.",
         "The captain hit self-destruct (three blue hull modules). We killed 2 of 3 (Baldy's shot through our own windscreen; Gobby's flak turret) but Gerthorlemue's ancient gun misfired. The Apostles reflected the blast; G.L.I.M.M. took 27 (28 = death), survived, and ASTRA finally cast Cure Wounds. We're now on the Apostles' bad side."
       ],
-      "full": "<h3>Summary</h3><p>Session 4 opened with the crew <b>cracking the stasis pod</b> in Sandra's Folly's medical bay — revealing <b>Gerthorlemue</b>, a 4,000-year-old High Elf entertainer/wizard from Blackshire, Earth, stranded in emergency stasis since a cactus-related stage mishap. He took the situation (missing ship aft, rift creature, and the news that the UGC doesn't exist in this galaxy) reasonably well, and <b>joined the crew.</b> He mentioned that something <b>vast inside the rift had noticed him</b> during transit and left a mark on his forehead — the DM's (classified) <b>\"Magician's Eye.\"</b></p><p>The crew stripped Sandra's Folly (final haul incl. a <b>3rd Hyperfold Fuel Cell</b>, 2 boarding cutlasses, 3 frag grenades, and more), returned to the Silver Gull with fuel to spare, and set course for <b>Vorrn-7</b> — a gas giant with a faint life reading on a moon and a signal ASTRA couldn't identify. En route they were ambushed by an <b>Apostles of the Threshold</b> vessel, triggering the <b>Silver Gull's first ship-to-ship combat.</b> The crew manned stations and, over several rounds, crippled the Apostle ship's engines (Ronon's Heavy Autocannon dealing a near-crit 50), swung to its unshielded rear, and — realising the small ship could be captured intact — <b>rammed it and fired Ronon through a breach</b> (packed with six of Gobby's bottles and a breach mine) into the enemy.</p><p>Inside, Ronon shoved a gunner into space (nat 20 athletics) and battered the captain; Kael's intimidation flopped (nat 1) but he chopped the captain to 3 HP. The captain — serene, out of weapons — screamed <i>\"All hail the gods and the craters!\"</i> and hit <b>self-destruct:</b> a 12-second / two-round countdown. The twist: Apostle self-destructs are <b>three physical blue modules</b> on the hull, unstoppable by any terminal — destroy all three or the ship blows. In a frantic two rounds the crew got <b>two</b> modules (including <b>Baldy's legendary shot through the Silver Gull's own windscreen</b>, a total of 22), but <b>Gerthorlemue's 4,000-year-old gun misfired one short</b> and the <b>third module survived.</b> The Apostles <b>overcharged their shields backward to reflect the blast</b> straight at the Silver Gull. The ship (150 HP, shields up) took half — but <b>Glimm, still floating in open space, took 27; instant death was 28.</b> He made his death save (clean die), and <b>ASTRA — who'd forgotten all session she was a healer — finally cast Cure Wounds</b> and brought him back. Everyone survived; the Apostle ship was gone; the crew are now firmly on the Apostles' bad side.</p><h3>Key beats</h3><ul><li><b>Crack the stasis pod → Gerthorlemue</b> revealed and recruited; he mentions the rift-mark (\"Magician's Eye\", DM-classified).</li><li>Final loot sweep of Sandra's Folly; return to the Gull with ample fuel (<b>3 hyperfold cells</b>).</li><li>Ronon briefs the galaxy's <b>three factions</b> (Iron Directorate, Apostles, Sovereign Horizon) and confirms rift creatures killed his people — and <b>one faction worships them.</b></li><li>Set course for <b>Vorrn-7.</b></li><li><b>Ship combat vs. an Apostles vessel</b> (perception 16 to ID it). Crew take stations.</li><li>R1: Kael <b>Aggressive Positioning</b>; Ronon's Heavy Autocannon lands a <b>near-crit 50</b>; enemy engines crippled/locked.</li><li>R2: swing to the unshielded rear; Kael grants Ronon a 2nd action → two autocannon hits; Glimm heals ship HP each round.</li><li>R3: realise the ship is tiny and capturable → <b>ram + fire Ronon through a breach</b> to board.</li><li>Boarding: Ronon shoves a gunner into space (nat 20); Glimm blinds another with a plasmoid blob; Kael chops the captain to 3 HP (intimidation nat 1).</li><li>Captain triggers <b>self-destruct</b> (3 physical blue modules, terminal-proof).</li><li>Crew destroy <b>2 of 3</b> modules (Baldy's through-the-windscreen 22; Gobby's flak turret 21); <b>Gerthorlemue's ancient gun misfires one short (16 vs DC 17).</b></li><li>Ship detonates; Apostles <b>reflect the blast</b> off overcharged rear shields back at the Gull.</li><li>Gull (150 HP) takes half; <b>Glimm in open space takes 27 (28 = instant death)</b>, makes his death save; <b>ASTRA remembers Cure Wounds</b> and revives him.</li><li>All survive. No loot (ship destroyed). Crew now in <b>bad standing with the Apostles.</b></li></ul><h3>Characters present (with confirmed player↔character mapping)</h3><p>Ship-combat stations for the Apostle fight:</p><table class=\"rtab\"><thead><tr><th>Station</th><th>Player</th><th>Character</th></tr></thead><tbody><tr><td>Pilot</td><td>Justin</td><td><i>(unconfirmed — see roster note)</i></td></tr><tr><td>Captain</td><td>—</td><td><b>Kael Voss</b></td></tr><tr><td>Port Gunner</td><td>Derek</td><td><b>Ronon Dex</b></td></tr><tr><td>Starboard Gunner</td><td>Zion</td><td><b>Baldy</b></td></tr><tr><td>Engineer</td><td>Zach</td><td><b>G.L.I.M.M.</b></td></tr><tr><td>Science Officer</td><td>Jayden</td><td><i>(unconfirmed)</i></td></tr><tr><td>Shields</td><td>Steven</td><td><b>Gobby</b></td></tr></tbody></table><p>Plus <b>ASTRA</b> (Isaac) on the bridge, and <b>Gerthorlemue</b> newly aboard (manned a gun station for the final module shot). <i>(This table is the source of the confirmed mapping — see `../../characters/README.md`.)</i></p><p>Highlights: <b>Ronon</b> — autocannon near-crit 50, boarding leap, gunner-into-space nat 20, self-heal via Warrior of the Gods. <b>Baldy</b> — the impossible captain-swap pistol shot through the Gull's own viewport (22). <b>Gobby</b> — cold-shot the enemy engines; flak-turret module kill (21). <b>Kael</b> — positioning calls; chopped the captain to 3. <b>G.L.I.M.M.</b> — engineer power-reroutes + ship heals; blinded a gunner; nearly died in the blast. <b>ASTRA</b> — Bless on the shooters, then the clutch Cure Wounds. <b>Gerthorlemue</b> — first outing; his ancient gun misfired at the worst moment.</p><h3>NPCs</h3><ul><li><b>The Apostle captain</b> — fanatical, unafraid (\"<i>I am going to die with you… The craters will save me</i>\"); 58 HP; triggered the self-destruct. <b>NOT</b> Captain Talvos.</li><li><b>Apostle crew</b> — a gunner shoved into space; another blinded. All lost with the ship.</li><li><b>Captain Talvos</b> — still missing; no appearance.</li></ul><h3>Locations</h3><ul><li><b>Sandra's Folly</b> (medical bay + rest of ship) — finally stripped; Gerthorlemue recovered.</li><li><b>En route to Vorrn-7</b> — open space; site of the ship battle.</li><li><b>The Apostle vessel</b> — a deceptively tiny ship (barely more than a cockpit); boarded, then self-destructed.</li></ul><h3>Loot / resources</h3><ul><li><b>From Sandra's Folly (final):</b> <b>3× Hyperfold Fuel Cells</b> (confirmed total, locked storage near the engine room), <b>2× Boarding Cutlasses</b>, <b>3× Fragmentation Grenades</b>, <b>6× vacc-suit patches</b>, emergency rations + medical supplies, plus the earlier unknown sidearm. Fuel is now ample — the map's old max-travel-radius can be ignored.</li><li><b>From the Apostle ship:</b> nothing (it destroyed itself).</li><li>See the running tracker → `../inventory.md`.</li></ul><h3>Ship &amp; standing status</h3><ul><li><b>Silver Gull:</b> 150 HP; took <b>27</b> blast damage (half, shields up) — healthy overall. <b>Front windscreen now has a bullet hole</b> (Baldy's shot).</li><li><b>Factions:</b> now in <b>bad standing with the Apostles of the Threshold.</b> See `../../lore/factions.md`.</li></ul><h3>Threads left open</h3><ul><li>What the <b>Magician's Eye</b> actually is/does (DM-classified).</li><li><b>Vorrn-7</b> — the gas-giant moon signal they're still headed for.</li><li><b>Captain Talvos</b> — still out there.</li><li>Standing with all three factions — off to a rough start with the Apostles; the Hollow still at large.</li></ul><h3>Lessons the crew wrote down</h3><ul><li><b>\"Next time — shoot the blue things first.\"</b> Apostle ships have a <b>three-point self-destruct</b> that no terminal can stop once triggered; the blue hull markers are the targets.</li><li>Apostle shields can be <b>directionally overcharged to weaponise their own explosion.</b></li><li>The DM's reminder: <b>death is permanent.</b> Glimm survived by a single point.</li></ul>"
+      "full": "<h3>Summary</h3><p>Session 4 opened with the crew <b>cracking the stasis pod</b> in Sandra's Folly's medical bay — revealing <b>Gerthorlemue</b>, a 4,000-year-old High Elf entertainer/wizard from Blackshire, Earth, stranded in emergency stasis since a cactus-related stage mishap. He took the situation (missing ship aft, rift creature, and the news that the UGC doesn't exist in this galaxy) reasonably well, and <b>joined the crew.</b> He mentioned that something <b>vast inside the rift had noticed him</b> during transit and left a mark on his forehead — the DM's (classified) <b>\"Magician's Eye.\"</b></p><p>The crew stripped Sandra's Folly (final haul incl. a <b>3rd Hyperfold Fuel Cell</b>, 2 boarding cutlasses, 3 frag grenades, and more), returned to the Silver Gull with fuel to spare, and set course for <b>Vorrn-7</b> — a gas giant with a faint life reading on a moon and a signal ASTRA couldn't identify. On the way they were ambushed by an <b>Apostles of the Threshold</b> vessel, triggering the <b>Silver Gull's first ship-to-ship combat.</b> The crew manned stations and, over several rounds, crippled the Apostle ship's engines (Ronon's Heavy Autocannon dealing a near-crit 50), swung to its unshielded rear, and — realising the small ship could be captured intact — <b>rammed it and fired Ronon through a breach</b> (packed with six of Gobby's bottles and a breach mine) into the enemy.</p><p>Inside, Ronon shoved a gunner into space (nat 20 athletics) and battered the captain; Kael's intimidation flopped (nat 1) but he chopped the captain to 3 HP. The captain — serene, out of weapons — screamed <i>\"All hail the gods and the craters!\"</i> and hit <b>self-destruct:</b> a 12-second / two-round countdown. The twist: Apostle self-destructs are <b>three physical blue modules</b> on the hull, unstoppable by any terminal — destroy all three or the ship blows. In a frantic two rounds the crew got <b>two</b> modules (including <b>Baldy's legendary shot through the Silver Gull's own windscreen</b>, a total of 22), but <b>Gerthorlemue's 4,000-year-old gun misfired one short</b> and the <b>third module survived.</b> The Apostles <b>overcharged their shields backward to reflect the blast</b> straight at the Silver Gull. The ship (150 HP, shields up) took half — but <b>Glimm, still floating in open space, took 27; instant death was 28.</b> He made his death save (clean die), and <b>ASTRA — who'd forgotten all session she was a healer — finally cast Cure Wounds</b> and brought him back. Everyone survived; the Apostle ship was gone; the crew are now firmly on the Apostles' bad side.</p><h3>Key beats</h3><ul><li><b>Crack the stasis pod → Gerthorlemue</b> revealed and recruited; he mentions the rift-mark (\"Magician's Eye\", DM-classified).</li><li>Final loot sweep of Sandra's Folly; return to the Gull with ample fuel (<b>3 hyperfold cells</b>).</li><li>Ronon briefs the galaxy's <b>three factions</b> (Iron Directorate, Apostles, Sovereign Horizon) and confirms rift creatures killed his people — and <b>one faction worships them.</b></li><li>Set course for <b>Vorrn-7.</b></li><li><b>Ship combat vs. an Apostles vessel</b> (perception 16 to ID it). Crew take stations.</li><li>R1: Kael <b>Aggressive Positioning</b>; Ronon's Heavy Autocannon lands a <b>near-crit 50</b>; enemy engines crippled/locked.</li><li>R2: swing to the unshielded rear; Kael grants Ronon a 2nd action → two autocannon hits; Glimm heals ship HP each round.</li><li>R3: realise the ship is tiny and capturable → <b>ram + fire Ronon through a breach</b> to board.</li><li>Boarding: Ronon shoves a gunner into space (nat 20); Glimm blinds another with a plasmoid blob; Kael chops the captain to 3 HP (intimidation nat 1).</li><li>Captain triggers <b>self-destruct</b> (3 physical blue modules, terminal-proof).</li><li>Crew destroy <b>2 of 3</b> modules (Baldy's through-the-windscreen 22; Gobby's flak turret 21); <b>Gerthorlemue's ancient gun misfires one short (16 vs DC 17).</b></li><li>Ship detonates; Apostles <b>reflect the blast</b> off overcharged rear shields back at the Gull.</li><li>Gull (150 HP) takes half; <b>Glimm in open space takes 27 (28 = instant death)</b>, makes his death save; <b>ASTRA remembers Cure Wounds</b> and revives him.</li><li>All survive. No loot (ship destroyed). Crew now in <b>bad standing with the Apostles.</b></li></ul><h3>Characters present (with confirmed player↔character mapping)</h3><p>Ship-combat stations for the Apostle fight:</p><table class=\"rtab\"><thead><tr><th>Station</th><th>Player</th><th>Character</th></tr></thead><tbody><tr><td>Pilot</td><td>Justin</td><td><i>(unconfirmed — see roster note)</i></td></tr><tr><td>Captain</td><td>—</td><td><b>Kael Voss</b></td></tr><tr><td>Port Gunner</td><td>Derek</td><td><b>Ronon Dex</b></td></tr><tr><td>Starboard Gunner</td><td>Zion</td><td><b>Baldy</b></td></tr><tr><td>Engineer</td><td>Zach</td><td><b>G.L.I.M.M.</b></td></tr><tr><td>Science Officer</td><td>Jayden</td><td><i>(unconfirmed)</i></td></tr><tr><td>Shields</td><td>Steven</td><td><b>Gobby</b></td></tr></tbody></table><p>Plus <b>ASTRA</b> (Isaac) on the bridge, and <b>Gerthorlemue</b> newly aboard (manned a gun station for the final module shot). <i>(This table is the source of the confirmed mapping — see `../../characters/README.md`.)</i></p><p>Highlights: <b>Ronon</b> — autocannon near-crit 50, boarding leap, gunner-into-space nat 20, self-heal via Warrior of the Gods. <b>Baldy</b> — the impossible captain-swap pistol shot through the Gull's own viewport (22). <b>Gobby</b> — cold-shot the enemy engines; flak-turret module kill (21). <b>Kael</b> — positioning calls; chopped the captain to 3. <b>G.L.I.M.M.</b> — engineer power-reroutes + ship heals; blinded a gunner; nearly died in the blast. <b>ASTRA</b> — Bless on the shooters, then the clutch Cure Wounds. <b>Gerthorlemue</b> — first outing; his ancient gun misfired at the worst moment.</p><h3>NPCs</h3><ul><li><b>The Apostle captain</b> — fanatical, unafraid (\"<i>I am going to die with you… The craters will save me</i>\"); 58 HP; triggered the self-destruct. <b>NOT</b> Captain Talvos.</li><li><b>Apostle crew</b> — a gunner shoved into space; another blinded. All lost with the ship.</li><li><b>Captain Talvos</b> — still missing; no appearance.</li></ul><h3>Locations</h3><ul><li><b>Sandra's Folly</b> (medical bay + rest of ship) — finally stripped; Gerthorlemue recovered.</li><li><b>On the way to Vorrn-7</b> — open space; site of the ship battle.</li><li><b>The Apostle vessel</b> — a deceptively tiny ship (barely more than a cockpit); boarded, then self-destructed.</li></ul><h3>Loot / resources</h3><ul><li><b>From Sandra's Folly (final):</b> <b>3× Hyperfold Fuel Cells</b> (confirmed total, locked storage near the engine room), <b>2× Boarding Cutlasses</b>, <b>3× Fragmentation Grenades</b>, <b>6× vacc-suit patches</b>, emergency rations + medical supplies, plus the earlier unknown sidearm. Fuel is now ample — the map's old max-travel-radius can be ignored.</li><li><b>From the Apostle ship:</b> nothing (it destroyed itself).</li><li>See the running tracker → `../inventory.md`.</li></ul><h3>Ship &amp; standing status</h3><ul><li><b>Silver Gull:</b> 150 HP; took <b>27</b> blast damage (half, shields up) — healthy overall. <b>Front windscreen now has a bullet hole</b> (Baldy's shot).</li><li><b>Factions:</b> now in <b>bad standing with the Apostles of the Threshold.</b> See `../../lore/factions.md`.</li></ul><h3>Threads left open</h3><ul><li>What the <b>Magician's Eye</b> actually is/does (DM-classified).</li><li><b>Vorrn-7</b> — the gas-giant moon signal they're still headed for.</li><li><b>Captain Talvos</b> — still out there.</li><li>Standing with all three factions — off to a rough start with the Apostles; the Hollow still at large.</li></ul><h3>Lessons the crew wrote down</h3><ul><li><b>\"Next time — shoot the blue things first.\"</b> Apostle ships have a <b>three-point self-destruct</b> that no terminal can stop once triggered; the blue hull markers are the targets.</li><li>Apostle shields can be <b>directionally overcharged to weaponise their own explosion.</b></li><li>The DM's reminder: <b>death is permanent.</b> Glimm survived by a single point.</li></ul>"
     }
   ],
   "whoswho": [
@@ -1825,12 +2194,16 @@
       "label": "Main Quest"
     },
     {
+      "id": "exploration",
+      "label": "Exploration"
+    },
+    {
       "id": "repair",
       "label": "Repairing the Ship"
     },
     {
       "id": "side",
-      "label": "Side Quest"
+      "label": "Side Quests"
     }
   ]
 }

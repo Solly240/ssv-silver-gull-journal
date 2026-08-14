@@ -147,7 +147,8 @@ function getState() {
   return {
     playerMap: d.playerMap || {}, inventory: d.inventory || {}, questStatus: d.questStatus || {},
     questObjDone: d.questObjDone || {}, questObjs: d.questObjs || {}, addedObjectives: d.addedObjectives || {},
-    turretBuilt: d.turretBuilt || {}, partyNotes: d.partyNotes || [], addedQuests: d.addedQuests || []
+    turretBuilt: d.turretBuilt || {}, partyNotes: d.partyNotes || [], addedQuests: d.addedQuests || [],
+    questReveal: d.questReveal || {}   // qid -> true = a hidden quest revealed to players
   };
 }
 async function saveState(mut) {
@@ -166,10 +167,12 @@ function mergedContent() {
     const done = s.questObjDone[q.id];
     if (done) objs = objs.map((o, i) => (done[i] !== undefined ? { ...o, done: done[i] } : o));
     q.objectives = objs;
+    q.hidden = !!(q.hidden && !s.questReveal[q.id]);   // revealed hidden quests become visible
   });
   (c.turrets || []).forEach((t) => { if (s.turretBuilt[t.id] !== undefined) t.built = s.turretBuilt[t.id]; });
   c.partyNotes = (c.partyNotes || []).concat(s.partyNotes || []);
   if (s.addedQuests.length) c.quests = (c.quests || []).concat(s.addedQuests);
+  c.galaxyRevealed = (c.quests || []).some((q) => q.revealsGalaxy && q.status === "complete");
   return c;
 }
 
@@ -199,6 +202,8 @@ function buildCtx() {
     addQuest: async (name) => saveState((s) => { s.addedQuests.push({ id: "q" + Date.now(), ico: "•", name, status: "active", description: "", objectives: [] }); }),
     saveMapping: async (m) => saveState((s) => { s.playerMap = m; }),
     addPartyNote: async (t) => saveState((s) => { s.partyNotes.push(t); }),
+    revealQuest: async (id) => saveState((s) => { s.questReveal[id] = true; }),
+    hideQuest: async (id) => saveState((s) => { delete s.questReveal[id]; }),
 
     openAssign: () => assignDialog(),
     promptNumber: (title, val) => promptValue(title, val, "number"),
