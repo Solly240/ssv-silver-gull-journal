@@ -688,6 +688,14 @@
       "location": "Ferrum Hold",
       "handIn": "Ferrum Hold",
       "reward": "Standing with the Iron Directorate + refined ore."
+    },
+    {
+      "id": "q1786681981901",
+      "ico": "•",
+      "name": "test",
+      "status": "active",
+      "description": "",
+      "objectives": []
     }
   ],
   "lore": [
