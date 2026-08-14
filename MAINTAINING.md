@@ -267,6 +267,13 @@ gh release create vX.Y.Z module.json module.zip --title "…" --notes "…"
 - **v2.5.0** quest category sections; J closes journal; Escape no longer opens the game menu.
 - **v2.6.0** collapsible sections; hidden GM-only "possible" quests + reveal; 12 location/reward side
   quests; galaxy-map reward; `&`-encoding fix; galaxy named ("The Erevos Reach") in lore.
+- **v2.7.0** Vorrn-7 arc: map node `vorrn7` (moon image + 3 landing `locations` with `scene` names) that
+  the sector's `vorrn-7` location drills into; **two-column map** (map left, detail right); **clickable
+  quest `location`** via `mapTarget:{node,loc}` → `ctx.gotoMap` (opens Map tab, highlights); **scene
+  buttons** → `ctx.gotoScene(name)` activates a Foundry scene by name; **GM delete quest** →
+  `ctx.deleteQuest` + `worldState.removedQuests`; quests reworked Vorrn-7-local + expanded detail.
+  Landing-site battlemaps are NOT shipped — owner uses premade maps (Seafoot/Czepeku/etc.) and creates
+  Foundry scenes named exactly "Vorrn-7 — Frostwatch Landing" / "… Kettle Hollow" / "… The Long Silence".
 
 Related memory files: `journal-module-deployment`, `politics-module-deployment`, `vtt-access-notes`,
 `image-generation` (in the project memory dir).
