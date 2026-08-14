@@ -9,6 +9,10 @@
  * Foundry world-settings mirror the live content so connected clients stay in sync in-session.
  *
  * Built for Foundry v12–v14 (works with the classic-Application Simple Quest).
+ *
+ * Live code: the bundled render.js (imported below) is the offline fallback, but on every load we
+ * fetch the latest render.js from GitHub and run it — so panel/UI updates reach everyone on a normal
+ * page reload (no hard refresh, no re-install). Only changes to THIS file need a module update.
  */
 import "./render.js";
 
@@ -16,6 +20,7 @@ const MODULE_ID = "ssv-silver-gull-journal";
 const OWNER = "Solly240", REPO = "ssv-silver-gull-journal", BRANCH = "main", FILE = "content.json";
 const RAW_URL = `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/${FILE}`;
 const API_URL = `https://api.github.com/repos/${OWNER}/${REPO}/contents/${FILE}`;
+const RENDER_API = `https://api.github.com/repos/${OWNER}/${REPO}/contents/scripts/render.js`;
 
 const SET_CACHE = "contentCache";   // world  — the live shared content (synced among clients)
 const SET_ETAG = "contentEtag";     // world  — raw ETag for conditional pulls
@@ -116,6 +121,20 @@ const note = (m) => ui.notifications?.info(`Ship's Journal: ${m}`);
 const warn = (m) => ui.notifications?.warn(`Ship's Journal: ${m}`);
 const stamp = () => new Date().toLocaleString();
 async function setStatus(s) { if (game.user.isGM) await game.settings.set(MODULE_ID, SET_STATUS, s); }
+
+/* Fetch the latest render.js from GitHub and run it (self-contained IIFE that sets globalThis.SSVJ),
+   so UI updates land on a normal reload. Falls back silently to the bundled render.js on any failure. */
+async function loadLatestRender() {
+  try {
+    const res = await fetch(`${RENDER_API}?ref=${BRANCH}&t=${Date.now()}`, { headers: { Accept: "application/vnd.github.raw" }, cache: "no-store" });
+    if (!res.ok) return;
+    const src = await res.text();
+    if (!src || !src.includes("globalThis.SSVJ")) return;
+    document.getElementById("ssvj-styles")?.remove();   // let the new render.js re-inject its CSS
+    (0, eval)(src);
+    globalThis.SSVJ?.ensureStyles?.();
+  } catch (e) { console.warn(`${MODULE_ID} | live render fetch failed; using bundled render.js`, e); }
+}
 
 /* -------------------------------------------------------------------------- */
 /*  ctx for the renderers                                                     */
@@ -301,6 +320,7 @@ Hooks.once("init", () => {
 
 Hooks.once("ready", async () => {
   CONTENT = getCache() || (await loadBundled()) || {};
+  await loadLatestRender();   // upgrade render.js from GitHub (no-op offline / on failure)
   const mod = game.modules.get(MODULE_ID);
   const api = { pull, push, refresh: refreshOpen, logTabs, openSync: openSyncMenu, get content() { return CONTENT; } };
   if (mod) mod.api = api;
