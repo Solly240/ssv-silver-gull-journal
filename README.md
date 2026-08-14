@@ -1,5 +1,8 @@
 # SSV Silver Gull — Ship's Journal
 
+> **Maintaining / editing this module?** Read [`MAINTAINING.md`](MAINTAINING.md) — the full
+> architecture, data schemas, deploy process, and edit recipes.
+
 A homebrew Foundry VTT module that fills out the campaign's **Simple Quest** journal (press **J**)
 with six custom, **data-driven** panels, kept in **two-way sync with GitHub**. Companion to the
 [Politics & Standing](../../politics/ssv-silver-gull-politics/) module — it leaves the **Politics**
