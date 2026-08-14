@@ -28,6 +28,9 @@ const SET_SHA = "contentSha";       // world  — blob sha for pushes
 const SET_TOKEN = "ghToken";        // client — GM's personal GitHub token (never shared)
 const SET_SCRATCH = "scratchpad";   // client — per-user private notes
 const SET_STATUS = "syncStatus";    // world  — last-sync status string
+const SET_STATE = "worldState";     // world  — LIVE GM state (assignments, inventory, quest progress,
+                                    //          turret built, party notes) — NEVER pulled/deployed, so
+                                    //          it survives content updates. Overlaid on the content.
 
 const SSVJ = () => globalThis.SSVJ;
 let CONTENT = null;                  // in-memory live content
@@ -137,30 +140,65 @@ async function loadLatestRender() {
 }
 
 /* -------------------------------------------------------------------------- */
+/*  Live world state (Foundry-local; survives content updates)                */
+/* -------------------------------------------------------------------------- */
+function getState() {
+  const d = game.settings.get(MODULE_ID, SET_STATE) || {};
+  return {
+    playerMap: d.playerMap || {}, inventory: d.inventory || {}, questStatus: d.questStatus || {},
+    questObjDone: d.questObjDone || {}, questObjs: d.questObjs || {}, addedObjectives: d.addedObjectives || {},
+    turretBuilt: d.turretBuilt || {}, partyNotes: d.partyNotes || [], addedQuests: d.addedQuests || []
+  };
+}
+async function saveState(mut) {
+  if (!game.user.isGM) return warn("Only the GM can change that.");
+  const s = getState(); mut(s); await game.settings.set(MODULE_ID, SET_STATE, s); refreshOpen();
+}
+// Effective content = authored CONTENT with the GM's live state overlaid.
+function mergedContent() {
+  const s = getState();
+  const c = foundry.utils.deepClone(CONTENT || {});
+  c.playerMap = { ...(c.playerMap || {}), ...s.playerMap };
+  c.inventory = { ...(c.inventory || {}), ...s.inventory };
+  (c.quests || []).forEach((q) => {
+    if (s.questStatus[q.id]) q.status = s.questStatus[q.id];
+    let objs = s.questObjs[q.id] ? s.questObjs[q.id].slice() : (q.objectives || []).concat(s.addedObjectives[q.id] || []);
+    const done = s.questObjDone[q.id];
+    if (done) objs = objs.map((o, i) => (done[i] !== undefined ? { ...o, done: done[i] } : o));
+    q.objectives = objs;
+  });
+  (c.turrets || []).forEach((t) => { if (s.turretBuilt[t.id] !== undefined) t.built = s.turretBuilt[t.id]; });
+  c.partyNotes = (c.partyNotes || []).concat(s.partyNotes || []);
+  if (s.addedQuests.length) c.quests = (c.quests || []).concat(s.addedQuests);
+  return c;
+}
+
+/* -------------------------------------------------------------------------- */
 /*  ctx for the renderers                                                     */
 /* -------------------------------------------------------------------------- */
 function buildCtx() {
-  const q = (id) => CONTENT.quests.find((x) => x.id === id);
+  const data = mergedContent();
+  const q = (id) => (data.quests || []).find((x) => x.id === id);
   return {
-    data: CONTENT,
+    data,
     isGM: game.user.isGM,
     assetUrl,
     users: game.users.map((u) => ({ id: u.id, name: u.name, isGM: u.isGM })),
-    myCharId: (CONTENT.playerMap || {})[game.user.id] || null,
+    myCharId: (data.playerMap || {})[game.user.id] || null,
     scratchpad: game.settings.get(MODULE_ID, SET_SCRATCH) || "",
     saveScratchpad: async (t) => game.settings.set(MODULE_ID, SET_SCRATCH, String(t || "")),
 
-    adjustInv: async (id, d) => { CONTENT.inventory[id] = Math.max(0, Number(CONTENT.inventory[id] || 0) + Number(d)); await saveContent(); },
-    setInv: async (id, v) => { CONTENT.inventory[id] = Math.max(0, Number(v) || 0); await saveContent(); },
-    setQuestStatus: async (id, s) => { const x = q(id); if (x) x.status = s; await saveContent(); },
-    toggleObjective: async (id, i) => { const o = q(id)?.objectives?.[i]; if (o) o.done = !o.done; await saveContent(); },
-    addObjective: async (id, r) => { q(id)?.objectives?.push({ title: r.title, detail: r.detail || "", done: false }); await saveContent(); },
-    editObjective: async (id, i, r) => { const o = q(id)?.objectives?.[i]; if (o) { o.title = r.title; o.detail = r.detail; } await saveContent(); },
-    removeObjective: async (id, i) => { q(id)?.objectives?.splice(i, 1); await saveContent(); },
-    toggleTurretBuilt: async (tid) => { const t = CONTENT.turrets.find((x) => x.id === tid); if (t) t.built = !t.built; await saveContent(); },
-    addQuest: async (name) => { CONTENT.quests.push({ id: "q" + Date.now(), ico: "•", name, status: "active", description: "", objectives: [] }); await saveContent(); },
-    saveMapping: async (m) => { CONTENT.playerMap = m; await saveContent(); },
-    addPartyNote: async (t) => { (CONTENT.partyNotes = CONTENT.partyNotes || []).push(t); await saveContent(); },
+    adjustInv: async (id, d) => saveState((s) => { s.inventory[id] = Math.max(0, Number(data.inventory[id] || 0) + Number(d)); }),
+    setInv: async (id, v) => saveState((s) => { s.inventory[id] = Math.max(0, Number(v) || 0); }),
+    setQuestStatus: async (id, st) => saveState((s) => { s.questStatus[id] = st; }),
+    toggleObjective: async (id, i) => saveState((s) => { const qq = q(id); const arr = s.questObjDone[id] ? s.questObjDone[id].slice() : (qq ? qq.objectives.map((o) => !!o.done) : []); arr[i] = !arr[i]; s.questObjDone[id] = arr; }),
+    addObjective: async (id, r) => saveState((s) => { const o = { title: r.title, detail: r.detail || "", done: false }; if (s.questObjs[id]) s.questObjs[id].push(o); else (s.addedObjectives[id] = s.addedObjectives[id] || []).push(o); }),
+    editObjective: async (id, i, r) => saveState((s) => { const qq = q(id); if (!s.questObjs[id]) s.questObjs[id] = qq.objectives.map((o) => ({ ...o })); if (s.questObjs[id][i]) { s.questObjs[id][i].title = r.title; s.questObjs[id][i].detail = r.detail; } }),
+    removeObjective: async (id, i) => saveState((s) => { const qq = q(id); if (!s.questObjs[id]) s.questObjs[id] = qq.objectives.map((o) => ({ ...o })); s.questObjs[id].splice(i, 1); }),
+    toggleTurretBuilt: async (tid) => saveState((s) => { const t = (data.turrets || []).find((x) => x.id === tid); s.turretBuilt[tid] = !(t && t.built); }),
+    addQuest: async (name) => saveState((s) => { s.addedQuests.push({ id: "q" + Date.now(), ico: "•", name, status: "active", description: "", objectives: [] }); }),
+    saveMapping: async (m) => saveState((s) => { s.playerMap = m; }),
+    addPartyNote: async (t) => saveState((s) => { s.partyNotes.push(t); }),
 
     openAssign: () => assignDialog(),
     promptNumber: (title, val) => promptValue(title, val, "number"),
@@ -197,7 +235,7 @@ async function promptObjective(title, def) {
 }
 async function assignDialog() {
   if (!game.user.isGM) return;
-  const map = { ...(CONTENT.playerMap || {}) };
+  const map = { ...(getState().playerMap || {}) };
   const players = game.users.filter((u) => !u.isGM);
   const chars = CONTENT.characters;
   const opts = (cid) => `<option value="">— unassigned —</option>` + chars.map((c) => `<option value="${c.id}" ${cid === c.id ? "selected" : ""}>${SSVJ().esc(c.name)}</option>`).join("");
@@ -208,7 +246,7 @@ async function assignDialog() {
   const d = D2(); let result = null;
   if (d) result = await d.prompt({ window: { title: "Assign players → characters" }, content, ok: { label: "Save", callback: (e, b) => read(b.form) } }).catch(() => null);
   else result = await new Promise((res) => new Dialog({ title: "Assign players → characters", content, buttons: { ok: { label: "Save", callback: (h) => res(read(h[0].querySelector("form") || h[0])) }, cancel: { label: "Cancel", callback: () => res(null) } }, default: "ok" }).render(true));
-  if (result) { CONTENT.playerMap = result; await saveContent(); }
+  if (result) await saveState((s) => { s.playerMap = result; });
 }
 
 /* -------------------------------------------------------------------------- */
@@ -308,6 +346,7 @@ Hooks.once("init", () => {
   reg(SET_ETAG, "world", String, "");
   reg(SET_SHA, "world", String, "");
   reg(SET_STATUS, "world", String, "never");
+  reg(SET_STATE, "world", Object, {});
   reg(SET_TOKEN, "client", String, "");
   reg(SET_SCRATCH, "client", String, "");
   game.settings.registerMenu(MODULE_ID, "syncMenu", {
