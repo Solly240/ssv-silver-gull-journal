@@ -274,6 +274,12 @@ gh release create vX.Y.Z module.json module.zip --title "…" --notes "…"
   `ctx.deleteQuest` + `worldState.removedQuests`; quests reworked Vorrn-7-local + expanded detail.
   Landing-site battlemaps are NOT shipped — owner uses premade maps (Seafoot/Czepeku/etc.) and creates
   Foundry scenes named exactly "Vorrn-7 — Frostwatch Landing" / "… Kettle Hollow" / "… The Long Silence".
+- **v2.7.1** reverted map to full-width (detail below, not a side column); trimmed far quests to 3 hidden;
+  added several hidden Vorrn-7 "possible" quests; richer objective detail.
+- **v2.7.2** quest-location deep-link now **scrolls the highlighted marker into view** in `renderMap`
+  (finds the scroll parent and centers the `.hot.sel` dot after the map image loads). The link always
+  navigated + highlighted, but on the tall sector chart the target dot (e.g. Sett at y≈0.83) landed
+  off-screen, so it *looked* dead. render.js-only change → hot-loads live; no reinstall needed.
 
 Related memory files: `journal-module-deployment`, `politics-module-deployment`, `vtt-access-notes`,
 `image-generation` (in the project memory dir).
