@@ -482,6 +482,26 @@
     el.querySelectorAll("[data-jump]").forEach((a) => a.onclick = () => { S._mapPath = S._mapPath.slice(0, Number(a.dataset.jump) + 1); S._mapSel = null; S.renderMap(ctx, body); });
     const b = el.querySelector("[data-back]"); if (b) b.onclick = () => { S._mapPath = S._mapPath.slice(0, -1); S._mapSel = null; S.renderMap(ctx, body); };
     const sb = el.querySelector("[data-scene]"); if (sb) sb.onclick = () => ctx.gotoScene?.(sb.dataset.scene);
+
+    // When a location is selected (esp. via a quest's "location" deep-link), scroll the
+    // pulsing marker into view — otherwise a low/off-screen dot looks like nothing happened.
+    if (loc) {
+      const scrollToSel = () => {
+        const selEl = el.querySelector(".hot.sel"); if (!selEl) return;
+        const findScroller = (n) => { let p = n.parentElement; while (p) { const o = getComputedStyle(p).overflowY; if ((o === "auto" || o === "scroll" || o === "overlay") && p.scrollHeight > p.clientHeight + 4) return p; p = p.parentElement; } return null; };
+        const sc = findScroller(selEl);
+        if (sc) {
+          const sr = sc.getBoundingClientRect(), er = selEl.getBoundingClientRect();
+          const delta = (er.top + er.height / 2) - (sr.top + sr.height / 2);
+          try { sc.scrollTo({ top: sc.scrollTop + delta, behavior: "smooth" }); } catch (_) { sc.scrollTop += delta; }
+        } else {
+          try { selEl.scrollIntoView({ block: "center", behavior: "smooth" }); } catch (_) { selEl.scrollIntoView(); }
+        }
+      };
+      const img = el.querySelector(".mapstage img");
+      if (img && !img.complete) img.addEventListener("load", scrollToSel, { once: true });
+      else setTimeout(scrollToSel, 30);
+    }
   };
 
   /* ================================================================== */
