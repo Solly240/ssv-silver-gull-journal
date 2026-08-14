@@ -2,7 +2,7 @@
   "id": "ssv-silver-gull-journal",
   "title": "SSV Silver Gull \u2014 Ship's Journal",
   "description": "Fills out the SSV Silver Gull campaign's Simple Quest journal: a custom Quest Board with ship-inventory progress bars, a Lore compendium, an in-fiction Timeline, a zoomable galaxy Map, per-player hidden My Journal dossiers, and a shared Party Journal. Companion to the Politics & Standing module; leaves the Politics tab untouched.",
-  "version": "2.6.0",
+  "version": "2.7.0",
   "authors": [
     {
       "name": "SSV Silver Gull GM"

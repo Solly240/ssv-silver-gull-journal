@@ -148,7 +148,8 @@ function getState() {
     playerMap: d.playerMap || {}, inventory: d.inventory || {}, questStatus: d.questStatus || {},
     questObjDone: d.questObjDone || {}, questObjs: d.questObjs || {}, addedObjectives: d.addedObjectives || {},
     turretBuilt: d.turretBuilt || {}, partyNotes: d.partyNotes || [], addedQuests: d.addedQuests || [],
-    questReveal: d.questReveal || {}   // qid -> true = a hidden quest revealed to players
+    questReveal: d.questReveal || {},   // qid -> true = a hidden quest revealed to players
+    removedQuests: d.removedQuests || []  // qids deleted by the GM
   };
 }
 async function saveState(mut) {
@@ -172,6 +173,7 @@ function mergedContent() {
   (c.turrets || []).forEach((t) => { if (s.turretBuilt[t.id] !== undefined) t.built = s.turretBuilt[t.id]; });
   c.partyNotes = (c.partyNotes || []).concat(s.partyNotes || []);
   if (s.addedQuests.length) c.quests = (c.quests || []).concat(s.addedQuests);
+  if (s.removedQuests.length) c.quests = (c.quests || []).filter((q) => !s.removedQuests.includes(q.id));
   c.galaxyRevealed = (c.quests || []).some((q) => q.revealsGalaxy && q.status === "complete");
   return c;
 }
@@ -204,6 +206,21 @@ function buildCtx() {
     addPartyNote: async (t) => saveState((s) => { s.partyNotes.push(t); }),
     revealQuest: async (id) => saveState((s) => { s.questReveal[id] = true; }),
     hideQuest: async (id) => saveState((s) => { delete s.questReveal[id]; }),
+    deleteQuest: async (id) => saveState((s) => { const i = s.addedQuests.findIndex((q) => q.id === id); if (i >= 0) s.addedQuests.splice(i, 1); else if (!s.removedQuests.includes(id)) s.removedQuests.push(id); }),
+    openTab: (labels) => openTabByLabel(labels),
+    gotoMap: (nodeId, locId) => {
+      const nodes = (CONTENT.map && CONTENT.map.nodes) || {};
+      const path = []; let cur = nodeId; let guard = 0;
+      while (cur && guard++ < 20) { path.unshift(cur); cur = nodes[cur]?.parent; }
+      const S = SSVJ(); if (path.length) S._mapPath = path; S._mapSel = locId || null;
+      refreshOpen();
+      openTabByLabel(["map", "maps", "star map"]);
+    },
+    gotoScene: (name) => {
+      const sc = game.scenes?.getName?.(name);
+      if (!sc) return warn(`Scene "${name}" isn't set up yet — create it in Foundry with that exact name.`);
+      if (game.user.isGM) sc.activate?.() ?? sc.view?.(); else sc.view?.();
+    },
 
     openAssign: () => assignDialog(),
     promptNumber: (title, val) => promptValue(title, val, "number"),
@@ -322,6 +339,12 @@ function bindPanels(root) {
 }
 function currentRoot() { const sq = ui.simpleQuest; return sq?.rendered ? rootOf(sq, sq.element) : null; }
 function refreshOpen() { const r = currentRoot(); if (r) bindPanels(r); }
+function openTabByLabel(labels) {
+  const r = currentRoot(); if (!r) return;
+  const norm = (s) => String(s || "").trim().toLowerCase();
+  const link = Array.from(r.querySelectorAll("a.item[data-tab]")).find((a) => labels.includes(norm(a.textContent)));
+  if (link) link.click();
+}
 
 function logTabs() {
   const r = currentRoot();

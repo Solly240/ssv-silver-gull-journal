@@ -205,13 +205,141 @@
       ]
     },
     {
+      "id": "talvos",
+      "ico": "🔍",
+      "name": "Find Captain Talvos",
+      "status": "active",
+      "description": "Captain Elias Renn Talvos — the crew's legendary commander — was mid-spacewalk when the rift split and his tether sheared him into the OTHER flow, a different direction than the ship. Wherever he came out, it isn't necessarily where the crew crashed. Finding any trace of him is the long arc of the whole campaign. ASTRA has no lead yet — the trail starts the moment the ship and its sensors are whole enough to search.",
+      "objectives": [],
+      "category": "main"
+    },
+    {
+      "id": "home",
+      "ico": "🧭",
+      "name": "Get Back to Our Galaxy",
+      "status": "active",
+      "description": "The crew are stranded in the uncharted Shattered Expanse, outside the Luminara Galaxy and UGC space entirely — no charted stars, no beacons, no reference points. Whether home is even reachable is unknown. The living Ancient gate 'The Coil' at the heart of the Reach may be the road out — if they can reach it, and survive whatever guards it.",
+      "objectives": [],
+      "category": "main"
+    },
+    {
+      "id": "trace-signal",
+      "ico": "🔺",
+      "name": "Trace the Signal",
+      "status": "active",
+      "category": "main",
+      "hidden": false,
+      "location": "The Long Silence (Vorrn-7)",
+      "handIn": "—",
+      "reward": "Salvage (chance of Quantum Relays / a fuel cell) + the truth behind the signal.",
+      "mapTarget": {
+        "node": "vorrn7",
+        "loc": "long-silence"
+      },
+      "note": "The wreck is old and unstable, and something is keeping that signal alive. Approach carefully.",
+      "description": "The repeating signal comes from a wreck half-buried in the ice — call sign long dead, transmitter somehow still warm. Someone, or something, is keeping it broadcasting. Find the source, decide whether it's salvage or a snare, and shut it off (or answer it).",
+      "objectives": [
+        {
+          "title": "Reach the wreck",
+          "detail": "Cross the ice to the downed ship at The Long Silence and find a way inside the breached hull.",
+          "done": false
+        },
+        {
+          "title": "Follow the signal to its source",
+          "detail": "Trace the broadcast through the dead decks to whatever is still powering it.",
+          "done": false
+        },
+        {
+          "title": "Decide what to do with it",
+          "detail": "Salvage it, silence it, or answer it — each has consequences. Choose with the crew.",
+          "done": false
+        },
+        {
+          "title": "Get out",
+          "detail": "The wreck is unstable and the cold is patient. Leave before either one closes in.",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "vorrn7-moon",
+      "ico": "🌙",
+      "name": "Make Planetfall on the Vorrn-7 Moon",
+      "status": "active",
+      "category": "exploration",
+      "description": "The Silver Gull has reached the Vorrn-7 System. ASTRA's scan of the largest moon shows three points of civilisation on the ice, a faint life reading, and a repeating signal she can't identify. Time to stop watching from orbit and put boots on the ground — pick a landing site and find out what's down there.",
+      "objectives": [
+        {
+          "title": "Hold orbit and finish the scan",
+          "detail": "Bring the Gull into a stable orbit and let ASTRA resolve the three surface settlements and the signal's rough bearing.",
+          "done": false
+        },
+        {
+          "title": "Choose a landing site",
+          "detail": "Frostwatch Landing (the outpost), Kettle Hollow (the life reading), or The Long Silence (the signal). Open the Map and drop in.",
+          "done": false
+        },
+        {
+          "title": "Make planetfall",
+          "detail": "Set the Gull down and get the crew onto the surface.",
+          "done": false
+        }
+      ],
+      "hidden": false,
+      "location": "Vorrn-7 Moon",
+      "handIn": "—",
+      "reward": "Whatever's waiting on the moon — intel, salvage, or trouble.",
+      "mapTarget": {
+        "node": "expanse",
+        "loc": "vorrn-7"
+      }
+    },
+    {
+      "id": "faint-signature",
+      "ico": "📡",
+      "name": "The Faint Signature",
+      "status": "active",
+      "category": "exploration",
+      "hidden": false,
+      "location": "Kettle Hollow (Vorrn-7)",
+      "handIn": "Kettle Hollow",
+      "reward": "A local contact + intel on the moon (and on the signal).",
+      "mapTarget": {
+        "node": "vorrn7",
+        "loc": "kettle-hollow"
+      },
+      "description": "The life reading ASTRA flagged is real, and it's a whole community — Kettle Hollow, a colony carved into a glacier, that shows on no UGC or faction registry. They didn't ask to be found. Make contact without spooking them and find out who they are, why they're hiding, and what they know about the rest of this moon.",
+      "objectives": [
+        {
+          "title": "Descend into Kettle Hollow",
+          "detail": "Take the ice tunnels down to the colony proper; go in openly — they'll be watching.",
+          "done": false
+        },
+        {
+          "title": "Make peaceful contact",
+          "detail": "Convince the colony's speaker the crew aren't Directorate press-gangs or Apostle missionaries.",
+          "done": false
+        },
+        {
+          "title": "Hear their story",
+          "detail": "Learn who founded Kettle Hollow, why they stay hidden, and what they've heard out on the ice.",
+          "done": false
+        },
+        {
+          "title": "Earn a favour",
+          "detail": "Do one thing for the colony to leave on good terms — a trade, a repair, or seeing off a threat.",
+          "done": false
+        }
+      ]
+    },
+    {
       "id": "turrets",
       "ico": "🔧",
       "name": "Rebuild the Ship's Turrets",
       "status": "active",
       "kind": "turrets",
       "collapsed": true,
-      "description": "All six turret hardpoints were sheared off in the crash — the Silver Gull is effectively unarmed. ASTRA recovered the blueprints and the micro-repair drones can fabricate each turret, but they need exotic components gathered from across the Expanse. The material bars below fill straight from the ship's inventory; each turret can be built once its own components are on hand.",
+      "description": "All six turret hardpoints were sheared off in the crash, leaving the Silver Gull toothless. ASTRA still has the fabrication blueprints and the micro-repair drones can build each turret on its empty hardpoint — but they need exotic components the crew will have to scavenge, trade for, or refine across the Reach. Each material bar below fills straight from the ship's inventory; a turret can be built the moment its own components are aboard.",
       "objectives": [
         {
           "title": "Light Flak Turret",
@@ -258,7 +386,7 @@
       "ico": "🕳️",
       "name": "Repair the Hull Breach",
       "status": "active",
-      "description": "The Silver Gull's belly was gouged open in the crash, and there's a fresh scar too: during the Apostle battle Baldy fired a round straight through the front windscreen to kill a self-destruct module. The micro-repair drones are working the hull, but the breaches and that bullet hole still need sealing.",
+      "description": "The Gull's belly was torn open in the crash and never fully closed, and there's a fresh scar too: Baldy put a round clean through the front windscreen during the Apostle battle. The micro-repair drones can seal it all — given hull patches and Titanium-Aegis plating — but until they do, every hard burn and every hull hit is a gamble.",
       "objectives": [
         {
           "title": "Patch the front-windscreen bullet hole",
@@ -284,7 +412,7 @@
       "ico": "🛰️",
       "name": "Restore Cloaking",
       "status": "active",
-      "description": "The cloaking field generator is not installed — Ship-Combat Station #9 (Cloaking Officer) is LOCKED. Online, it would give the crew Engage Cloak (attackers roll at disadvantage), Cloak Burst, Phase Shift, a Decoy Drop, and passive Adaptive Camouflage — exactly the edge a lone, outgunned ship needs in the Expanse.",
+      "description": "The cloaking field generator was never installed — Ship-Combat Station #9 (Cloaking Officer) sits dark and LOCKED. Bring it online and the Gull gains Engage Cloak (attackers roll at disadvantage), Cloak Burst, Phase Shift, a Decoy Drop and passive Adaptive Camouflage — exactly the edge a lone, outgunned ship needs out here.",
       "objectives": [
         {
           "title": "Recover or fabricate a cloaking field generator",
@@ -306,150 +434,82 @@
       "location": "SSV Silver Gull"
     },
     {
-      "id": "talvos",
-      "ico": "🔍",
-      "name": "Find Captain Talvos",
-      "status": "active",
-      "description": "Captain Elias Renn Talvos — the crew's legendary commander — was mid-spacewalk when the rift split, and his tether sheared into the other flow (Flow Beta), a different direction than the ship. Wherever he landed, it isn't necessarily where the crew crashed. Finding any trace of him is the campaign's long arc. ASTRA has no leads yet.",
-      "objectives": [],
-      "category": "main"
-    },
-    {
-      "id": "home",
-      "ico": "🧭",
-      "name": "Get Back to Our Galaxy",
-      "status": "active",
-      "description": "The crew are stranded in the uncharted Shattered Expanse, outside the Luminara Galaxy and UGC space entirely — no charted stars, no beacons, no reference points. Whether home is even reachable is unknown. The living Ancient gate 'The Coil' may be a road out. ASTRA has no confirmed route yet.",
-      "objectives": [],
-      "category": "main"
-    },
-    {
-      "id": "vorrn7-moon",
-      "ico": "🌙",
-      "name": "Make Planetfall on the Vorrn-7 Moon",
-      "status": "active",
-      "category": "exploration",
-      "description": "The Silver Gull is bound for the Vorrn-7 System — a ringed ice-giant whose largest moon carries a faint life reading and a repeating signal ASTRA can't identify. Find out what's down there.",
-      "objectives": [
-        {
-          "title": "Enter orbit of Vorrn-7",
-          "detail": "Bring the Gull into a stable orbit around the ice-giant and its moon.",
-          "done": false
-        },
-        {
-          "title": "Scan the life reading",
-          "detail": "Pin down the source of the faint biosignature on the moon.",
-          "done": false
-        },
-        {
-          "title": "Trace the unidentified signal",
-          "detail": "Triangulate the repeating signal — is it a beacon, a distress call, or a trap?",
-          "done": false
-        },
-        {
-          "title": "Set down and investigate",
-          "detail": "Make planetfall and see the source with your own eyes.",
-          "done": false
-        }
-      ],
-      "hidden": false,
-      "location": "Vorrn-7 Moon",
-      "handIn": "—",
-      "reward": "Whatever's waiting on the moon — intel, salvage, or trouble."
-    },
-    {
       "id": "cartographer",
       "ico": "🗺️",
-      "name": "The Cartographer's Price",
+      "name": "The Cartographer of Frostwatch",
       "status": "active",
       "category": "side",
-      "description": "Word at the free port: a Sovereign Horizon cartographer, Wrenn Sallow, sells the only complete chart of The Erevos Reach — for a price. Buy it and the whole galaxy opens up.",
+      "description": "There's a surveyor holed up at Frostwatch Landing — Wrenn Sallow, who spent years charting the Erevos Reach before she washed up on this moon. She has the only complete star chart of the whole galaxy loaded in her rig, and she'll hand it over — once the crew prove they're worth it and do a little work for her first. Get it, and the entire galaxy opens up on ASTRA's map.",
       "objectives": [
         {
-          "title": "Dock at Halberd's Rest",
-          "detail": "Reach the great neutral free port built into the gutted Directorate dreadnought.",
+          "title": "Find Wrenn Sallow at Frostwatch",
+          "detail": "Ask around the outpost's trade post for the surveyor; she keeps to the old comms shack on the outpost's edge.",
           "done": false
         },
         {
-          "title": "Find Wrenn Sallow",
-          "detail": "Track down the cartographer in the market decks.",
+          "title": "Earn her trust",
+          "detail": "She won't sell to strangers. Run the errand she asks — recover her lost survey drone from the ice flats, or settle her tab at the cantina — to prove you're not Directorate or Apostle.",
           "done": false
         },
         {
-          "title": "Meet her price",
-          "detail": "Data, credits, or a favor — settle the deal.",
+          "title": "Pay her price",
+          "detail": "Data, credits, or a favour — settle the deal for the chart.",
           "done": false
         },
         {
-          "title": "Receive the master chart",
-          "detail": "Load the full Erevos Reach chart into ASTRA's nav system.",
+          "title": "Load the master chart into ASTRA",
+          "detail": "Jack her survey rig into ASTRA's nav system and copy the full Erevos Reach chart.",
           "done": false
         }
       ],
       "hidden": true,
-      "location": "Halberd's Rest",
-      "handIn": "Halberd's Rest",
+      "location": "Frostwatch Landing (Vorrn-7)",
+      "handIn": "Frostwatch Landing",
       "reward": "The complete Erevos Reach galaxy chart — every region named on the Map.",
-      "giver": "Wrenn Sallow (Sovereign Horizon)",
-      "revealsGalaxy": true
+      "giver": "Wrenn Sallow, ex-Sovereign Horizon surveyor",
+      "revealsGalaxy": true,
+      "mapTarget": {
+        "node": "vorrn7",
+        "loc": "frostwatch"
+      }
     },
     {
-      "id": "thermite",
-      "ico": "🔥",
-      "name": "Thermite Run",
+      "id": "frostwatch-trouble",
+      "ico": "🛠️",
+      "name": "Trouble at Frostwatch",
       "status": "active",
-      "category": "repair",
-      "description": "Turret ammunition needs Hyper-Dense Refined Thermite, and only the magma-flat cartels of Cindermoor refine it. Make the run and haul it home.",
+      "category": "side",
+      "hidden": false,
+      "location": "Frostwatch Landing (Vorrn-7)",
+      "handIn": "Frostwatch Landing",
+      "reward": "Outpost goodwill + a crate of salvage (roll for a turret component).",
+      "mapTarget": {
+        "node": "vorrn7",
+        "loc": "frostwatch"
+      },
+      "description": "Frostwatch Landing is limping. Their fusion tap keeps browning out, a supply rover went missing on the ice, and the outpost boss is offering salvage-pick rights to anyone who can sort it out. Easy way to make friends on a strange moon — and friends here mean fuel, parts and a warm bunk.",
       "objectives": [
         {
-          "title": "Reach Cindermoor",
-          "detail": "Take the Gull down to the volcanic refinery world.",
+          "title": "Talk to the outpost boss",
+          "detail": "Meet the harried administrator at the Frostwatch trade post and take the job.",
           "done": false
         },
         {
-          "title": "Broker with a refinery cartel",
-          "detail": "Buy, barter, or bully your way to a batch.",
+          "title": "Stabilise the fusion tap",
+          "detail": "Get down to the reactor housing and reseat the coolant lines / clear the ice choking the vents.",
           "done": false
         },
         {
-          "title": "Haul the thermite back",
-          "detail": "Get the volatile cargo aboard without cooking the ship.",
+          "title": "Recover the missing rover",
+          "detail": "Follow the rover's last track out onto the ice flats and bring it (and whoever was driving) home.",
+          "done": false
+        },
+        {
+          "title": "Report back",
+          "detail": "Return to the boss at Frostwatch to claim the salvage rights.",
           "done": false
         }
-      ],
-      "hidden": true,
-      "location": "Cindermoor",
-      "handIn": "Cindermoor",
-      "reward": "3× Hyper-Dense Refined Thermite (turret material)."
-    },
-    {
-      "id": "salvage-rights",
-      "ico": "♻️",
-      "name": "Salvage Rights",
-      "status": "active",
-      "category": "repair",
-      "description": "Ossuary is a whole world of dead ships. Stake a claim and strip a wreck for the exotic parts the turrets need.",
-      "objectives": [
-        {
-          "title": "Dock the ship-graveyard",
-          "detail": "Bring the Gull down among the centuries of wrecks at Ossuary.",
-          "done": false
-        },
-        {
-          "title": "Stake a salvage claim",
-          "detail": "Register a claim with the salvage settlement — or take one the hard way.",
-          "done": false
-        },
-        {
-          "title": "Strip a wreck",
-          "detail": "Pull working Quantum Relays and a fuel cell from the hulks.",
-          "done": false
-        }
-      ],
-      "hidden": true,
-      "location": "Ossuary",
-      "handIn": "Ossuary",
-      "reward": "2× Quantum Relays + 1× Hyperfold Fuel Cell."
+      ]
     },
     {
       "id": "green-fire",
@@ -479,215 +539,77 @@
       "location": "Greenhollow",
       "handIn": "Greenhollow",
       "reward": "Raw Verdite — revive a piece of Ronon's Satedan gear.",
-      "giver": "Ronon Dex"
+      "giver": "Ronon Dex",
+      "mapTarget": {
+        "node": "expanse",
+        "loc": "greenhollow"
+      }
     },
     {
-      "id": "mauve-ledger",
-      "ico": "🃏",
-      "name": "The Mauve Ledger",
+      "id": "thermite",
+      "ico": "🔥",
+      "name": "Thermite Run",
       "status": "active",
-      "category": "side",
-      "description": "The syndicate that wants Baldy dead keeps its books at Sundowner's casino-city. Get the ledger and Baldy's 'mauve' debt gets a lot quieter.",
+      "category": "repair",
+      "description": "Turret ammunition needs Hyper-Dense Refined Thermite, and only the magma-flat cartels of Cindermoor refine it. Make the run and haul it home.",
       "objectives": [
         {
-          "title": "Reach Sundowner",
-          "detail": "Descend to the rogue-planet casino-city.",
+          "title": "Reach Cindermoor",
+          "detail": "Take the Gull down to the volcanic refinery world.",
           "done": false
         },
         {
-          "title": "Dodge the collectors",
-          "detail": "Move through the tables without the syndicate's hunters clocking Baldy.",
+          "title": "Broker with a refinery cartel",
+          "detail": "Buy, barter, or bully your way to a batch.",
           "done": false
         },
         {
-          "title": "Lift the ledger",
-          "detail": "Win it, steal it, or burn it — quietly.",
+          "title": "Haul the thermite back",
+          "detail": "Get the volatile cargo aboard without cooking the ship.",
           "done": false
         }
       ],
       "hidden": true,
-      "location": "Sundowner",
-      "handIn": "Sundowner",
-      "reward": "Baldy's bounty goes cold (for now) — and a favor owed.",
-      "giver": "Baldy"
+      "location": "Cindermoor",
+      "handIn": "Cindermoor",
+      "reward": "3× Hyper-Dense Refined Thermite (turret material).",
+      "mapTarget": {
+        "node": "expanse",
+        "loc": "cindermoor"
+      }
     },
     {
-      "id": "sib-vael-round",
-      "ico": "🍺",
-      "name": "A Round at Sib Vael",
+      "id": "salvage-rights",
+      "ico": "♻️",
+      "name": "Salvage Rights",
       "status": "active",
-      "category": "side",
-      "description": "Sib Vael's floating markets distill the rarest brews in the Reach. Gobby wants in — and a brew-off could net something genuinely potent.",
+      "category": "repair",
+      "description": "Ossuary is a whole world of dead ships. Stake a claim and strip a wreck for the exotic parts the turrets need.",
       "objectives": [
         {
-          "title": "Dock at Sib Vael",
-          "detail": "Bring the Gull down to the ocean world's smuggler coves.",
+          "title": "Dock the ship-graveyard",
+          "detail": "Bring the Gull down among the centuries of wrecks at Ossuary.",
           "done": false
         },
         {
-          "title": "Enter the brew-off",
-          "detail": "Gobby challenges a local reef-spirit distiller.",
+          "title": "Stake a salvage claim",
+          "detail": "Register a claim with the salvage settlement — or take one the hard way.",
           "done": false
         },
         {
-          "title": "Win the cask",
-          "detail": "Take home the prize batch.",
+          "title": "Strip a wreck",
+          "detail": "Pull working Quantum Relays and a fuel cell from the hulks.",
           "done": false
         }
       ],
       "hidden": true,
-      "location": "Sib Vael",
-      "handIn": "Sib Vael",
-      "reward": "A cask of bioluminescent reef-spirit — a powerful one-use boon.",
-      "giver": "Gobby"
-    },
-    {
-      "id": "older-than-astra",
-      "ico": "◎",
-      "name": "Older Than ASTRA",
-      "status": "active",
-      "category": "exploration",
-      "description": "The [CORRUPTED] ring's writing may be older than ASTRA herself. She wants to know what it is — even if getting close means facing whatever guards a dead Ancient gate.",
-      "objectives": [
-        {
-          "title": "Approach the [CORRUPTED] ring",
-          "detail": "Close on the torus megastructure adrift in the rift.",
-          "done": false
-        },
-        {
-          "title": "Survive the guardians",
-          "detail": "Avoid or endure whatever still watches the gate.",
-          "done": false
-        },
-        {
-          "title": "Retrieve a data fragment",
-          "detail": "Pull a shard of the ring's impossibly old records for ASTRA.",
-          "done": false
-        }
-      ],
-      "hidden": true,
-      "location": "[CORRUPTED] Ring",
-      "handIn": "—",
-      "reward": "An Ancient data fragment — a piece of what ASTRA has forgotten.",
-      "giver": "ASTRA",
-      "note": "Dangerous — likely Ancient-gate guardians."
-    },
-    {
-      "id": "sermon-choir",
-      "ico": "🕯️",
-      "name": "Sermon at The Choir",
-      "status": "active",
-      "category": "main",
-      "description": "The Apostles keep a shrine-mission at The Choir. The crew are already on their bad side — but the faithful know things about the rifts nobody else does.",
-      "objectives": [
-        {
-          "title": "Approach The Choir",
-          "detail": "Reach the spire-covered shrine world on the Reach's rim.",
-          "done": false
-        },
-        {
-          "title": "Get inside a sermon",
-          "detail": "Blend in — or break in — to hear the Conclave's word.",
-          "done": false
-        },
-        {
-          "title": "Get out alive",
-          "detail": "Leave with what you learned before they realize who you are.",
-          "done": false
-        }
-      ],
-      "hidden": true,
-      "location": "The Choir",
-      "handIn": "—",
-      "reward": "Hard intel on the Apostles and the rifts.",
-      "note": "Hostile faction — high risk."
-    },
-    {
-      "id": "cold-case",
-      "ico": "❄️",
-      "name": "Cold Case",
-      "status": "active",
-      "category": "side",
-      "description": "A sealed cryo-container is logged in Tarn's ice-vaults under a name that no longer exists. Thaw it and find out why someone paid to keep it frozen.",
-      "objectives": [
-        {
-          "title": "Reach Tarn",
-          "detail": "Take the Gull to the frozen cryo-mining world.",
-          "done": false
-        },
-        {
-          "title": "Access the ice-vaults",
-          "detail": "Get into the cheap-labor mining settlement's cold storage.",
-          "done": false
-        },
-        {
-          "title": "Thaw the container",
-          "detail": "Open it — and deal with whatever's inside.",
-          "done": false
-        }
-      ],
-      "hidden": true,
-      "location": "Tarn",
-      "handIn": "Tarn",
-      "reward": "Whatever was worth freezing (loot / a lead)."
-    },
-    {
-      "id": "gallows-contract",
-      "ico": "☠️",
-      "name": "The Gallows Contract",
-      "status": "active",
-      "category": "side",
-      "description": "The pirate lords of Gallows Reach post bounties no honest port would touch. Take one, and you're on the board.",
-      "objectives": [
-        {
-          "title": "Reach Gallows Reach",
-          "detail": "Dock at the pirate lords' bounty-and-black-market hub.",
-          "done": false
-        },
-        {
-          "title": "Take a contract",
-          "detail": "Pull a job off the board that the crew can stomach.",
-          "done": false
-        },
-        {
-          "title": "Collect the bounty",
-          "detail": "Finish it and get paid at the Reach.",
-          "done": false
-        }
-      ],
-      "hidden": true,
-      "location": "Gallows Reach",
-      "handIn": "Gallows Reach",
-      "reward": "Credits + a pirate-lord's favor."
-    },
-    {
-      "id": "ferrum-accord",
-      "ico": "⚙️",
-      "name": "Ferrum Accord",
-      "status": "active",
-      "category": "side",
-      "description": "Ferrum Hold buys ore and loyalty in equal measure. Run a contract for the Iron Directorate holding and you'll have a foot in the door with a superpower.",
-      "objectives": [
-        {
-          "title": "Reach Ferrum Hold",
-          "detail": "Dock at the orderly, watchful mining holding.",
-          "done": false
-        },
-        {
-          "title": "Run an ore contract",
-          "detail": "Move a load the Directorate wants moved, no questions.",
-          "done": false
-        },
-        {
-          "title": "Deliver clean",
-          "detail": "Hand it off at Ferrum Hold and bank the standing.",
-          "done": false
-        }
-      ],
-      "hidden": true,
-      "location": "Ferrum Hold",
-      "handIn": "Ferrum Hold",
-      "reward": "Standing with the Iron Directorate + refined ore."
+      "location": "Ossuary",
+      "handIn": "Ossuary",
+      "reward": "2× Quantum Relays + 1× Hyperfold Fuel Cell.",
+      "mapTarget": {
+        "node": "expanse",
+        "loc": "ossuary"
+      }
     }
   ],
   "lore": [
@@ -1732,7 +1654,8 @@
             "y": 0.6121,
             "hasData": false
           }
-        ]
+        ],
+        "parent": null
       },
       "expanse": {
         "name": "The Shattered Expanse",
@@ -1905,7 +1828,8 @@
             "x": 0.207,
             "y": 0.9131,
             "hasData": true,
-            "info": "A ringed ice/gas giant and a moon with a faint life reading and a signal ASTRA couldn't identify. The crew's current forward destination."
+            "info": "The crew's current destination — a ringed ice-giant and its largest moon, which carries a faint life reading and a repeating signal. Click to drop into the moon.",
+            "child": "vorrn7"
           },
           {
             "id": "keth-minor",
@@ -2174,6 +2098,42 @@
             "x": 0.7174,
             "y": 0.918,
             "hasData": false
+          }
+        ]
+      },
+      "vorrn7": {
+        "name": "Vorrn-7 Moon",
+        "kind": "body",
+        "parent": "expanse",
+        "image": "https://raw.githubusercontent.com/Solly240/ssv-silver-gull-journal/main/assets/vorrn7/vorrn7-moon.png",
+        "description": "The largest moon of the Vorrn-7 ice-giant: a frozen world of cracked ice plains under the banded gas giant and its rings. ASTRA's scans pick out three points of civilisation on the surface — the crew's three possible landing sites. A faint life reading pulses from one; an unidentified repeating signal from another.",
+        "locations": [
+          {
+            "id": "frostwatch",
+            "name": "Frostwatch Landing",
+            "x": 0.225,
+            "y": 0.79,
+            "hasData": true,
+            "scene": "Vorrn-7 — Frostwatch Landing",
+            "info": "A frontier survey outpost on the ice — landing pad, prefab habs, a trade post and the moon's main quest board. The obvious first place to set down and get the lay of the land."
+          },
+          {
+            "id": "kettle-hollow",
+            "name": "Kettle Hollow",
+            "x": 0.775,
+            "y": 0.61,
+            "hasData": true,
+            "scene": "Vorrn-7 — Kettle Hollow",
+            "info": "A small colony carved into a glacier — the source of the faint life reading. Who is living all the way out here, and why?"
+          },
+          {
+            "id": "long-silence",
+            "name": "The Long Silence",
+            "x": 0.775,
+            "y": 0.865,
+            "hasData": true,
+            "scene": "Vorrn-7 — The Long Silence",
+            "info": "A wreck half-buried in the ice, still broadcasting a repeating signal into the dark. Salvage — or a trap. Approach carefully."
           }
         ]
       }

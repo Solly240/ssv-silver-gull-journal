@@ -134,7 +134,17 @@
     .ssvj .hot{position:absolute;width:22px;height:22px;transform:translate(-50%,-50%);border-radius:50%;border:1.5px solid transparent;background:transparent;cursor:pointer;padding:0;}
     .ssvj .hot:hover{border-color:var(--teal);background:rgba(63,224,200,.18);box-shadow:0 0 12px rgba(63,224,200,.5);}
     .ssvj .hot.nodata:hover{border-color:var(--red);background:rgba(255,84,112,.18);box-shadow:0 0 12px rgba(255,84,112,.4);}
-    .ssvj .hot.sel{border-color:var(--gold);background:rgba(242,193,75,.2);}
+    .ssvj .hot.sel{border-color:var(--gold);background:rgba(242,193,75,.25);box-shadow:0 0 0 3px rgba(242,193,75,.35),0 0 16px rgba(242,193,75,.6);animation:ssvjpulse 1.4s ease-in-out infinite;}
+    @keyframes ssvjpulse{0%,100%{box-shadow:0 0 0 3px rgba(242,193,75,.35),0 0 12px rgba(242,193,75,.5);}50%{box-shadow:0 0 0 6px rgba(242,193,75,.18),0 0 22px rgba(242,193,75,.8);}}
+    .ssvj .map-2col{display:grid;grid-template-columns:1.55fr 1fr;gap:14px;align-items:start;}
+    @media (max-width:820px){.ssvj .map-2col{grid-template-columns:1fr;}}
+    .ssvj .map-right{border:1px solid var(--border);border-radius:10px;background:var(--panel2);padding:12px 14px;}
+    .ssvj .mp-h{font-weight:700;color:var(--teal2);font-size:15px;margin-bottom:6px;}
+    .ssvj .mp-loc p{font-size:13.5px;color:#c6d6ec;line-height:1.5;margin:0 0 10px;}
+    .ssvj .mp-loc.red .noinfo{color:var(--red);}
+    .ssvj .scene-btn{width:100%;margin-top:4px;padding:9px;font-size:13.5px;}
+    .ssvj .loclink{color:var(--teal);cursor:pointer;text-decoration:underline dotted;}
+    .ssvj .loclink:hover{color:var(--teal2);}
     .ssvj .detail{border:1px solid var(--border);border-radius:9px;background:var(--panel2);padding:12px 14px;margin-top:12px;}
     .ssvj .detail.red{border-color:rgba(255,84,112,.5);background:rgba(255,84,112,.06);}
     .ssvj .noinfo{color:var(--red);font-weight:700;}
@@ -231,7 +241,7 @@
       const pillCls = q.status === "complete" ? "done" : (q.objectives && q.objectives.length ? "active" : "open");
       const pillTxt = q.status === "complete" ? "Complete" : (q.objectives && q.objectives.length ? "In Progress" : "Long Arc");
       const meta = [];
-      if (q.location) meta.push(`📍 ${esc(q.location)}`);
+      if (q.location) meta.push(q.mapTarget ? `<a class="loclink" data-goto="${q.id}">📍 ${esc(q.location)}</a>` : `📍 ${esc(q.location)}`);
       if (q.reward) meta.push(`🎁 ${esc(q.reward)}`);
       const metaHtml = meta.length ? `<div class="q-meta">${meta.join(" &nbsp;·&nbsp; ")}</div>` : "";
       let extra = "";
@@ -281,6 +291,7 @@
     el.querySelectorAll("[data-open]").forEach((h) => h.onclick = (e) => { e.stopPropagation(); S._questOpen = h.dataset.open; S.renderQuests(ctx, body); });
     el.querySelectorAll("[data-collapse]").forEach((a) => a.onclick = (e) => { e.stopPropagation(); const id = a.dataset.collapse; const cur = S._collapsed[id] !== undefined ? S._collapsed[id] : true; S._collapsed[id] = !cur; S.renderQuests(ctx, body); });
     el.querySelectorAll("[data-reveal]").forEach((b) => b.onclick = (e) => { e.stopPropagation(); ctx.revealQuest?.(b.dataset.reveal); });
+    el.querySelectorAll("[data-goto]").forEach((a) => a.onclick = (e) => { e.stopPropagation(); const q = all.find((x) => x.id === a.dataset.goto); if (q && q.mapTarget) ctx.gotoMap?.(q.mapTarget.node, q.mapTarget.loc); });
     wireTurretGroup(ctx, el, body);
     const aq = el.querySelector("[data-addquest]"); if (aq) aq.onclick = async () => { const t = await ctx.promptText?.("New quest name", ""); if (t) ctx.addQuest?.(t); };
   };
@@ -342,7 +353,7 @@
       : `<p class="muted">No objectives yet.${ctx.isGM ? " Use “+ add task” below." : " ASTRA will update this."}</p>`);
 
     const metaRows = [
-      q.location ? `<dt>Location</dt><dd>${esc(q.location)}</dd>` : "",
+      q.location ? `<dt>Location</dt><dd>${q.mapTarget ? `<a class="loclink" data-goto-detail>📍 ${esc(q.location)}</a>` : esc(q.location)}</dd>` : "",
       q.handIn && q.handIn !== "—" ? `<dt>Hand in at</dt><dd>${esc(q.handIn)}</dd>` : "",
       q.giver ? `<dt>From</dt><dd>${esc(q.giver)}</dd>` : "",
       q.reward ? `<dt>Reward</dt><dd class="reward">${esc(q.reward)}</dd>` : ""
@@ -358,9 +369,11 @@
       ${isTurret ? turretGroup(ctx, q) : objs}
       ${ctx.isGM ? `<div class="gm-row"><span class="gm-tag">GM</span>
         ${!isTurret ? `<button class="btn mini" data-add>+ add task</button>` : ""}
-        <button class="btn mini" data-status>${q.status === "complete" ? "mark active" : "mark complete"}</button></div>` : ""}`;
+        <button class="btn mini" data-status>${q.status === "complete" ? "mark active" : "mark complete"}</button>
+        <button class="btn mini warn" data-del-quest>delete quest</button></div>` : ""}`;
 
     el.querySelector("[data-back]").onclick = () => { S._questOpen = null; S.renderQuests(ctx, el.parentElement); };
+    const gt = el.querySelector("[data-goto-detail]"); if (gt) gt.onclick = () => { if (q.mapTarget) ctx.gotoMap?.(q.mapTarget.node, q.mapTarget.loc); };
     el.querySelectorAll("[data-expand]").forEach((t) => t.onclick = () => { const k = `${q.id}:${t.dataset.expand}`; S._objOpen[k] = !S._objOpen[k]; questDetail(ctx, el, q); });
     if (ctx.isGM) {
       el.querySelectorAll("[data-toggle]").forEach((b) => b.onclick = () => ctx.toggleObjective(q.id, Number(b.dataset.toggle)));
@@ -368,6 +381,7 @@
       el.querySelectorAll("[data-del]").forEach((b) => b.onclick = async () => { if (await ctx.confirm?.("Remove task?", "Delete this objective?")) ctx.removeObjective(q.id, +b.dataset.del); });
       const add = el.querySelector("[data-add]"); if (add) add.onclick = async () => { const r = await ctx.promptObjective?.("Add task", { title: "", detail: "" }); if (r && r.title) ctx.addObjective(q.id, r); };
       const stt = el.querySelector("[data-status]"); if (stt) stt.onclick = () => ctx.setQuestStatus(q.id, q.status === "complete" ? "active" : "complete");
+      const dq = el.querySelector("[data-del-quest]"); if (dq) dq.onclick = async () => { if (await ctx.confirm?.("Delete quest?", `Permanently remove "${q.name}" from the board?`)) { ctx.deleteQuest?.(q.id); S._questOpen = null; } };
       wireTurretGroup(ctx, el, el.parentElement);
     }
   }
@@ -433,26 +447,37 @@
     const crumbs = S._mapPath.map((id, i) => `<a data-jump="${i}">${esc(nodes[id].name)}</a>`).join(' <span>&rsaquo;</span> ');
     const back = S._mapPath.length > 1 ? `<a data-back>&#9664; Back</a> &nbsp; ` : "";
 
-    let detail = "";
-    if (loc) {
-      detail = loc.hasData
-        ? `<div class="detail"><div style="display:flex;justify-content:space-between;gap:10px;align-items:center;"><b style="color:var(--teal);font-size:15px;">${esc(loc.name)}</b><a class="link" data-close>close ✕</a></div><p style="color:#c6d6ec;margin-top:6px;font-size:13.5px;">${esc(loc.info || "")}</p></div>`
-        : `<div class="detail red"><div style="display:flex;justify-content:space-between;gap:10px;align-items:center;"><b style="color:var(--red);font-size:15px;">${esc(loc.name)}</b><a class="link" data-close>close ✕</a></div><p class="noinfo" style="margin-top:6px;">⚠ ASTRA has no info on this region yet.</p></div>`;
+    // right-hand detail panel content
+    let right;
+    if (loc && loc.scene) {
+      right = `<div class="mp-loc"><div class="mp-h">${esc(loc.name)}</div><p>${esc(loc.info || "")}</p>
+        <button class="btn scene-btn" data-scene="${esc(loc.scene)}">▶ Take me to this scene</button></div>`;
+    } else if (loc && loc.hasData) {
+      right = `<div class="mp-loc"><div class="mp-h">${esc(loc.name)}</div><p>${esc(loc.info || "")}</p></div>`;
+    } else if (loc) {
+      right = `<div class="mp-loc red"><div class="mp-h" style="color:var(--red)">${esc(loc.name)}</div><p class="noinfo">⚠ ASTRA has no info on this region yet.</p></div>`;
+    } else {
+      right = `<div class="mp-loc"><div class="mp-h">${esc(node.name)}</div><p class="muted">${esc(node.description || "Click a marker on the map for detail.")}</p></div>`;
     }
+    const revealed = node.imageNamed && (data.galaxyRevealed || (data.quests || []).some((q) => q.revealsGalaxy && q.status === "complete"));
 
     el.innerHTML = `
       <h1 class="ssvj-title">Star Map</h1>
       <div class="crumbs">${back}${crumbs}</div>
-      <div class="mapstage">
-        <img src="${au(ctx, (node.imageNamed && (data.galaxyRevealed || (data.quests || []).some((q) => q.revealsGalaxy && q.status === "complete"))) ? node.imageNamed : node.image)}" alt="${esc(node.name)}"/>
-        ${locs.map((l) => { const drill = l.child && nodes[l.child]; const nd = (l.hasData || drill) ? "" : "nodata"; return `<button class="hot ${nd} ${loc && loc.id === l.id ? "sel" : ""}" data-loc="${l.id}" title="${esc(l.name)}" style="left:${(l.x * 100).toFixed(2)}%;top:${(l.y * 100).toFixed(2)}%;"></button>`; }).join("")}
-      </div>
-      <div class="legend">
-        <span><b style="background:#3fe0c8"></b>Charted — click a marker</span>
-        <span><b style="background:#ff5470"></b>No info yet</span>
-        <span class="muted">${node.kind === "galaxy" ? "Click The Shattered Expanse to zoom into its sector chart." : ""}</span>
-      </div>
-      ${detail}`;
+      <div class="map-2col">
+        <div class="mapstage">
+          <img src="${au(ctx, revealed ? node.imageNamed : node.image)}" alt="${esc(node.name)}"/>
+          ${locs.map((l) => { const drill = l.child && nodes[l.child]; const nd = (l.hasData || drill) ? "" : "nodata"; return `<button class="hot ${nd} ${loc && loc.id === l.id ? "sel" : ""}" data-loc="${l.id}" title="${esc(l.name)}" style="left:${(l.x * 100).toFixed(2)}%;top:${(l.y * 100).toFixed(2)}%;"></button>`; }).join("")}
+        </div>
+        <div class="map-right">
+          ${right}
+          <div class="legend">
+            <span><b style="background:#3fe0c8"></b>Charted</span>
+            <span><b style="background:#ff5470"></b>No info yet</span>
+          </div>
+          ${node.kind === "galaxy" ? `<p class="muted" style="margin-top:8px;">Click The Shattered Expanse to zoom into its sector chart.</p>` : ""}
+        </div>
+      </div>`;
 
     el.querySelectorAll("[data-loc]").forEach((h) => h.onclick = () => {
       const l = locs.find((x) => x.id === h.dataset.loc);
@@ -462,7 +487,7 @@
     });
     el.querySelectorAll("[data-jump]").forEach((a) => a.onclick = () => { S._mapPath = S._mapPath.slice(0, Number(a.dataset.jump) + 1); S._mapSel = null; S.renderMap(ctx, body); });
     const b = el.querySelector("[data-back]"); if (b) b.onclick = () => { S._mapPath = S._mapPath.slice(0, -1); S._mapSel = null; S.renderMap(ctx, body); };
-    const c = el.querySelector("[data-close]"); if (c) c.onclick = () => { S._mapSel = null; S.renderMap(ctx, body); };
+    const sb = el.querySelector("[data-scene]"); if (sb) sb.onclick = () => ctx.gotoScene?.(sb.dataset.scene);
   };
 
   /* ================================================================== */
