@@ -136,9 +136,7 @@
     .ssvj .hot.nodata:hover{border-color:var(--red);background:rgba(255,84,112,.18);box-shadow:0 0 12px rgba(255,84,112,.4);}
     .ssvj .hot.sel{border-color:var(--gold);background:rgba(242,193,75,.25);box-shadow:0 0 0 3px rgba(242,193,75,.35),0 0 16px rgba(242,193,75,.6);animation:ssvjpulse 1.4s ease-in-out infinite;}
     @keyframes ssvjpulse{0%,100%{box-shadow:0 0 0 3px rgba(242,193,75,.35),0 0 12px rgba(242,193,75,.5);}50%{box-shadow:0 0 0 6px rgba(242,193,75,.18),0 0 22px rgba(242,193,75,.8);}}
-    .ssvj .map-2col{display:grid;grid-template-columns:1.55fr 1fr;gap:14px;align-items:start;}
-    @media (max-width:820px){.ssvj .map-2col{grid-template-columns:1fr;}}
-    .ssvj .map-right{border:1px solid var(--border);border-radius:10px;background:var(--panel2);padding:12px 14px;}
+    .ssvj .map-detail{border:1px solid var(--border);border-radius:10px;background:var(--panel2);padding:12px 14px;margin-top:10px;}
     .ssvj .mp-h{font-weight:700;color:var(--teal2);font-size:15px;margin-bottom:6px;}
     .ssvj .mp-loc p{font-size:13.5px;color:#c6d6ec;line-height:1.5;margin:0 0 10px;}
     .ssvj .mp-loc.red .noinfo{color:var(--red);}
@@ -464,20 +462,16 @@
     el.innerHTML = `
       <h1 class="ssvj-title">Star Map</h1>
       <div class="crumbs">${back}${crumbs}</div>
-      <div class="map-2col">
-        <div class="mapstage">
-          <img src="${au(ctx, revealed ? node.imageNamed : node.image)}" alt="${esc(node.name)}"/>
-          ${locs.map((l) => { const drill = l.child && nodes[l.child]; const nd = (l.hasData || drill) ? "" : "nodata"; return `<button class="hot ${nd} ${loc && loc.id === l.id ? "sel" : ""}" data-loc="${l.id}" title="${esc(l.name)}" style="left:${(l.x * 100).toFixed(2)}%;top:${(l.y * 100).toFixed(2)}%;"></button>`; }).join("")}
-        </div>
-        <div class="map-right">
-          ${right}
-          <div class="legend">
-            <span><b style="background:#3fe0c8"></b>Charted</span>
-            <span><b style="background:#ff5470"></b>No info yet</span>
-          </div>
-          ${node.kind === "galaxy" ? `<p class="muted" style="margin-top:8px;">Click The Shattered Expanse to zoom into its sector chart.</p>` : ""}
-        </div>
-      </div>`;
+      <div class="mapstage">
+        <img src="${au(ctx, revealed ? node.imageNamed : node.image)}" alt="${esc(node.name)}"/>
+        ${locs.map((l) => { const drill = l.child && nodes[l.child]; const nd = (l.hasData || drill) ? "" : "nodata"; return `<button class="hot ${nd} ${loc && loc.id === l.id ? "sel" : ""}" data-loc="${l.id}" title="${esc(l.name)}" style="left:${(l.x * 100).toFixed(2)}%;top:${(l.y * 100).toFixed(2)}%;"></button>`; }).join("")}
+      </div>
+      <div class="legend">
+        <span><b style="background:#3fe0c8"></b>Charted — click a marker</span>
+        <span><b style="background:#ff5470"></b>No info yet</span>
+        ${node.kind === "galaxy" ? `<span class="muted">Click The Shattered Expanse to zoom in.</span>` : ""}
+      </div>
+      <div class="map-detail">${right}</div>`;
 
     el.querySelectorAll("[data-loc]").forEach((h) => h.onclick = () => {
       const l = locs.find((x) => x.id === h.dataset.loc);

@@ -223,45 +223,6 @@
       "category": "main"
     },
     {
-      "id": "trace-signal",
-      "ico": "🔺",
-      "name": "Trace the Signal",
-      "status": "active",
-      "category": "main",
-      "hidden": false,
-      "location": "The Long Silence (Vorrn-7)",
-      "handIn": "—",
-      "reward": "Salvage (chance of Quantum Relays / a fuel cell) + the truth behind the signal.",
-      "mapTarget": {
-        "node": "vorrn7",
-        "loc": "long-silence"
-      },
-      "note": "The wreck is old and unstable, and something is keeping that signal alive. Approach carefully.",
-      "description": "The repeating signal comes from a wreck half-buried in the ice — call sign long dead, transmitter somehow still warm. Someone, or something, is keeping it broadcasting. Find the source, decide whether it's salvage or a snare, and shut it off (or answer it).",
-      "objectives": [
-        {
-          "title": "Reach the wreck",
-          "detail": "Cross the ice to the downed ship at The Long Silence and find a way inside the breached hull.",
-          "done": false
-        },
-        {
-          "title": "Follow the signal to its source",
-          "detail": "Trace the broadcast through the dead decks to whatever is still powering it.",
-          "done": false
-        },
-        {
-          "title": "Decide what to do with it",
-          "detail": "Salvage it, silence it, or answer it — each has consequences. Choose with the crew.",
-          "done": false
-        },
-        {
-          "title": "Get out",
-          "detail": "The wreck is unstable and the cold is patient. Leave before either one closes in.",
-          "done": false
-        }
-      ]
-    },
-    {
       "id": "vorrn7-moon",
       "ico": "🌙",
       "name": "Make Planetfall on the Vorrn-7 Moon",
@@ -270,18 +231,18 @@
       "description": "The Silver Gull has reached the Vorrn-7 System. ASTRA's scan of the largest moon shows three points of civilisation on the ice, a faint life reading, and a repeating signal she can't identify. Time to stop watching from orbit and put boots on the ground — pick a landing site and find out what's down there.",
       "objectives": [
         {
-          "title": "Hold orbit and finish the scan",
-          "detail": "Bring the Gull into a stable orbit and let ASTRA resolve the three surface settlements and the signal's rough bearing.",
+          "title": "Hold orbit and finish ASTRA's scan",
+          "detail": "At the Map, keep the Gull in a stable orbit of the moon. Let ASTRA resolve the three surface settlements (the lit clusters), the faint life reading, and the rough bearing of the repeating signal — this tells you what each landing site is before you commit.",
           "done": false
         },
         {
-          "title": "Choose a landing site",
-          "detail": "Frostwatch Landing (the outpost), Kettle Hollow (the life reading), or The Long Silence (the signal). Open the Map and drop in.",
+          "title": "Pick a landing site",
+          "detail": "Open the Map, click Vorrn-7 to drop to the moon, and choose where to set down: Frostwatch Landing (the outpost — supplies, jobs, the quest board), Kettle Hollow (the life reading — who's living out here?), or The Long Silence (the wreck putting out the signal).",
           "done": false
         },
         {
           "title": "Make planetfall",
-          "detail": "Set the Gull down and get the crew onto the surface.",
+          "detail": "Fly the Gull down to your chosen site and get the crew onto the surface. Use the 'Take me to this scene' button on the landing site to jump to the ground map.",
           "done": false
         }
       ],
@@ -293,44 +254,6 @@
         "node": "expanse",
         "loc": "vorrn-7"
       }
-    },
-    {
-      "id": "faint-signature",
-      "ico": "📡",
-      "name": "The Faint Signature",
-      "status": "active",
-      "category": "exploration",
-      "hidden": false,
-      "location": "Kettle Hollow (Vorrn-7)",
-      "handIn": "Kettle Hollow",
-      "reward": "A local contact + intel on the moon (and on the signal).",
-      "mapTarget": {
-        "node": "vorrn7",
-        "loc": "kettle-hollow"
-      },
-      "description": "The life reading ASTRA flagged is real, and it's a whole community — Kettle Hollow, a colony carved into a glacier, that shows on no UGC or faction registry. They didn't ask to be found. Make contact without spooking them and find out who they are, why they're hiding, and what they know about the rest of this moon.",
-      "objectives": [
-        {
-          "title": "Descend into Kettle Hollow",
-          "detail": "Take the ice tunnels down to the colony proper; go in openly — they'll be watching.",
-          "done": false
-        },
-        {
-          "title": "Make peaceful contact",
-          "detail": "Convince the colony's speaker the crew aren't Directorate press-gangs or Apostle missionaries.",
-          "done": false
-        },
-        {
-          "title": "Hear their story",
-          "detail": "Learn who founded Kettle Hollow, why they stay hidden, and what they've heard out on the ice.",
-          "done": false
-        },
-        {
-          "title": "Earn a favour",
-          "detail": "Do one thing for the colony to leave on good terms — a trade, a repair, or seeing off a threat.",
-          "done": false
-        }
-      ]
     },
     {
       "id": "turrets",
@@ -389,18 +312,18 @@
       "description": "The Gull's belly was torn open in the crash and never fully closed, and there's a fresh scar too: Baldy put a round clean through the front windscreen during the Apostle battle. The micro-repair drones can seal it all — given hull patches and Titanium-Aegis plating — but until they do, every hard burn and every hull hit is a gamble.",
       "objectives": [
         {
+          "title": "Feed the repair drones hull patches",
+          "detail": "In engineering, load the 6 vacc-suit patches from Sandra's Folly into the micro-repair drone hopper and mark the breached sectors on ASTRA's damage map so the drones prioritise them.",
+          "done": false
+        },
+        {
           "title": "Patch the front-windscreen bullet hole",
-          "detail": "Baldy's legendary S4 shot went through the Gull's own viewport. Seal it before the next hard burn.",
+          "detail": "Baldy's S4 shot punched clean through the cockpit viewport. Fit a pressure patch over the hole from inside, then have a drone weld a plate over it from the hull side before the next hard burn.",
           "done": false
         },
         {
-          "title": "Seal the crash breaches across the hull sectors",
-          "detail": "Multiple sectors were opened in the crash. Feed the drones and close them one by one.",
-          "done": false
-        },
-        {
-          "title": "Restore hull integrity to spec",
-          "detail": "Bring the Titanium-Aegis Matrix plating back to full rating with titanium ore or alloy scrap.",
+          "title": "Re-plate the crash breaches",
+          "detail": "The belly is still torn open across two sectors. Have the drones smelt Titanium Ore / Alloy Scrap and lay fresh Titanium-Aegis plating over the gaps until hull integrity reads green.",
           "done": false
         }
       ],
@@ -415,18 +338,18 @@
       "description": "The cloaking field generator was never installed — Ship-Combat Station #9 (Cloaking Officer) sits dark and LOCKED. Bring it online and the Gull gains Engage Cloak (attackers roll at disadvantage), Cloak Burst, Phase Shift, a Decoy Drop and passive Adaptive Camouflage — exactly the edge a lone, outgunned ship needs out here.",
       "objectives": [
         {
-          "title": "Recover or fabricate a cloaking field generator",
-          "detail": "Source the core hardware — salvage, trade, or drone-fabrication.",
+          "title": "Source a cloaking field generator",
+          "detail": "You need the core hardware. Salvage one from a wreck (try The Long Silence or Ossuary), buy one from the Sovereign Horizon, or have the drones fabricate one from a recovered schematic.",
           "done": false
         },
         {
-          "title": "Install it at Station #9 (Cloaking Officer)",
-          "detail": "Mount and wire the generator into the ship's systems and unlock the station.",
+          "title": "Install it at Station #9",
+          "detail": "Mount the generator in the empty Cloaking Officer bay, run its feed to the main bus, and let ASTRA unlock Station #9 in the ship-combat console.",
           "done": false
         },
         {
-          "title": "Calibrate & power the cloak",
-          "detail": "Tune the field and give it enough ship power — needs shields/power fully online.",
+          "title": "Calibrate and power the cloak",
+          "detail": "Tune the field emitters and give the cloak enough juice — this needs ship power/shields fully online. Run a test cloak in a safe system before you rely on it in a fight.",
           "done": false
         }
       ],
@@ -434,52 +357,12 @@
       "location": "SSV Silver Gull"
     },
     {
-      "id": "cartographer",
-      "ico": "🗺️",
-      "name": "The Cartographer of Frostwatch",
-      "status": "active",
-      "category": "side",
-      "description": "There's a surveyor holed up at Frostwatch Landing — Wrenn Sallow, who spent years charting the Erevos Reach before she washed up on this moon. She has the only complete star chart of the whole galaxy loaded in her rig, and she'll hand it over — once the crew prove they're worth it and do a little work for her first. Get it, and the entire galaxy opens up on ASTRA's map.",
-      "objectives": [
-        {
-          "title": "Find Wrenn Sallow at Frostwatch",
-          "detail": "Ask around the outpost's trade post for the surveyor; she keeps to the old comms shack on the outpost's edge.",
-          "done": false
-        },
-        {
-          "title": "Earn her trust",
-          "detail": "She won't sell to strangers. Run the errand she asks — recover her lost survey drone from the ice flats, or settle her tab at the cantina — to prove you're not Directorate or Apostle.",
-          "done": false
-        },
-        {
-          "title": "Pay her price",
-          "detail": "Data, credits, or a favour — settle the deal for the chart.",
-          "done": false
-        },
-        {
-          "title": "Load the master chart into ASTRA",
-          "detail": "Jack her survey rig into ASTRA's nav system and copy the full Erevos Reach chart.",
-          "done": false
-        }
-      ],
-      "hidden": true,
-      "location": "Frostwatch Landing (Vorrn-7)",
-      "handIn": "Frostwatch Landing",
-      "reward": "The complete Erevos Reach galaxy chart — every region named on the Map.",
-      "giver": "Wrenn Sallow, ex-Sovereign Horizon surveyor",
-      "revealsGalaxy": true,
-      "mapTarget": {
-        "node": "vorrn7",
-        "loc": "frostwatch"
-      }
-    },
-    {
       "id": "frostwatch-trouble",
       "ico": "🛠️",
       "name": "Trouble at Frostwatch",
       "status": "active",
       "category": "side",
-      "hidden": false,
+      "hidden": true,
       "location": "Frostwatch Landing (Vorrn-7)",
       "handIn": "Frostwatch Landing",
       "reward": "Outpost goodwill + a crate of salvage (roll for a turret component).",
@@ -490,26 +373,244 @@
       "description": "Frostwatch Landing is limping. Their fusion tap keeps browning out, a supply rover went missing on the ice, and the outpost boss is offering salvage-pick rights to anyone who can sort it out. Easy way to make friends on a strange moon — and friends here mean fuel, parts and a warm bunk.",
       "objectives": [
         {
-          "title": "Talk to the outpost boss",
-          "detail": "Meet the harried administrator at the Frostwatch trade post and take the job.",
+          "title": "Take the job from the outpost boss",
+          "detail": "Head to the Frostwatch trade post and talk to the outpost administrator. She's rattled — the reactor keeps browning out and a supply rover is overdue. Agree to help and she'll sign over salvage-pick rights.",
           "done": false
         },
         {
-          "title": "Stabilise the fusion tap",
-          "detail": "Get down to the reactor housing and reseat the coolant lines / clear the ice choking the vents.",
+          "title": "Reseat the fusion tap",
+          "detail": "Climb down into the reactor housing under the main hab. The coolant manifolds have iced over and one coupling has shaken loose. Clear the ice, reseat the three couplings, and restart the tap so the lights hold steady.",
           "done": false
         },
         {
-          "title": "Recover the missing rover",
-          "detail": "Follow the rover's last track out onto the ice flats and bring it (and whoever was driving) home.",
+          "title": "Track down the missing rover",
+          "detail": "The rover's last ping was ~3 km out on the ice flats. Follow its track, deal with whatever stopped it (a crevasse, scavengers, or something worse in the ice), and drive it and any crew back to the outpost.",
           "done": false
         },
         {
-          "title": "Report back",
-          "detail": "Return to the boss at Frostwatch to claim the salvage rights.",
+          "title": "Collect your pay",
+          "detail": "Return to the administrator at the trade post to claim the salvage-pick rights — roll on the outpost salvage cache for a turret component or fuel.",
           "done": false
         }
       ]
+    },
+    {
+      "id": "frostwatch-cantina",
+      "ico": "🥃",
+      "name": "The Frostwatch Tab",
+      "status": "active",
+      "category": "side",
+      "hidden": true,
+      "location": "Frostwatch Landing (Vorrn-7)",
+      "handIn": "Frostwatch Landing",
+      "reward": "A rumour + a favour owed at the outpost cantina.",
+      "mapTarget": {
+        "node": "vorrn7",
+        "loc": "frostwatch"
+      },
+      "description": "The cantina at Frostwatch is where every rumour on this moon gets traded. The barkeep will tell you what he knows about the other two settlements and the signal — if the crew clears a tab a departed spacer skipped out on, or handles the drunk making trouble in the corner.",
+      "objectives": [
+        {
+          "title": "Buy in at the cantina",
+          "detail": "Head into the Frostwatch cantina and get the barkeep talking. He'll trade information for a small problem solved.",
+          "done": false
+        },
+        {
+          "title": "Settle the skipped tab (or the troublemaker)",
+          "detail": "Either cover the debt a vanished spacer left behind, or calm/eject the belligerent drunk who's scaring off custom — your call, roleplay or muscle.",
+          "done": false
+        },
+        {
+          "title": "Cash in the rumours",
+          "detail": "With the barkeep onside, pump him for what he knows: the truth about Kettle Hollow, the age of the wreck at The Long Silence, and who else has come sniffing around Vorrn-7 lately.",
+          "done": false
+        }
+      ],
+      "giver": "Frostwatch cantina barkeep"
+    },
+    {
+      "id": "faint-signature",
+      "ico": "📡",
+      "name": "The Faint Signature",
+      "status": "active",
+      "category": "exploration",
+      "hidden": true,
+      "location": "Kettle Hollow (Vorrn-7)",
+      "handIn": "Kettle Hollow",
+      "reward": "A local contact + intel on the moon (and on the signal).",
+      "mapTarget": {
+        "node": "vorrn7",
+        "loc": "kettle-hollow"
+      },
+      "description": "The life reading ASTRA flagged is real, and it's a whole community — Kettle Hollow, a colony carved into a glacier, that shows on no UGC or faction registry. They didn't ask to be found. Make contact without spooking them and find out who they are, why they're hiding, and what they know about the rest of this moon.",
+      "objectives": [
+        {
+          "title": "Follow the life reading down",
+          "detail": "From Frostwatch (or straight from orbit) head to the glacier where ASTRA's faint biosignature pulses, and find the ice-tunnel entrance down into Kettle Hollow. Go in openly — they will already be watching you.",
+          "done": false
+        },
+        {
+          "title": "Get past the gate-keepers",
+          "detail": "Kettle Hollow's people are armed and jumpy. Convince the gate wardens you're not an Iron Directorate press-gang or an Apostle mission — a calm word, a shared drink (Gobby), or a show of good faith gets you inside.",
+          "done": false
+        },
+        {
+          "title": "Meet the colony's speaker",
+          "detail": "Sit down with whoever leads Kettle Hollow. Learn who founded it, why a whole community is hiding off every registry on this frozen rock, and what they've seen out on the ice and in the sky.",
+          "done": false
+        },
+        {
+          "title": "Leave on good terms",
+          "detail": "Do one concrete thing for them — trade needed supplies, fix their heat exchanger, or see off whatever's been stalking their tunnels — so you have a friendly port on Vorrn-7 instead of a closed door.",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "kettle-trade",
+      "ico": "🧊",
+      "name": "Cold Trade",
+      "status": "active",
+      "category": "side",
+      "hidden": true,
+      "location": "Kettle Hollow (Vorrn-7)",
+      "handIn": "Kettle Hollow",
+      "reward": "Colony goodwill + a cache of supplies (chance of a fuel cell).",
+      "mapTarget": {
+        "node": "vorrn7",
+        "loc": "kettle-hollow"
+      },
+      "description": "Kettle Hollow survives on what it can scrape from the ice and barter from passing ships. If the crew can run one honest trade with them, the colony opens up — and a friendly hidden colony is worth more than any faction.",
+      "objectives": [
+        {
+          "title": "Find out what the colony needs",
+          "detail": "Ask around Kettle Hollow: they're short on medical supplies, reactor parts, or clean water filters. Note what they'll pay in and what they're desperate for.",
+          "done": false
+        },
+        {
+          "title": "Fill the order",
+          "detail": "Source the goods — from the Gull's own stores, from Frostwatch, or salvaged nearby — and bring them down into the Hollow.",
+          "done": false
+        },
+        {
+          "title": "Make the trade",
+          "detail": "Hand over the supplies and take the colony's payment (ice-mined ore, a fuel cell, or local intel). Do it straight and they'll remember it.",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "trace-signal",
+      "ico": "🔺",
+      "name": "The Signal in the Ice",
+      "status": "active",
+      "category": "main",
+      "hidden": true,
+      "location": "The Long Silence (Vorrn-7)",
+      "handIn": "—",
+      "reward": "Salvage (chance of Quantum Relays / a fuel cell) + the truth behind the signal.",
+      "mapTarget": {
+        "node": "vorrn7",
+        "loc": "long-silence"
+      },
+      "note": "The wreck is old and unstable, and something is keeping that signal alive. Approach carefully.",
+      "description": "The repeating signal comes from a wreck half-buried in the ice — call sign long dead, transmitter somehow still warm. Someone, or something, is keeping it broadcasting. Find the source, decide whether it's salvage or a snare, and shut it off (or answer it).",
+      "objectives": [
+        {
+          "title": "Reach the wreck at The Long Silence",
+          "detail": "Cross the ice to the downed ship still broadcasting into the dark. Find a way through the breached hull — the main airlock is frozen shut, but the aft tear is open to the cold.",
+          "done": false
+        },
+        {
+          "title": "Trace the broadcast to its source",
+          "detail": "The signal repeats on a loop. Follow it deck by deck through the dead ship — dead consoles, frozen crew, sealed doors — to whatever is still keeping the transmitter warm.",
+          "done": false
+        },
+        {
+          "title": "Find out what's keeping it alive",
+          "detail": "Something is powering that transmitter long after the ship died. Investigate the source carefully — it may be a survivor, an automated distress beacon, salvageable tech, or a lure. Have Gerthorlemue watch for anything that reads wrong.",
+          "done": false
+        },
+        {
+          "title": "Decide: salvage, silence, or answer it",
+          "detail": "With the crew, choose what to do — strip it for parts, cut the signal, or reply to it — and be ready for the consequences of whichever you pick. Then get out before the wreck or the cold closes in.",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "long-salvage",
+      "ico": "🔩",
+      "name": "Pick the Bones",
+      "status": "active",
+      "category": "side",
+      "hidden": true,
+      "location": "The Long Silence (Vorrn-7)",
+      "handIn": "The Long Silence",
+      "reward": "Salvage: a chance at Quantum Relays + a Hyperfold cell (turret/fuel parts).",
+      "mapTarget": {
+        "node": "vorrn7",
+        "loc": "long-silence"
+      },
+      "description": "Whatever the signal turns out to be, the wreck at The Long Silence is a hull full of pre-crash tech slowly freezing solid. A careful salvage run could pull exactly the exotic parts the Silver Gull's turrets and engines are crying out for.",
+      "objectives": [
+        {
+          "title": "Map the safe route in",
+          "detail": "The wreck is unstable — decks have collapsed and the ice is load-bearing in places. Pick a path in that won't drop the crew through the floor (Gobby can smell the weak spots; Baldy can read the odds).",
+          "done": false
+        },
+        {
+          "title": "Strip the intact systems",
+          "detail": "Work the least-damaged compartments — comms bay, engine room, medbay — for Quantum Relays, a hyperfold fuel cell, hull patches, and anything else the drones can reuse.",
+          "done": false
+        },
+        {
+          "title": "Haul it out before it goes",
+          "detail": "The cold and the groaning hull won't wait forever. Get the salvage back to the Gull, and don't be inside when the deck finally lets go.",
+          "done": false
+        }
+      ],
+      "note": "The wreck is unstable — every turn spent inside is a risk."
+    },
+    {
+      "id": "cartographer",
+      "ico": "🗺️",
+      "name": "The Cartographer of Sett",
+      "status": "active",
+      "category": "side",
+      "description": "Ask around Frostwatch and you'll hear the same name: Wrenn Sallow, a surveyor who spent years charting the whole Erevos Reach before she washed out and holed up at Sett, a rimward waystation near the Vorrn system. She still has the only complete star chart of the galaxy in her rig — and she'll part with it, once the crew make the trip and prove they're worth it. Get it and the entire galaxy opens up on ASTRA's map.",
+      "objectives": [
+        {
+          "title": "Pick up the lead at Frostwatch",
+          "detail": "In the Frostwatch cantina or trade post you'll hear about Wrenn Sallow and her galaxy chart, and that she's docked at Sett.",
+          "done": false
+        },
+        {
+          "title": "Travel to Sett",
+          "detail": "Set a course from Vorrn-7 to Sett (open the Map — it's a short hop, marked on the sector chart) and dock at the waystation.",
+          "done": false
+        },
+        {
+          "title": "Find Wrenn Sallow and win her over",
+          "detail": "Track her down in Sett's dock-side bar. She won't deal with strangers — run the small job she names (recover her stolen survey drone, or clear a debt collector off her back) to prove you're not Directorate or Apostle.",
+          "done": false
+        },
+        {
+          "title": "Pay her price and copy the chart",
+          "detail": "Settle up in credits, data, or a favour, then jack her survey rig into ASTRA's nav system and copy the full Erevos Reach chart. The Map now shows every named region.",
+          "done": false
+        }
+      ],
+      "hidden": true,
+      "location": "Sett",
+      "handIn": "Sett",
+      "reward": "The complete Erevos Reach galaxy chart — every region named on the Map.",
+      "giver": "Wrenn Sallow, ex-Sovereign Horizon surveyor",
+      "revealsGalaxy": true,
+      "mapTarget": {
+        "node": "expanse",
+        "loc": "sett"
+      }
     },
     {
       "id": "green-fire",
@@ -520,18 +621,18 @@
       "description": "Greenhollow's jungles are veined with Verdite — the fuel Ronon's Satedan tech runs on. The first Verdite in this galaxy could bring a piece of his home back to life.",
       "objectives": [
         {
-          "title": "Reach Greenhollow",
-          "detail": "Make landfall on the contested jungle world.",
+          "title": "Set a course for Greenhollow",
+          "detail": "Greenhollow is a Verdite-veined jungle world in the Verdant Fringe. Fly there and make landfall near the mining claims.",
           "done": false
         },
         {
-          "title": "Beat the rival prospectors",
-          "detail": "Out-bid or out-fight the gangs working the same veins.",
+          "title": "Beat the rival prospectors to a vein",
+          "detail": "The good Verdite veins are all worked by prospector gangs. Out-bid them, out-work them, or out-fight them for access to an unclaimed seam.",
           "done": false
         },
         {
-          "title": "Extract raw Verdite",
-          "detail": "Cut and stabilize a load of the volatile green mineral.",
+          "title": "Cut and stabilise the Verdite",
+          "detail": "Extract raw Verdite carefully (it's volatile), stabilise it for transport, and bring it back — enough to bring a piece of Ronon's Satedan gear back to life.",
           "done": false
         }
       ],
@@ -554,18 +655,18 @@
       "description": "Turret ammunition needs Hyper-Dense Refined Thermite, and only the magma-flat cartels of Cindermoor refine it. Make the run and haul it home.",
       "objectives": [
         {
-          "title": "Reach Cindermoor",
-          "detail": "Take the Gull down to the volcanic refinery world.",
+          "title": "Set a course for Cindermoor",
+          "detail": "Cindermoor is a volcanic refinery world in the Ember Drift — a long haul. Fly there and dock at one of the magma-flat refineries.",
           "done": false
         },
         {
-          "title": "Broker with a refinery cartel",
-          "detail": "Buy, barter, or bully your way to a batch.",
+          "title": "Broker for refined thermite",
+          "detail": "The cartels don't sell to strangers cheap. Bargain hard, trade salvage, or do a job for a refinery boss to get a batch of Hyper-Dense Refined Thermite.",
           "done": false
         },
         {
-          "title": "Haul the thermite back",
-          "detail": "Get the volatile cargo aboard without cooking the ship.",
+          "title": "Haul it home without cooking the ship",
+          "detail": "The thermite is volatile. Stow it properly, keep the hold cool, and get it back to the Silver Gull's drone hopper intact.",
           "done": false
         }
       ],
@@ -587,18 +688,18 @@
       "description": "Ossuary is a whole world of dead ships. Stake a claim and strip a wreck for the exotic parts the turrets need.",
       "objectives": [
         {
-          "title": "Dock the ship-graveyard",
-          "detail": "Bring the Gull down among the centuries of wrecks at Ossuary.",
+          "title": "Reach Ossuary",
+          "detail": "Ossuary is a whole world of dead ships in the Ember Drift. Fly there and set down among the wrecks at the salvage settlement.",
           "done": false
         },
         {
           "title": "Stake a salvage claim",
-          "detail": "Register a claim with the salvage settlement — or take one the hard way.",
+          "detail": "Register a claim with the settlement's claim-master (or take an abandoned one) so your salvage is legal — and defend it if a rival crew disputes it.",
           "done": false
         },
         {
-          "title": "Strip a wreck",
-          "detail": "Pull working Quantum Relays and a fuel cell from the hulks.",
+          "title": "Strip a wreck for the good parts",
+          "detail": "Work a promising hulk for Quantum Relays and a Hyperfold fuel cell, then haul the parts back to the Gull.",
           "done": false
         }
       ],
@@ -2013,7 +2114,8 @@
             "name": "Sett",
             "x": 0.1966,
             "y": 0.8271,
-            "hasData": false
+            "hasData": true,
+            "info": "A rimward waystation on the edge of the Verdant Fringe, near the Vorrn system — a cheap dock for traders, drifters and people who don't want to be found. Wrenn Sallow, the cartographer with the full galaxy chart, has holed up here."
           },
           {
             "id": "lowtide",
