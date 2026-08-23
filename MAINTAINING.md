@@ -283,3 +283,24 @@ gh release create vX.Y.Z module.json module.zip --title "…" --notes "…"
 
 Related memory files: `journal-module-deployment`, `politics-module-deployment`, `vtt-access-notes`,
 `image-generation` (in the project memory dir).
+
+## Quest control for sibling modules
+
+`game.modules.get("ssv-silver-gull-journal").api` exposes, alongside the sync methods:
+
+| method | notes |
+|---|---|
+| `getQuests()` | the **merged** quest list — authored content with live world state overlaid |
+| `getQuest(id)` | one merged quest, or `null` |
+| `revealQuest(id)` / `hideQuest(id)` | flips `worldState.questReveal`, un-hiding a GM-only quest for the party |
+| `setQuestStatus(id, "active"\|"complete")` | flips `worldState.questStatus` |
+
+The Settlements module drives these from its quest-giver dossier: accepting a job calls
+`revealQuest`, completing it calls `setQuestStatus`.
+
+**Use `getQuests()`, never `api.content`.** `content` is the raw authored file with no live
+state overlaid, so it reports revealed quests as still hidden and completed ones as active.
+
+The three mutators are defined once at module scope and handed to `buildCtx()` from there —
+do not re-declare them inline in the ctx object. They all route through `saveState()`, which
+is GM-gated, so a player calling them is a no-op with a warning.

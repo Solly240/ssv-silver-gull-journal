@@ -1358,8 +1358,8 @@
       "erevos": {
         "name": "The Erevos Reach",
         "kind": "galaxy",
-        "image": "assets/current-galaxy-current.png",
-        "imageNamed": "assets/current-galaxy-named.png",
+        "image": "assets/current-galaxy-current.webp",
+        "imageNamed": "assets/current-galaxy-named.webp",
         "locations": [
           {
             "id": "the-shattered-expanse",
@@ -1762,7 +1762,7 @@
         "name": "The Shattered Expanse",
         "kind": "sector",
         "parent": "erevos",
-        "image": "assets/shattered-expanse-sector-chart.png",
+        "image": "assets/shattered-expanse-sector-chart.webp",
         "locations": [
           {
             "id": "the-coil",

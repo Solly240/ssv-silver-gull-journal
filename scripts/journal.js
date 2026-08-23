@@ -129,7 +129,13 @@ async function setStatus(s) { if (game.user.isGM) await game.settings.set(MODULE
    so UI updates land on a normal reload. Falls back silently to the bundled render.js on any failure. */
 async function loadLatestRender() {
   try {
-    const res = await fetch(`${RENDER_API}?ref=${BRANCH}&t=${Date.now()}`, { headers: { Accept: "application/vnd.github.raw" }, cache: "no-store" });
+    // Bounded: an unreachable or throttled GitHub used to be able to hang here indefinitely.
+    const ac = new AbortController();
+    const to = setTimeout(() => ac.abort(), 3000);
+    let res;
+    try {
+      res = await fetch(`${RENDER_API}?ref=${BRANCH}&t=${Date.now()}`, { headers: { Accept: "application/vnd.github.raw" }, cache: "no-store", signal: ac.signal });
+    } finally { clearTimeout(to); }
     if (!res.ok) return;
     const src = await res.text();
     if (!src || !src.includes("globalThis.SSVJ")) return;
@@ -157,11 +163,27 @@ async function saveState(mut) {
   const s = getState(); mut(s); await game.settings.set(MODULE_ID, SET_STATE, s); refreshOpen();
 }
 // Effective content = authored CONTENT with the GM's live state overlaid.
+/* Quest mutators live at module scope so they can be exported. The Settlements module
+ * drives these when a player accepts or completes a job from a quest-giver; buildCtx()
+ * hands the same functions to the renderers, so there is only ever one definition.
+ * All of them go through saveState(), which is already GM-gated. */
+const revealQuest = async (id) => saveState((s) => { s.questReveal[id] = true; });
+const hideQuest = async (id) => saveState((s) => { delete s.questReveal[id]; });
+const setQuestStatus = async (id, st) => saveState((s) => { s.questStatus[id] = st; });
+
 function mergedContent() {
   const s = getState();
-  const c = foundry.utils.deepClone(CONTENT || {});
-  c.playerMap = { ...(c.playerMap || {}), ...s.playerMap };
-  c.inventory = { ...(c.inventory || {}), ...s.inventory };
+  // Only `quests` (and their objectives) and `turrets` are mutated below; `playerMap`,
+  // `inventory` and `partyNotes` are replaced with fresh objects/arrays outright. The
+  // remaining branches — partyLog, map, characters, lore, timeline — are read-only for
+  // the renderers, so a deepClone of the whole ~140KB content on every ctx build was
+  // copying far more than this function ever touches.
+  const src = CONTENT || {};
+  const c = { ...src };
+  c.quests = (src.quests || []).map((q) => ({ ...q, objectives: (q.objectives || []).map((o) => ({ ...o })) }));
+  c.turrets = (src.turrets || []).map((t) => ({ ...t }));
+  c.playerMap = { ...(src.playerMap || {}), ...s.playerMap };
+  c.inventory = { ...(src.inventory || {}), ...s.inventory };
   (c.quests || []).forEach((q) => {
     if (s.questStatus[q.id]) q.status = s.questStatus[q.id];
     let objs = s.questObjs[q.id] ? s.questObjs[q.id].slice() : (q.objectives || []).concat(s.addedObjectives[q.id] || []);
@@ -195,7 +217,7 @@ function buildCtx() {
 
     adjustInv: async (id, d) => saveState((s) => { s.inventory[id] = Math.max(0, Number(data.inventory[id] || 0) + Number(d)); }),
     setInv: async (id, v) => saveState((s) => { s.inventory[id] = Math.max(0, Number(v) || 0); }),
-    setQuestStatus: async (id, st) => saveState((s) => { s.questStatus[id] = st; }),
+    setQuestStatus,
     toggleObjective: async (id, i) => saveState((s) => { const qq = q(id); const arr = s.questObjDone[id] ? s.questObjDone[id].slice() : (qq ? qq.objectives.map((o) => !!o.done) : []); arr[i] = !arr[i]; s.questObjDone[id] = arr; }),
     addObjective: async (id, r) => saveState((s) => { const o = { title: r.title, detail: r.detail || "", done: false }; if (s.questObjs[id]) s.questObjs[id].push(o); else (s.addedObjectives[id] = s.addedObjectives[id] || []).push(o); }),
     editObjective: async (id, i, r) => saveState((s) => { const qq = q(id); if (!s.questObjs[id]) s.questObjs[id] = qq.objectives.map((o) => ({ ...o })); if (s.questObjs[id][i]) { s.questObjs[id][i].title = r.title; s.questObjs[id][i].detail = r.detail; } }),
@@ -204,8 +226,8 @@ function buildCtx() {
     addQuest: async (name) => saveState((s) => { s.addedQuests.push({ id: "q" + Date.now(), ico: "•", name, status: "active", description: "", objectives: [] }); }),
     saveMapping: async (m) => saveState((s) => { s.playerMap = m; }),
     addPartyNote: async (t) => saveState((s) => { s.partyNotes.push(t); }),
-    revealQuest: async (id) => saveState((s) => { s.questReveal[id] = true; }),
-    hideQuest: async (id) => saveState((s) => { delete s.questReveal[id]; }),
+    revealQuest,
+    hideQuest,
     deleteQuest: async (id) => saveState((s) => { const i = s.addedQuests.findIndex((q) => q.id === id); if (i >= 0) s.addedQuests.splice(i, 1); else if (!s.removedQuests.includes(id)) s.removedQuests.push(id); }),
     openTab: (labels) => openTabByLabel(labels),
     gotoMap: (nodeId, locId) => {
@@ -316,6 +338,7 @@ class SyncMenu extends FormApplication {
 /*  tab injection                                                             */
 /* -------------------------------------------------------------------------- */
 function rootOf(app, html) { return html?.[0] || html || app?.element?.[0] || app?.element || null; }
+let _bindRev = 0;   // bumped per bind cycle; marks which panels are up to date
 function bindPanels(root) {
   if (!CONTENT) return;
   const links = Array.from(root.querySelectorAll("a.item[data-tab]"));
@@ -328,13 +351,48 @@ function bindPanels(root) {
     for (const l of links) if (!used.has(l) && labels.some((lab) => norm(l.textContent).includes(lab))) return l;
     return null;
   };
+  // Collect the panel/link/body triples first, then render lazily. Rendering all six
+  // eagerly meant every state change (every +/- on a material counter) rebuilt five
+  // hidden tabs, including re-decoding the full-size star map nobody was looking at.
+  const found = [];
   for (const panel of SSVJ().PANELS) {
     const link = findLink(panel.labels); if (!link) continue;
     used.add(link);
     const tab = link.getAttribute("data-tab");
     const body = root.querySelector(`.tab[data-tab="${tab}"]`);
     if (!body) continue;
-    try { panel.render(ctx, body); } catch (e) { console.error(`${MODULE_ID} | render ${panel.key}`, e); }
+    found.push({ panel, link, body });
+  }
+
+  _bindRev++;
+  const rev = String(_bindRev);
+  const drawOne = (panel, body, c) => {
+    try { panel.render(c, body); body.dataset.ssvjRev = rev; }
+    catch (e) { console.error(`${MODULE_ID} | render ${panel.key}`, e); }
+  };
+  const isShowing = ({ link, body }) =>
+    body.classList.contains("active") || link.classList.contains("active") || body.offsetParent !== null;
+
+  // If we can't tell which tab is showing (unfamiliar markup), fall back to the old
+  // eager behaviour rather than leaving tabs blank.
+  const anyActive = found.some(isShowing);
+
+  for (const entry of found) {
+    const { panel, link, body } = entry;
+    if (!anyActive || isShowing(entry)) { drawOne(panel, body, ctx); continue; }
+
+    delete body.dataset.ssvjRev;                       // stale until this tab is opened
+    if (link.dataset.ssvjWired !== "1") {
+      link.dataset.ssvjWired = "1";
+      link.addEventListener("click", () => {
+        // Simple Quest flips .active in its own handler, so defer a tick.
+        setTimeout(() => {
+          if (body.dataset.ssvjRev === String(_bindRev)) return;   // already current
+          try { panel.render(buildCtx(), body); body.dataset.ssvjRev = String(_bindRev); }
+          catch (e) { console.error(`${MODULE_ID} | render ${panel.key}`, e); }
+        }, 0);
+      });
+    }
   }
 }
 function currentRoot() { const sq = ui.simpleQuest; return sq?.rendered ? rootOf(sq, sq.element) : null; }
@@ -393,9 +451,20 @@ Hooks.once("init", () => {
 
 Hooks.once("ready", async () => {
   CONTENT = getCache() || (await loadBundled()) || {};
-  await loadLatestRender();   // upgrade render.js from GitHub (no-op offline / on failure)
+  // Not awaited: the bundled render.js is already imported above, so the UI is usable
+  // immediately. This upgrade lands asynchronously and refreshes any open panel then.
+  loadLatestRender().then(() => { try { refreshOpen(); } catch (e) {} });
   const mod = game.modules.get(MODULE_ID);
-  const api = { pull, push, refresh: refreshOpen, logTabs, openSync: openSyncMenu, get content() { return CONTENT; } };
+  const api = {
+    pull, push, refresh: refreshOpen, logTabs, openSync: openSyncMenu,
+    get content() { return CONTENT; },
+    // Quest control for sibling modules (Settlements' quest-givers). getQuests returns the
+    // merged view — `content` is the raw authored file with no live state overlaid, so it
+    // reports revealed quests as still hidden and completed ones as still active.
+    getQuests: () => mergedContent().quests || [],
+    getQuest: (id) => (mergedContent().quests || []).find((q) => q.id === id) || null,
+    revealQuest, hideQuest, setQuestStatus,
+  };
   if (mod) mod.api = api;
   globalThis.SilverGullJournal = api;
   window.addEventListener("keydown", onKey, true);

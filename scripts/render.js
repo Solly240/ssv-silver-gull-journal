@@ -29,7 +29,10 @@
 (function () {
   "use strict";
   const S = {};
-  const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  // Map hoisted out of the replacer: it used to be allocated once per escaped character,
+  // and esc() runs thousands of times per journal render.
+  const ESC_MAP = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" };
+  const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ESC_MAP[c]);
   const clamp = (n, a, b) => Math.max(a, Math.min(b, n));
   const pctv = (h, r) => (r <= 0 ? 100 : clamp((h / r) * 100, 0, 100));
   S.esc = esc;
@@ -313,7 +316,7 @@
       const state = built ? `<span class="t-built">✔ built</span>` : (ready ? `<span class="t-ready">ready to build</span>` : `<span class="t-wait">needs materials</span>`);
       return `<div class="turret-card ${built ? "built" : ""}">
         <div class="turret-head">
-          ${t.img ? `<img class="turret-img" src="${au(ctx, t.img)}" alt=""/>` : ""}
+          ${t.img ? `<img class="turret-img" src="${au(ctx, t.img)}" alt="" width="62" height="66" loading="lazy" decoding="async"/>` : ""}
           <div style="flex:1;min-width:0;"><div class="otitle">${esc(t.name)}</div><div class="odetail">${esc(o.detail || t.role || "")}</div>
             <div style="margin-top:4px;">${state}</div></div>
           ${ctx.isGM ? `<button class="btn mini" data-turret="${t.id}">${built ? "unbuild" : "mark built"}</button>` : ""}
@@ -463,7 +466,7 @@
       <h1 class="ssvj-title">Star Map</h1>
       <div class="crumbs">${back}${crumbs}</div>
       <div class="mapstage">
-        <img src="${au(ctx, revealed ? node.imageNamed : node.image)}" alt="${esc(node.name)}"/>
+        <img src="${au(ctx, revealed ? node.imageNamed : node.image)}" alt="${esc(node.name)}" decoding="async"/>
         ${locs.map((l) => { const drill = l.child && nodes[l.child]; const nd = (l.hasData || drill) ? "" : "nodata"; return `<button class="hot ${nd} ${loc && loc.id === l.id ? "sel" : ""}" data-loc="${l.id}" title="${esc(l.name)}" style="left:${(l.x * 100).toFixed(2)}%;top:${(l.y * 100).toFixed(2)}%;"></button>`; }).join("")}
       </div>
       <div class="legend">
