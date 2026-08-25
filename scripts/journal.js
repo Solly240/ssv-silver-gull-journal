@@ -281,7 +281,8 @@ async function assignDialog() {
   if (!game.user.isGM) return;
   const map = { ...(getState().playerMap || {}) };
   const players = game.users.filter((u) => !u.isGM);
-  const chars = CONTENT.characters;
+  const chars = CONTENT?.characters || [];
+  if (!chars.length) return warn("No characters in the journal content to assign.");
   const opts = (cid) => `<option value="">— unassigned —</option>` + chars.map((c) => `<option value="${c.id}" ${cid === c.id ? "selected" : ""}>${SSVJ().esc(c.name)}</option>`).join("");
   const content = `<div style="display:flex;flex-direction:column;gap:8px;padding:4px 2px;">
     <p style="margin:0 0 4px;">Assign each player to a crew member. Their hidden "My Journal" dossier shows only their character.</p>
@@ -417,6 +418,16 @@ function logTabs() {
 // Escape or J closes the journal when it's open; we run in the capture phase and stop the event so
 // Foundry never sees it (no game menu on Escape, no re-open on J). When the journal is closed we do
 // nothing, so Escape/J behave normally (J still opens it via Simple Quest).
+// The sibling SSV modules mount full-screen panels straight onto <body>. When one of those is
+// up it is what the player is looking at, so Escape belongs to it, not to the journal behind it.
+const OVERLAY_SEL = "#ssvshop-panel, .sgsl-overlay, #ssvset-panel, #ssv-ship-console, " +
+                    "#ssv-item-browser, #ssv-repair-puzzle, #ssv-nav-game";
+function overlayShowing() {
+  for (const el of document.querySelectorAll(OVERLAY_SEL)) {
+    if (el.offsetParent !== null || el.getClientRects().length) return true;
+  }
+  return !!document.querySelector("#ssvset-card > *, #ssvset-dossier > *");
+}
 function onKey(e) {
   const sq = ui.simpleQuest; if (!sq?.rendered) return;
   const k = e.key;
@@ -425,6 +436,7 @@ function onKey(e) {
   const ae = document.activeElement;
   if (ae && (ae.tagName === "INPUT" || ae.tagName === "TEXTAREA" || ae.isContentEditable)) return;  // don't hijack typing
   if (isEsc && document.querySelector(".dialog, dialog[open], .window-app.dialog")) return;          // let dialogs handle Escape
+  if (isEsc && overlayShowing()) return;   // a sibling module's full-screen panel owns Escape first
   e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation();
   try { sq.close(); } catch (err) {}
 }
